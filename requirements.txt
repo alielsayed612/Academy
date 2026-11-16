@@ -1,0 +1,8 @@
+# Runtime dependencies (Python 3.12, Windows 10/11). Lower bounds only - NOT verified against a lock in this repo.
+# On the build machine, after the first successful build:  pip freeze > requirements.lock  and commit it,
+# then build from the lock for reproducible releases.
+fastapi>=0.110
+uvicorn>=0.29
+pydantic>=2.6
+pywebview>=5.0
+openpyxl>=3.1

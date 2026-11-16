@@ -1,0 +1,3 @@
+-r requirements-core.txt
+pyinstaller>=6.5
+httpx>=0.27        # needed by the HTTP test-suite (fastapi.testclient)

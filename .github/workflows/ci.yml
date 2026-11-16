@@ -1,0 +1,49 @@
+name: CI
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: windows-latest          # target platform of the product
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      # [dev] brings httpx, so the HTTP test-suite RUNS here instead of being skipped (session 9 fix).
+      - run: pip install -e ".[dev]"
+      - name: Tests (blocking)
+        run: python -m unittest discover -s tests -t . -v
+  build-smoke:
+    # Builds the real EXE on a clean Windows runner and boots it headless. UNVERIFIED until its first green run.
+    needs: test
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -e ".[build]"
+      - name: PyInstaller build
+        run: pyinstaller YawmJadidAcademy.spec --noconfirm
+      - name: Verify EXE content matches this source (modules, version, UI hashes, no seed/db payload)
+        run: python scripts/verify_build_artifact.py dist/YawmJadidAcademy/YawmJadidAcademy.exe --ui-dir dist/YawmJadidAcademy/_internal/alahd_erp/ui
+      - name: EXE smoke test
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/smoke_exe.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: YawmJadidAcademy-windows-portable
+          path: dist/YawmJadidAcademy
+          retention-days: 14
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install ruff mypy
+      - name: Ruff (advisory until baseline is clean)
+        run: ruff check .
+        continue-on-error: true
+      - name: Mypy (advisory, domain layer only)
+        run: mypy
+        continue-on-error: true

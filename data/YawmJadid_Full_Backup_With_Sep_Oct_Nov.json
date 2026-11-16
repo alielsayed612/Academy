@@ -1,0 +1,5510 @@
+{
+  "teachers": [
+    "خديجة أحمد",
+    "روان ابراهيم",
+    "رويدا ابراهيم",
+    "هاجر محمد",
+    "رحاب صبري",
+    "الزهراء سعد",
+    "آيات مصطفى",
+    "عائشة"
+  ],
+  "teacherMeta": {
+    "خديجة أحمد": {
+      "defaultPct": 0,
+      "pct": 0,
+      "active": true
+    },
+    "روان ابراهيم": {
+      "defaultPct": 70,
+      "pct": 70,
+      "active": true
+    },
+    "رويدا ابراهيم": {
+      "defaultPct": 70,
+      "pct": 70,
+      "active": true
+    },
+    "هاجر محمد": {
+      "defaultPct": 70,
+      "pct": 70,
+      "active": true
+    },
+    "رحاب صبري": {
+      "defaultPct": 70,
+      "pct": 70,
+      "active": true
+    },
+    "الزهراء سعد": {
+      "defaultPct": 70,
+      "pct": 70,
+      "active": true
+    },
+    "آيات مصطفى": {
+      "defaultPct": 70,
+      "pct": 70,
+      "active": true
+    },
+    "عائشة": {
+      "defaultPct": 60,
+      "pct": 60,
+      "active": true,
+      "notes": "معلمة قواعد شهر 9 (12 طالبة)"
+    }
+  },
+  "students": [
+    {
+      "id": "stu_dash_001",
+      "code": "STU-001",
+      "name": "وفاء سامي",
+      "phone": "01003526127",
+      "teacher": "خديجة أحمد",
+      "type": "خاص",
+      "pct": 0,
+      "schedule": "السبت 5:00 م | الأربعاء 5:00 م",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 0,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_002",
+      "code": "STU-002",
+      "name": "نادية عبد الحميد",
+      "phone": "01145693066",
+      "teacher": "خديجة أحمد",
+      "type": "8 حلقات-ساعة",
+      "pct": 70,
+      "schedule": "السبت 3:00 - 4:00 م | الخميس 10:00 - 11:00 ص",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-09-23",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 350,
+          "paymentDate": "2026-09-23",
+          "actualStartDate": "",
+          "pay": "2026-09-23",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 245,
+          "end": "2026-10-23",
+          "endDate": "2026-10-23",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_003",
+      "code": "STU-003",
+      "name": "نور محمد مصطفى",
+      "phone": "01208361643",
+      "teacher": "خديجة أحمد",
+      "type": "8 حلقات-40 دقيقة",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-13",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 275,
+          "paymentDate": "2026-10-13",
+          "actualStartDate": "",
+          "pay": "2026-10-13",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 193,
+          "end": "2026-11-13",
+          "endDate": "2026-11-13",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_004",
+      "code": "STU-004",
+      "name": "فاطمة محمد",
+      "phone": "01108371758",
+      "teacher": "خديجة أحمد",
+      "type": "8 حلقات-30 دقيقة",
+      "pct": 70,
+      "schedule": "السبت 9:00 - 9:30 ص | الثلاثاء 9:00 - 9:30 ص",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-03",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 275,
+          "paymentDate": "2026-10-03",
+          "actualStartDate": "",
+          "pay": "2026-10-03",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 193,
+          "end": "2026-11-04",
+          "endDate": "2026-11-04",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_005",
+      "code": "STU-005",
+      "name": "رغد أحمد",
+      "phone": "01121278790",
+      "teacher": "خديجة أحمد",
+      "type": "8 حلقات-40 دقيقة",
+      "pct": 70,
+      "schedule": "الاثنين 7:30 - 8:10 ص | الخميس 7:30 - 8:10 ص",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 225,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 158,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_006",
+      "code": "STU-006",
+      "name": "هند أحمد",
+      "phone": "01201443500",
+      "teacher": "خديجة أحمد",
+      "type": "8 حلقات-40 دقيقة",
+      "pct": 70,
+      "schedule": "الاثنين 10:00 - 10:40 ص | الأربعاء 6:00 - 6:40 م",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-12",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 200,
+          "paymentDate": "2026-10-12",
+          "actualStartDate": "",
+          "pay": "2026-10-12",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 140,
+          "end": "2026-11-12",
+          "endDate": "2026-11-12",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_007",
+      "code": "STU-007",
+      "name": "مريم خالد صلاح",
+      "phone": "01145945761",
+      "teacher": "خديجة أحمد",
+      "type": "8 حلقات-40 دقيقة",
+      "pct": 70,
+      "schedule": "السبت 9:30 - 10:00 ص | الثلاثاء 9:30 - 10:00 ص",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-12",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 275,
+          "paymentDate": "2026-10-12",
+          "actualStartDate": "",
+          "pay": "2026-10-12",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 193,
+          "end": "2026-11-12",
+          "endDate": "2026-11-12",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_008",
+      "code": "STU-008",
+      "name": "شروق عطية",
+      "phone": "01010308163",
+      "teacher": "خديجة أحمد",
+      "type": "8 حلقات-ساعة",
+      "pct": 70,
+      "schedule": "الأحد 1:00 - 2:00 ظ | الخميس 1:00 - 2:00 ظ",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 350,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 245,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_009",
+      "code": "STU-009",
+      "name": "هنا محمود مصطفى",
+      "phone": "01101567575",
+      "teacher": "خديجة أحمد",
+      "type": "8 حلقات-30 دقيقة",
+      "pct": 70,
+      "schedule": "الاثنين 3:00 - 3:40 م | الخميس 3:00 - 3:40 م",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-09-22",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 250,
+          "paymentDate": "2026-09-22",
+          "actualStartDate": "",
+          "pay": "2026-09-22",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 175,
+          "end": "2026-10-22",
+          "endDate": "2026-10-22",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_010",
+      "code": "STU-010",
+      "name": "ملك محمود",
+      "phone": "01221857520",
+      "teacher": "خديجة أحمد",
+      "type": "الإجازة",
+      "pct": 0,
+      "schedule": "السبت 11:00 ص | الأحد 9:00 ص",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 0,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        },
+        "2026-11": {
+          "value": 0,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_011",
+      "code": "STU-011",
+      "name": "ندى عماد",
+      "phone": "01278048414",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الثانية",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-14",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 175,
+          "paymentDate": "2026-10-14",
+          "actualStartDate": "",
+          "pay": "2026-10-14",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 123,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_012",
+      "code": "STU-012",
+      "name": "ملك محمد صبحي",
+      "phone": "01080849325",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الثانية",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-13",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 175,
+          "paymentDate": "2026-10-13",
+          "actualStartDate": "",
+          "pay": "2026-10-13",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 123,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_013",
+      "code": "STU-013",
+      "name": "سلمى أحمد",
+      "phone": "01021825887",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الثانية",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 175,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 123,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_014",
+      "code": "STU-014",
+      "name": "ياسمين حجازي شعبان",
+      "phone": "01508345475",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الثانية",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-09",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 175,
+          "paymentDate": "2026-10-09",
+          "actualStartDate": "",
+          "pay": "2026-10-09",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 123,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_015",
+      "code": "STU-015",
+      "name": "أمنية كرم",
+      "phone": "01005678534",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الأولى",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-12",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 175,
+          "paymentDate": "2026-10-12",
+          "actualStartDate": "",
+          "pay": "2026-10-12",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 123,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_016",
+      "code": "STU-016",
+      "name": "بسملة وجدي الدرملي",
+      "phone": "01015725025",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الثانية",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-15",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 175,
+          "paymentDate": "2026-10-15",
+          "actualStartDate": "",
+          "pay": "2026-10-15",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 123,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_017",
+      "code": "STU-017",
+      "name": "ملك أمجد فرج",
+      "phone": "01003930528",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الأولى",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 125,
+          "paymentDate": "2026-10-11",
+          "actualStartDate": "",
+          "pay": "2026-10-11",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 88,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_018",
+      "code": "STU-018",
+      "name": "سهيلة سيد ماهر",
+      "phone": "01222642199",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الأولى",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-22",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 125,
+          "paymentDate": "2026-10-22",
+          "actualStartDate": "",
+          "pay": "2026-10-22",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 88,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_019",
+      "code": "STU-019",
+      "name": "حبيبة أيمن أحمد",
+      "phone": "01001855304",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الأولى",
+      "pct": 70,
+      "schedule": "السبت 4:00 - 4:20 م",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 125,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 88,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        },
+        "2026-11": {
+          "value": 175,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 123,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_020",
+      "code": "STU-020",
+      "name": "زمزم عادل",
+      "phone": "01012441236",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الأولى",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-15",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 200,
+          "paymentDate": "2026-10-15",
+          "actualStartDate": "",
+          "pay": "2026-10-15",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 140,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_021",
+      "code": "STU-021",
+      "name": "ندى عماد",
+      "phone": "01278048414",
+      "teacher": "خديجة أحمد",
+      "type": "المجموعة الأولى",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 175,
+          "paymentDate": "2026-09-27",
+          "actualStartDate": "",
+          "pay": "2026-09-27",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 123,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        },
+        "2026-11": {
+          "value": 200,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 140,
+          "end": "2026-11-06",
+          "endDate": "2026-11-06",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_022",
+      "code": "STU-022",
+      "name": "دعاء أبو الغيط",
+      "phone": "01127439413",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الثانية",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-01",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 175,
+          "paymentDate": "2026-10-01",
+          "actualStartDate": "",
+          "pay": "2026-10-01",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 123,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_023",
+      "code": "STU-023",
+      "name": "مشكاة",
+      "phone": "01505344171",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الثانية",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-25",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 175,
+          "paymentDate": "2026-10-25",
+          "actualStartDate": "",
+          "pay": "2026-10-25",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 123,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_024",
+      "code": "STU-024",
+      "name": "عائشة محمد",
+      "phone": "01060168948",
+      "teacher": "خديجة أحمد",
+      "type": "8 حلقات-20 دقيقة",
+      "pct": 70,
+      "schedule": "السبت 6:30 - 6:50 م | الثلاثاء 3:00 - 3:20 م",
+      "adminStatus": "نشطة",
+      "paymentDate": "",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 175,
+          "paymentDate": "",
+          "actualStartDate": "",
+          "pay": "",
+          "startDate": "",
+          "paidStatus": "",
+          "partialPaid": null,
+          "customWage": 123,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_025",
+      "code": "STU-025",
+      "name": "آلاء أشرف",
+      "phone": "01031780830",
+      "teacher": "خديجة أحمد",
+      "type": "8 حلقات-20 دقيقة",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-05",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 200,
+          "paymentDate": "2026-10-05",
+          "actualStartDate": "",
+          "pay": "2026-10-05",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 140,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_026",
+      "code": "STU-026",
+      "name": "حبيبة سيد محمد",
+      "phone": "01500019543",
+      "teacher": "خديجة أحمد",
+      "type": "8 حلقات-20 دقيقة",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 200,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 140,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_027",
+      "code": "STU-027",
+      "name": "شيماء خلف",
+      "phone": "01507231676",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الثانية",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-03",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 200,
+          "paymentDate": "2026-10-03",
+          "actualStartDate": "",
+          "pay": "2026-10-03",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 140,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_028",
+      "code": "STU-028",
+      "name": "آلاء ممدوح رفاعي",
+      "phone": "01150505653",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الأولى",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-14",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 200,
+          "paymentDate": "2026-10-14",
+          "actualStartDate": "",
+          "pay": "2026-10-14",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 140,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_029",
+      "code": "STU-029",
+      "name": "رحمة إبراهيم",
+      "phone": "01205122804",
+      "teacher": "خديجة أحمد",
+      "type": "8 حلقات-20 دقيقة",
+      "pct": 70,
+      "schedule": "السبت 6:00 - 6:20 م | الاثنين 9:00 - 9:20 ص | الثلاثاء 3:30 - 3:50 م",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 170,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 119,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_030",
+      "code": "STU-030",
+      "name": "حنين البدري رابح",
+      "phone": "01019761163",
+      "teacher": "خديجة أحمد",
+      "type": "8 حلقات-ساعة",
+      "pct": 70,
+      "schedule": "السبت 7:00 - 8:00 م | الأربعاء 7:00 - 8:00 م",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-28",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 250,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 175,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        },
+        "2026-11": {
+          "value": 375,
+          "paymentDate": "2026-10-28",
+          "actualStartDate": "",
+          "pay": "2026-10-28",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 263,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_031",
+      "code": "STU-031",
+      "name": "سلوى زكريا محي الدين",
+      "phone": "01130756713",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الأولى",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 175,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 123,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        },
+        "2026-11": {
+          "value": 175,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 123,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_032",
+      "code": "STU-032",
+      "name": "ندى رمضان",
+      "phone": "01554944688",
+      "teacher": "خديجة أحمد",
+      "type": "تجويد نظري",
+      "pct": 80,
+      "schedule": "الأربعاء 2:00 - 2:40 م | الجمعة 3:00 - 3:40 م",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-28",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 775,
+          "paymentDate": "2026-10-28",
+          "actualStartDate": "",
+          "pay": "2026-10-28",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 620,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_033",
+      "code": "STU-033",
+      "name": "سلوى صالح",
+      "phone": "01288813093",
+      "teacher": "روان ابراهيم",
+      "type": "خاص",
+      "pct": 70,
+      "schedule": "الاثنين بعد الفجر | الخميس بعد الفجر",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 0,
+          "paymentDate": "",
+          "actualStartDate": "",
+          "pay": "",
+          "startDate": "",
+          "paidStatus": "",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        },
+        "2026-11": {
+          "value": 0,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_034",
+      "code": "STU-034",
+      "name": "جومانة عبد الرازق",
+      "phone": "01030215830",
+      "teacher": "رويدا ابراهيم",
+      "type": "خاص حلقين 40",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-03",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 275,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 193,
+          "end": "2026-11-09",
+          "endDate": "2026-11-09",
+          "att": {}
+        },
+        "2026-11": {
+          "value": 275,
+          "paymentDate": "2026-11-03",
+          "actualStartDate": "",
+          "pay": "2026-11-03",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 193,
+          "end": "2026-12-03",
+          "endDate": "2026-12-03",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_035",
+      "code": "STU-035",
+      "name": "وردة محمد السيد",
+      "phone": "01128034725",
+      "teacher": "رويدا ابراهيم",
+      "type": "تجويد نظري",
+      "pct": 70,
+      "schedule": "الجمعة 8:00 صباحاً | السبت 8:00 صباحاً | الثلاثاء 7:00 مساءً",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 500,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 350,
+          "end": "2026-11-30",
+          "endDate": "2026-11-30",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_036",
+      "code": "STU-036",
+      "name": "بسملة عبد الصمد",
+      "phone": "01114321923",
+      "teacher": "خديجة أحمد",
+      "type": "الإجازة",
+      "pct": 70,
+      "schedule": "السبت 10:00 - 11:00 ص | الثلاثاء 10:00 - 11:00 ص",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 550,
+          "paymentDate": "2026-10-11",
+          "actualStartDate": "",
+          "pay": "2026-10-11",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 385,
+          "end": "2026-11-11",
+          "endDate": "2026-11-11",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_037",
+      "code": "STU-037",
+      "name": "فاطمة صالح",
+      "phone": "01100154208",
+      "teacher": "رويدا ابراهيم",
+      "type": "تجويد نظري",
+      "pct": 75,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-10",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 0,
+          "paymentDate": "",
+          "actualStartDate": "",
+          "pay": "",
+          "startDate": "",
+          "paidStatus": "",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-11-05",
+          "endDate": "2026-11-05",
+          "att": {}
+        },
+        "2026-11": {
+          "value": 400,
+          "paymentDate": "2026-11-10",
+          "actualStartDate": "",
+          "pay": "2026-11-10",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 300,
+          "end": "2026-12-10",
+          "endDate": "2026-12-10",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_038",
+      "code": "STU-038",
+      "name": "مريم فتحي",
+      "phone": "01041939357",
+      "teacher": "رويدا ابراهيم",
+      "type": "8 حلقات-ساعة",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 375,
+          "paymentDate": "2026-10-11",
+          "actualStartDate": "",
+          "pay": "2026-10-11",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 263,
+          "end": "2026-11-11",
+          "endDate": "2026-11-11",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_039",
+      "code": "STU-039",
+      "name": "مريم أحمد",
+      "phone": "01145616250",
+      "teacher": "",
+      "type": "خاص",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-10",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 275,
+          "paymentDate": "2026-10-10",
+          "actualStartDate": "",
+          "pay": "2026-10-10",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 165,
+          "end": "2026-11-10",
+          "endDate": "2026-11-10",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_040",
+      "code": "STU-040",
+      "name": "رضوى سعيد",
+      "phone": "01144154173",
+      "teacher": "روان ابراهيم",
+      "type": "8 حلقات-40 دقيقة",
+      "pct": 70,
+      "schedule": "الأحد 8:00 | الأربعاء 8:00",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-08",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 0,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-11-30",
+          "endDate": "2026-11-30",
+          "att": {}
+        },
+        "2026-11": {
+          "value": 275,
+          "paymentDate": "2026-11-08",
+          "actualStartDate": "",
+          "pay": "2026-11-08",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 193,
+          "end": "2026-12-07",
+          "endDate": "2026-12-07",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_041",
+      "code": "STU-041",
+      "name": "ولاء سالم",
+      "phone": "01550302599",
+      "teacher": "",
+      "type": "خاص",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-07",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 250,
+          "paymentDate": "2026-10-07",
+          "actualStartDate": "",
+          "pay": "2026-10-07",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 150,
+          "end": "2026-11-07",
+          "endDate": "2026-11-07",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_042",
+      "code": "STU-042",
+      "name": "عبير فتحي",
+      "phone": "01551773579",
+      "teacher": "روان ابراهيم",
+      "type": "خاص",
+      "pct": 70,
+      "schedule": "السبت 7:00 مساءً | الاثنين 7:00 مساءً | الخميس 7:00 مساءً",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 0,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_043",
+      "code": "STU-043",
+      "name": "منار علي",
+      "phone": "01103429296",
+      "teacher": "رويدا ابراهيم",
+      "type": "تجويد نظري",
+      "pct": 75,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-10",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 0,
+          "paymentDate": "",
+          "actualStartDate": "",
+          "pay": "",
+          "startDate": "",
+          "paidStatus": "",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-11-05",
+          "endDate": "2026-11-05",
+          "att": {}
+        },
+        "2026-11": {
+          "value": 400,
+          "paymentDate": "2026-11-10",
+          "actualStartDate": "",
+          "pay": "2026-11-10",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 300,
+          "end": "2026-12-12",
+          "endDate": "2026-12-12",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_044",
+      "code": "STU-044",
+      "name": "أنهار محمد",
+      "phone": "967782442922",
+      "teacher": "هاجر محمد",
+      "type": "",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 175,
+          "paymentDate": "2026-10-25",
+          "actualStartDate": "",
+          "pay": "2026-10-25",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 123,
+          "end": "2026-11-08",
+          "endDate": "2026-11-08",
+          "att": {}
+        },
+        "2026-11": {
+          "value": 175,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 123,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_045",
+      "code": "STU-045",
+      "name": "منة الله عبد رب النبي",
+      "phone": "01020127204",
+      "teacher": "هاجر محمد",
+      "type": "",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-10-14",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 175,
+          "paymentDate": "2026-10-14",
+          "actualStartDate": "",
+          "pay": "2026-10-14",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 123,
+          "end": "2026-11-08",
+          "endDate": "2026-11-08",
+          "att": {}
+        },
+        "2026-11": {
+          "value": 175,
+          "paymentDate": "",
+          "actualStartDate": "",
+          "pay": "",
+          "startDate": "",
+          "paidStatus": "",
+          "partialPaid": null,
+          "customWage": 123,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_046",
+      "code": "STU-046",
+      "name": "ولاء أحمد",
+      "phone": "01143409312",
+      "teacher": "هاجر محمد",
+      "type": "",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 175,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 123,
+          "end": "2026-11-08",
+          "endDate": "2026-11-08",
+          "att": {}
+        },
+        "2026-11": {
+          "value": 175,
+          "paymentDate": "",
+          "actualStartDate": "",
+          "pay": "",
+          "startDate": "",
+          "paidStatus": "",
+          "partialPaid": null,
+          "customWage": 123,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_047",
+      "code": "STU-047",
+      "name": "آيات محمد",
+      "phone": "01011270140",
+      "teacher": "روان ابراهيم",
+      "type": "8 حلقات-20 دقيقة",
+      "pct": 70,
+      "schedule": "السبت 8:00 مساءً | الثلاثاء 8:00 مساءً",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 0,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_048",
+      "code": "STU-048",
+      "name": "أشرقت يحيى",
+      "phone": "01020793021",
+      "teacher": "رحاب صبري",
+      "type": "خاص 20 دقيقة",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 0,
+          "paymentDate": "",
+          "actualStartDate": "",
+          "pay": "",
+          "startDate": "",
+          "paidStatus": "",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-12-06",
+          "endDate": "2026-12-06",
+          "att": {}
+        },
+        "2026-11": {
+          "value": 200,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 140,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_049",
+      "code": "STU-049",
+      "name": "حبيبة جمال منصور",
+      "phone": "01229179906",
+      "teacher": "الزهراء سعد",
+      "type": "خاص 20 دقيقة",
+      "pct": 70,
+      "schedule": "الأحد 3:00 مساءً | الأربعاء 5:30 مساءً",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 0,
+          "paymentDate": "",
+          "actualStartDate": "",
+          "pay": "",
+          "startDate": "",
+          "paidStatus": "",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-12-01",
+          "endDate": "2026-12-01",
+          "att": {}
+        },
+        "2026-11": {
+          "value": 200,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 140,
+          "end": "2026-11-30",
+          "endDate": "2026-11-30",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_050",
+      "code": "STU-050",
+      "name": "بسملة عيد",
+      "phone": "01000340602",
+      "teacher": "الزهراء سعد",
+      "type": "خاص 20 دقيقة",
+      "pct": 70,
+      "schedule": "الأحد 6:30 مساءً | الأربعاء 6:30 مساءً",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-09",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 0,
+          "paymentDate": "",
+          "actualStartDate": "",
+          "pay": "",
+          "startDate": "",
+          "paidStatus": "",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-12-01",
+          "endDate": "2026-12-01",
+          "att": {}
+        },
+        "2026-11": {
+          "value": 200,
+          "paymentDate": "2026-11-09",
+          "actualStartDate": "",
+          "pay": "2026-11-09",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 140,
+          "end": "2026-12-06",
+          "endDate": "2026-12-06",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_051",
+      "code": "STU-051",
+      "name": "ندى أشرف",
+      "phone": "01144110362",
+      "teacher": "الزهراء سعد",
+      "type": "خاص 20 دقيقة",
+      "pct": 70,
+      "schedule": "الأحد 10:00 صباحاً | الثلاثاء 10:00 صباحاً",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-09",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 0,
+          "paymentDate": "",
+          "actualStartDate": "",
+          "pay": "",
+          "startDate": "",
+          "paidStatus": "",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-12-01",
+          "endDate": "2026-12-01",
+          "att": {}
+        },
+        "2026-11": {
+          "value": 200,
+          "paymentDate": "2026-11-09",
+          "actualStartDate": "",
+          "pay": "2026-11-09",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 140,
+          "end": "2026-12-06",
+          "endDate": "2026-12-06",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_052",
+      "code": "STU-052",
+      "name": "شهد سعيد محمد",
+      "phone": "01221342539",
+      "teacher": "آيات مصطفى",
+      "type": "خاص 20 دقيقة",
+      "pct": 70,
+      "schedule": "السبت 8:00 | الثلاثاء 8:00",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-05",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 0,
+          "paymentDate": "",
+          "actualStartDate": "",
+          "pay": "",
+          "startDate": "",
+          "paidStatus": "",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-12-01",
+          "endDate": "2026-12-01",
+          "att": {}
+        },
+        "2026-11": {
+          "value": 200,
+          "paymentDate": "2026-11-05",
+          "actualStartDate": "",
+          "pay": "2026-11-05",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 140,
+          "end": "2026-11-30",
+          "endDate": "2026-11-30",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_053",
+      "code": "STU-053",
+      "name": "شهد محمد خلف",
+      "phone": "01043900615",
+      "teacher": "آيات مصطفى",
+      "type": "خاص 20 دقيقة",
+      "pct": 70,
+      "schedule": "السبت 8:30 | الثلاثاء 8:30",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 0,
+          "paymentDate": "",
+          "actualStartDate": "",
+          "pay": "",
+          "startDate": "",
+          "paidStatus": "",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-12-01",
+          "endDate": "2026-12-01",
+          "att": {}
+        },
+        "2026-11": {
+          "value": 200,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 140,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_054",
+      "code": "STU-054",
+      "name": "سجود هيثم نوار",
+      "phone": "01556961735",
+      "teacher": "آيات مصطفى",
+      "type": "خاص 20 دقيقة",
+      "pct": 70,
+      "schedule": "الاثنين 9:40 | الخميس 9:40",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 0,
+          "paymentDate": "",
+          "actualStartDate": "",
+          "pay": "",
+          "startDate": "",
+          "paidStatus": "",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-12-06",
+          "endDate": "2026-12-06",
+          "att": {}
+        },
+        "2026-11": {
+          "value": 200,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 140,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_055",
+      "code": "STU-055",
+      "name": "ولاء عاطف",
+      "phone": "01559525007",
+      "teacher": "آيات مصطفى",
+      "type": "خاص 20 دقيقة",
+      "pct": 70,
+      "schedule": "الاثنين 9:20 | الجمعة 9:20",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-11",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-10": {
+          "value": 0,
+          "paymentDate": "",
+          "actualStartDate": "",
+          "pay": "",
+          "startDate": "",
+          "paidStatus": "",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-12-06",
+          "endDate": "2026-12-06",
+          "att": {}
+        },
+        "2026-11": {
+          "value": 200,
+          "paymentDate": "2026-11-11",
+          "actualStartDate": "",
+          "pay": "2026-11-11",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 140,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_056",
+      "code": "STU-056",
+      "name": "هند أحمد",
+      "phone": "01201443500",
+      "teacher": "روان ابراهيم",
+      "type": "8 حلقات-40 دقيقة",
+      "pct": 70,
+      "schedule": "السبت 6:00 مساءً | الاثنين 6:00 مساءً",
+      "adminStatus": "نشطة",
+      "paymentDate": "",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-11": {
+          "value": 200,
+          "paymentDate": "",
+          "actualStartDate": "",
+          "pay": "",
+          "startDate": "",
+          "paidStatus": "",
+          "partialPaid": null,
+          "customWage": 140,
+          "end": "",
+          "endDate": "",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_057",
+      "code": "STU-057",
+      "name": "منة الله إبراهيم",
+      "phone": "01212389910",
+      "teacher": "الزهراء سعد",
+      "type": "4 حلقات - نصف ساعة",
+      "pct": 70,
+      "schedule": "السبت 4:00 عصراً",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-10",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-11": {
+          "value": 150,
+          "paymentDate": "2026-11-10",
+          "actualStartDate": "",
+          "pay": "2026-11-10",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 105,
+          "end": "2026-12-07",
+          "endDate": "2026-12-07",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_058",
+      "code": "STU-058",
+      "name": "مريم أحمد",
+      "phone": "01144625267",
+      "teacher": "الزهراء سعد",
+      "type": "8 حلقات-20 دقيقة",
+      "pct": 70,
+      "schedule": "السبت 7:00 مساءً | الثلاثاء 7:00 مساءً",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-09",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-11": {
+          "value": 200,
+          "paymentDate": "2026-11-09",
+          "actualStartDate": "",
+          "pay": "2026-11-09",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 140,
+          "end": "2026-12-06",
+          "endDate": "2026-12-06",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_059",
+      "code": "STU-059",
+      "name": "يمنى صلاح",
+      "phone": "01040571566",
+      "teacher": "الزهراء سعد",
+      "type": "8 حلقات-30 دقيقة",
+      "pct": 70,
+      "schedule": "السبت 6:00 مساءً | الثلاثاء 6:00 مساءً",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-09",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-11": {
+          "value": 275,
+          "paymentDate": "2026-11-09",
+          "actualStartDate": "",
+          "pay": "2026-11-09",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 193,
+          "end": "2026-12-06",
+          "endDate": "2026-12-06",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_060",
+      "code": "STU-060",
+      "name": "هاجر عبد الحليم",
+      "phone": "01205625765",
+      "teacher": "الزهراء سعد",
+      "type": "8 حلقات-20 دقيقة",
+      "pct": 70,
+      "schedule": "السبت 3:30 عصراً | الثلاثاء 3:30 عصراً",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-09",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-11": {
+          "value": 200,
+          "paymentDate": "2026-11-09",
+          "actualStartDate": "",
+          "pay": "2026-11-09",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 140,
+          "end": "2026-12-08",
+          "endDate": "2026-12-08",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_061",
+      "code": "STU-061",
+      "name": "زينب أحمد",
+      "phone": "01152695380",
+      "teacher": "الزهراء سعد",
+      "type": "8 حلقات-30 دقيقة",
+      "pct": 70,
+      "schedule": "الأحد 6:00 مساءً | الأربعاء 6:00 مساءً",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-10",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-11": {
+          "value": 275,
+          "paymentDate": "2026-11-10",
+          "actualStartDate": "",
+          "pay": "2026-11-10",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 193,
+          "end": "2026-12-10",
+          "endDate": "2026-12-10",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_062",
+      "code": "STU-062",
+      "name": "جنة عمر",
+      "phone": "01141448138",
+      "teacher": "رحاب صبري",
+      "type": "4 حلقات - نصف ساعة",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-10",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-11": {
+          "value": 150,
+          "paymentDate": "2026-11-10",
+          "actualStartDate": "",
+          "pay": "2026-11-10",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 105,
+          "end": "2026-11-09",
+          "endDate": "2026-11-09",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_dash_063",
+      "code": "STU-063",
+      "name": "رضوى عبد المعين",
+      "phone": "01061404908",
+      "teacher": "رحاب صبري",
+      "type": "8 حلقات-40 دقيقة",
+      "pct": 70,
+      "schedule": "",
+      "adminStatus": "نشطة",
+      "paymentDate": "2026-11-10",
+      "actualStartDate": "",
+      "transferHistory": [],
+      "months": {
+        "2026-11": {
+          "value": 275,
+          "paymentDate": "2026-11-10",
+          "actualStartDate": "",
+          "pay": "2026-11-10",
+          "startDate": "",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 193,
+          "end": "2026-11-06",
+          "endDate": "2026-11-06",
+          "att": {}
+        }
+      }
+    },
+    {
+      "id": "stu_sep_001",
+      "code": "SEP-001",
+      "name": "هند حامد أمين",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "خاص حلقتين 40",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 200,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 120,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_002",
+      "code": "SEP-002",
+      "name": "أمنية كرم",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الثانية",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 175,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 105,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_003",
+      "code": "SEP-003",
+      "name": "مريم خالد صلاح",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "خاص حلقتين 40",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 275,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 165,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_004",
+      "code": "SEP-004",
+      "name": "مروة سليم",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة خديجة الأولى",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 200,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 120,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_005",
+      "code": "SEP-005",
+      "name": "ملك أمجد فرج",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الأولى",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 175,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 105,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_006",
+      "code": "SEP-006",
+      "name": "ياسمين حجازي",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الثانية",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 175,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 105,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_007",
+      "code": "SEP-007",
+      "name": "سامية مصطفى محمد",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة خديجة الأولى",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 200,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 120,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_008",
+      "code": "SEP-008",
+      "name": "آلاء",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة خديجة شهر 10",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 200,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 120,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_009",
+      "code": "SEP-009",
+      "name": "فاطمة محمد",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "خاص حلقتين 40",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 275,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 165,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_010",
+      "code": "SEP-010",
+      "name": "دعاء أبو الغيط",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة خديجة الأولى",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 175,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 105,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_011",
+      "code": "SEP-011",
+      "name": "ندى عماد",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة خديجة الأولى",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 175,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 105,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_012",
+      "code": "SEP-012",
+      "name": "سلوى زكريا يحيى",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الأولى",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 175,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 105,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_013",
+      "code": "SEP-013",
+      "name": "شيماء خلف",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة خديجة شهر 10",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 200,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 120,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_014",
+      "code": "SEP-014",
+      "name": "رغد أحمد",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "خاص حلقتين 40",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 225,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 135,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_015",
+      "code": "SEP-015",
+      "name": "حنين البدري رابح",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "خاص حلقتين 40",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 250,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 150,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_016",
+      "code": "SEP-016",
+      "name": "سلمى أحمد",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الثانية",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 175,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 105,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_017",
+      "code": "SEP-017",
+      "name": "المعلمة شروق",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "خاص حلقتين ساعة",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 350,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 210,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_018",
+      "code": "SEP-018",
+      "name": "المعلمة نادية",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "خاص حلقتين ساعة",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 350,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 210,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_019",
+      "code": "SEP-019",
+      "name": "رحمة سمير",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة خديجة شهر 10",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 170,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 105,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_020",
+      "code": "SEP-020",
+      "name": "عائشة محمد",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة خديجة الأولى",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 0,
+          "paymentDate": "",
+          "actualStartDate": "2026-09-01",
+          "pay": "",
+          "startDate": "2026-09-01",
+          "paidStatus": "unpaid",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "لم يتم الدفع — اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_021",
+      "code": "SEP-021",
+      "name": "مشكاة",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة خديجة الأولى",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 0,
+          "paymentDate": "",
+          "actualStartDate": "2026-09-01",
+          "pay": "",
+          "startDate": "2026-09-01",
+          "paidStatus": "unpaid",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "لم يتم الدفع — اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_022",
+      "code": "SEP-022",
+      "name": "هنا محمود مصطفى",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "خاص حلقتين 40",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 250,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 150,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_023",
+      "code": "SEP-023",
+      "name": "ملك محمد صبحي",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الثانية",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 0,
+          "paymentDate": "",
+          "actualStartDate": "2026-09-01",
+          "pay": "",
+          "startDate": "2026-09-01",
+          "paidStatus": "unpaid",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "لم يتم الدفع — اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_024",
+      "code": "SEP-024",
+      "name": "بسملة مجدي الدرملي",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الثانية",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 0,
+          "paymentDate": "",
+          "actualStartDate": "2026-09-01",
+          "pay": "",
+          "startDate": "2026-09-01",
+          "paidStatus": "unpaid",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "لم يتم الدفع — اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_025",
+      "code": "SEP-025",
+      "name": "ندى عماد",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الثانية",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 0,
+          "paymentDate": "",
+          "actualStartDate": "2026-09-01",
+          "pay": "",
+          "startDate": "2026-09-01",
+          "paidStatus": "unpaid",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "لم يتم الدفع — اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_026",
+      "code": "SEP-026",
+      "name": "حبيبة سمير محمد",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة خديجة شهر 10",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 200,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 120,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_027",
+      "code": "SEP-027",
+      "name": "حبيبة أيمن أحمد",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الأولى",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 0,
+          "paymentDate": "",
+          "actualStartDate": "2026-09-01",
+          "pay": "",
+          "startDate": "2026-09-01",
+          "paidStatus": "unpaid",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "لم يتم الدفع — اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_028",
+      "code": "SEP-028",
+      "name": "منة الله أحمد",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الأولى",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 0,
+          "paymentDate": "",
+          "actualStartDate": "2026-09-01",
+          "pay": "",
+          "startDate": "2026-09-01",
+          "paidStatus": "unpaid",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "لم يتم الدفع — اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_029",
+      "code": "SEP-029",
+      "name": "سهيلة صابر ماهر",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الأولى",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 0,
+          "paymentDate": "",
+          "actualStartDate": "2026-09-01",
+          "pay": "",
+          "startDate": "2026-09-01",
+          "paidStatus": "unpaid",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "لم يتم الدفع — اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_030",
+      "code": "SEP-030",
+      "name": "عائشة السيد موسى",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الأولى",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 0,
+          "paymentDate": "",
+          "actualStartDate": "2026-09-01",
+          "pay": "",
+          "startDate": "2026-09-01",
+          "paidStatus": "unpaid",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "لم يتم الدفع — اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_031",
+      "code": "SEP-031",
+      "name": "حبيبة السيد موسى",
+      "phone": "",
+      "teacher": "خديجة أحمد",
+      "type": "مجموعة تامة الأولى",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 0,
+          "paymentDate": "",
+          "actualStartDate": "2026-09-01",
+          "pay": "",
+          "startDate": "2026-09-01",
+          "paidStatus": "unpaid",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "لم يتم الدفع — اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_032",
+      "code": "SEP-032",
+      "name": "ولاء سالم",
+      "phone": "",
+      "teacher": "عائشة",
+      "type": "خاص حلقتين 40",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 250,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 150,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "أجر المعلمة: تم الاستلام — اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_033",
+      "code": "SEP-033",
+      "name": "مريم فتحي",
+      "phone": "",
+      "teacher": "عائشة",
+      "type": "خاص حلقتين ساعة",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 375,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 225,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "أجر المعلمة: تم الاستلام — اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_034",
+      "code": "SEP-034",
+      "name": "بسملة عبد الصمد",
+      "phone": "",
+      "teacher": "عائشة",
+      "type": "خاص حلقتين ساعة",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 550,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 330,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "أجر المعلمة: تم الاستلام — اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_035",
+      "code": "SEP-035",
+      "name": "مريم أحمد",
+      "phone": "",
+      "teacher": "عائشة",
+      "type": "خاص حلقتين 40",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 275,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 165,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "أجر المعلمة: تم الاستلام — اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_036",
+      "code": "SEP-036",
+      "name": "منار علي",
+      "phone": "",
+      "teacher": "عائشة",
+      "type": "خاص حلقتين 40",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 215,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 129,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "أجر المعلمة: تم الاستلام — اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_037",
+      "code": "SEP-037",
+      "name": "فاطمة صالح",
+      "phone": "",
+      "teacher": "عائشة",
+      "type": "خاص حلقتين 40",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 215,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 129,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "أجر المعلمة: تم الاستلام — اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_038",
+      "code": "SEP-038",
+      "name": "رضوى عبد المعين",
+      "phone": "",
+      "teacher": "عائشة",
+      "type": "خاص حلقتين 40",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 275,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 165,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "أجر المعلمة: تم الاستلام — اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_039",
+      "code": "SEP-039",
+      "name": "جمانة عبد الرازق",
+      "phone": "",
+      "teacher": "عائشة",
+      "type": "خاص حلقتين 40",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 275,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 165,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "أجر المعلمة: تم الاستلام — اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_040",
+      "code": "SEP-040",
+      "name": "نور الله محمود",
+      "phone": "",
+      "teacher": "عائشة",
+      "type": "خاص 3 حلقات 40",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 400,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 240,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "أجر المعلمة: تم الاستلام — اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_041",
+      "code": "SEP-041",
+      "name": "عبير فتحي",
+      "phone": "",
+      "teacher": "عائشة",
+      "type": "خاص 3 حلقات 40",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 400,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_042",
+      "code": "SEP-042",
+      "name": "وردة محمد السيد",
+      "phone": "",
+      "teacher": "عائشة",
+      "type": "تجويد نظري",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 550,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_043",
+      "code": "SEP-043",
+      "name": "رضوى سعيد",
+      "phone": "",
+      "teacher": "عائشة",
+      "type": "خاص حلقتين 40",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 250,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": null,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_044",
+      "code": "SEP-044",
+      "name": "آيات محمد",
+      "phone": "",
+      "teacher": "هاجر محمد",
+      "type": "مجموعة المعلمة هاجر",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 175,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 120,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_045",
+      "code": "SEP-045",
+      "name": "منة الله عبد رب النبي",
+      "phone": "",
+      "teacher": "هاجر محمد",
+      "type": "مجموعة المعلمة هاجر",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 175,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 105,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_046",
+      "code": "SEP-046",
+      "name": "ولاء أحمد",
+      "phone": "",
+      "teacher": "هاجر محمد",
+      "type": "مجموعة المعلمة هاجر",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 175,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 105,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    },
+    {
+      "id": "stu_sep_047",
+      "code": "SEP-047",
+      "name": "أنهار محمد",
+      "phone": "",
+      "teacher": "هاجر محمد",
+      "type": "مجموعة المعلمة هاجر",
+      "pct": 60,
+      "schedule": "",
+      "adminStatus": "منتهي الاشتراك",
+      "paymentDate": "2026-09-01",
+      "actualStartDate": "2026-09-01",
+      "transferHistory": [],
+      "months": {
+        "2026-09": {
+          "value": 175,
+          "paymentDate": "2026-09-01",
+          "actualStartDate": "2026-09-01",
+          "pay": "2026-09-01",
+          "startDate": "2026-09-01",
+          "paidStatus": "paid",
+          "partialPaid": null,
+          "customWage": 105,
+          "end": "2026-09-30",
+          "endDate": "2026-09-30",
+          "att": {},
+          "invoiceNote": "اشتراك شهر 9 (منتهي الاشتراك)"
+        }
+      }
+    }
+  ],
+  "rev": 1,
+  "onboarded": true,
+  "pinRequired": false,
+  "settings": {
+    "onboardingCompleted": false,
+    "academyName": "أكاديمية يوم جديد",
+    "academySubtitle": "نظام إدارة الأكاديمية الموحد",
+    "logoDataUri": "",
+    "currency": "ج.م",
+    "defaultDurationDays": 30,
+    "expiringSoonDays": 5,
+    "defaultTeacherPct": 70,
+    "pctSource": "student",
+    "wageBasis": "net",
+    "wageAccrualMode": "accrued",
+    "monthsRangePast": 6,
+    "monthsRangeFuture": 6,
+    "extraBackupFolder": "",
+    "backupWarnDays": 3,
+    "consecutiveAbsenceThreshold": 2,
+    "idleLockMinutes": 15,
+    "pinEnabled": false,
+    "isDemoData": false,
+    "alertsConfig": {},
+    "defaultLandingView": "dashboard",
+    "defaultPageSize": 50,
+    "useArabicDigits": false,
+    "autoStartEnabled": false,
+    "autoStartInitialized": false,
+    "startMinimized": false,
+    "theme": "light",
+    "fontScale": "md",
+    "tableDensity": "comfortable",
+    "tableZebraStripes": true,
+    "sidebarCompact": false,
+    "showDashAlertsStrip": true,
+    "studentCodePrefix": "STD-",
+    "requireStudentPhone": false,
+    "defaultStudentViewMode": "table",
+    "studentStatuses": [
+      "نشطة",
+      "متوقفة مؤقتاً",
+      "منقطعة",
+      "خريجة"
+    ],
+    "defaultSessionDurationMin": 40,
+    "defaultPlanSessionCount": 8,
+    "defaultSessionStartTime": "16:00",
+    "defaultStatsPeriod": "all_time",
+    "defaultCollectionBasis": "cash",
+    "hidePersonalDataByDefault": true,
+    "defaultImportMode": "update_existing",
+    "defaultAutoCreateTeachers": true,
+    "defaultAutoCreatePackages": true,
+    "onboarded": false
+  },
+  "closedMonths": [],
+  "importBatches": [],
+  "payouts": [
+    {
+      "id": "sal_sep_aisha_001",
+      "teacher": "عائشة",
+      "month": "2026-09",
+      "amount": 1698,
+      "date": "2026-09-30",
+      "note": "تم الاستلام — أجر 9 طالبات من قواعد شهر 9 (متبقي 720 ج.م لـ 3 طالبات)"
+    }
+  ],
+  "transactions": [],
+  "installments": [
+    {
+      "id": "inst_bundled_001",
+      "receiptNo": "RCP-202610-001",
+      "studentId": "stu_dash_002",
+      "month": "2026-10",
+      "amount": 350,
+      "date": "2026-09-23",
+      "paymentDate": "2026-09-23",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — نادية عبد الحميد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_002",
+      "receiptNo": "RCP-202610-002",
+      "studentId": "stu_dash_003",
+      "month": "2026-10",
+      "amount": 275,
+      "date": "2026-10-13",
+      "paymentDate": "2026-10-13",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — نور محمد مصطفى",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_003",
+      "receiptNo": "RCP-202610-003",
+      "studentId": "stu_dash_004",
+      "month": "2026-10",
+      "amount": 275,
+      "date": "2026-10-03",
+      "paymentDate": "2026-10-03",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — فاطمة محمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_004",
+      "receiptNo": "RCP-202610-004",
+      "studentId": "stu_dash_005",
+      "month": "2026-10",
+      "amount": 225,
+      "date": "2026-11-11",
+      "paymentDate": "2026-11-11",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — رغد أحمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_005",
+      "receiptNo": "RCP-202610-005",
+      "studentId": "stu_dash_006",
+      "month": "2026-10",
+      "amount": 200,
+      "date": "2026-10-12",
+      "paymentDate": "2026-10-12",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — هند أحمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_006",
+      "receiptNo": "RCP-202610-006",
+      "studentId": "stu_dash_007",
+      "month": "2026-10",
+      "amount": 275,
+      "date": "2026-10-12",
+      "paymentDate": "2026-10-12",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — مريم خالد صلاح",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_007",
+      "receiptNo": "RCP-202610-007",
+      "studentId": "stu_dash_008",
+      "month": "2026-10",
+      "amount": 350,
+      "date": "2026-11-11",
+      "paymentDate": "2026-11-11",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — شروق عطية",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_008",
+      "receiptNo": "RCP-202610-008",
+      "studentId": "stu_dash_009",
+      "month": "2026-10",
+      "amount": 250,
+      "date": "2026-09-22",
+      "paymentDate": "2026-09-22",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — هنا محمود مصطفى",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_009",
+      "receiptNo": "RCP-202610-009",
+      "studentId": "stu_dash_011",
+      "month": "2026-10",
+      "amount": 175,
+      "date": "2026-10-14",
+      "paymentDate": "2026-10-14",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — ندى عماد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_010",
+      "receiptNo": "RCP-202610-010",
+      "studentId": "stu_dash_012",
+      "month": "2026-10",
+      "amount": 175,
+      "date": "2026-10-13",
+      "paymentDate": "2026-10-13",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — ملك محمد صبحي",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_011",
+      "receiptNo": "RCP-202610-011",
+      "studentId": "stu_dash_013",
+      "month": "2026-10",
+      "amount": 175,
+      "date": "2026-11-11",
+      "paymentDate": "2026-11-11",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — سلمى أحمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_012",
+      "receiptNo": "RCP-202610-012",
+      "studentId": "stu_dash_014",
+      "month": "2026-10",
+      "amount": 175,
+      "date": "2026-10-09",
+      "paymentDate": "2026-10-09",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — ياسمين حجازي شعبان",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_013",
+      "receiptNo": "RCP-202610-013",
+      "studentId": "stu_dash_015",
+      "month": "2026-10",
+      "amount": 175,
+      "date": "2026-10-12",
+      "paymentDate": "2026-10-12",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — أمنية كرم",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_014",
+      "receiptNo": "RCP-202610-014",
+      "studentId": "stu_dash_016",
+      "month": "2026-10",
+      "amount": 175,
+      "date": "2026-10-15",
+      "paymentDate": "2026-10-15",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — بسملة وجدي الدرملي",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_015",
+      "receiptNo": "RCP-202610-015",
+      "studentId": "stu_dash_017",
+      "month": "2026-10",
+      "amount": 125,
+      "date": "2026-10-11",
+      "paymentDate": "2026-10-11",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — ملك أمجد فرج",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_016",
+      "receiptNo": "RCP-202610-016",
+      "studentId": "stu_dash_018",
+      "month": "2026-10",
+      "amount": 125,
+      "date": "2026-10-22",
+      "paymentDate": "2026-10-22",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — سهيلة سيد ماهر",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_017",
+      "receiptNo": "RCP-202610-017",
+      "studentId": "stu_dash_019",
+      "month": "2026-10",
+      "amount": 125,
+      "date": "2026-11-11",
+      "paymentDate": "2026-11-11",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — حبيبة أيمن أحمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_018",
+      "receiptNo": "RCP-202611-018",
+      "studentId": "stu_dash_019",
+      "month": "2026-11",
+      "amount": 175,
+      "date": "2026-11-11",
+      "paymentDate": "2026-11-11",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — حبيبة أيمن أحمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_019",
+      "receiptNo": "RCP-202610-019",
+      "studentId": "stu_dash_020",
+      "month": "2026-10",
+      "amount": 200,
+      "date": "2026-10-15",
+      "paymentDate": "2026-10-15",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — زمزم عادل",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_020",
+      "receiptNo": "RCP-202610-020",
+      "studentId": "stu_dash_021",
+      "month": "2026-10",
+      "amount": 175,
+      "date": "2026-09-27",
+      "paymentDate": "2026-09-27",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — ندى عماد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_021",
+      "receiptNo": "RCP-202611-021",
+      "studentId": "stu_dash_021",
+      "month": "2026-11",
+      "amount": 200,
+      "date": "2026-11-11",
+      "paymentDate": "2026-11-11",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — ندى عماد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_022",
+      "receiptNo": "RCP-202610-022",
+      "studentId": "stu_dash_022",
+      "month": "2026-10",
+      "amount": 175,
+      "date": "2026-10-01",
+      "paymentDate": "2026-10-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — دعاء أبو الغيط",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_023",
+      "receiptNo": "RCP-202610-023",
+      "studentId": "stu_dash_023",
+      "month": "2026-10",
+      "amount": 175,
+      "date": "2026-10-25",
+      "paymentDate": "2026-10-25",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — مشكاة",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_024",
+      "receiptNo": "RCP-202610-024",
+      "studentId": "stu_dash_025",
+      "month": "2026-10",
+      "amount": 200,
+      "date": "2026-10-05",
+      "paymentDate": "2026-10-05",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — آلاء أشرف",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_025",
+      "receiptNo": "RCP-202610-025",
+      "studentId": "stu_dash_026",
+      "month": "2026-10",
+      "amount": 200,
+      "date": "2026-11-11",
+      "paymentDate": "2026-11-11",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — حبيبة سيد محمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_026",
+      "receiptNo": "RCP-202610-026",
+      "studentId": "stu_dash_027",
+      "month": "2026-10",
+      "amount": 200,
+      "date": "2026-10-03",
+      "paymentDate": "2026-10-03",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — شيماء خلف",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_027",
+      "receiptNo": "RCP-202610-027",
+      "studentId": "stu_dash_028",
+      "month": "2026-10",
+      "amount": 200,
+      "date": "2026-10-14",
+      "paymentDate": "2026-10-14",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — آلاء ممدوح رفاعي",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_028",
+      "receiptNo": "RCP-202610-028",
+      "studentId": "stu_dash_029",
+      "month": "2026-10",
+      "amount": 170,
+      "date": "2026-11-11",
+      "paymentDate": "2026-11-11",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — رحمة إبراهيم",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_029",
+      "receiptNo": "RCP-202610-029",
+      "studentId": "stu_dash_030",
+      "month": "2026-10",
+      "amount": 250,
+      "date": "2026-11-11",
+      "paymentDate": "2026-11-11",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — حنين البدري رابح",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_030",
+      "receiptNo": "RCP-202611-030",
+      "studentId": "stu_dash_030",
+      "month": "2026-11",
+      "amount": 375,
+      "date": "2026-10-28",
+      "paymentDate": "2026-10-28",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — حنين البدري رابح",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_031",
+      "receiptNo": "RCP-202610-031",
+      "studentId": "stu_dash_031",
+      "month": "2026-10",
+      "amount": 175,
+      "date": "2026-11-11",
+      "paymentDate": "2026-11-11",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — سلوى زكريا محي الدين",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_032",
+      "receiptNo": "RCP-202611-032",
+      "studentId": "stu_dash_031",
+      "month": "2026-11",
+      "amount": 175,
+      "date": "2026-11-11",
+      "paymentDate": "2026-11-11",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — سلوى زكريا محي الدين",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_033",
+      "receiptNo": "RCP-202610-033",
+      "studentId": "stu_dash_032",
+      "month": "2026-10",
+      "amount": 775,
+      "date": "2026-10-28",
+      "paymentDate": "2026-10-28",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — ندى رمضان",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_034",
+      "receiptNo": "RCP-202610-034",
+      "studentId": "stu_dash_034",
+      "month": "2026-10",
+      "amount": 275,
+      "date": "2026-11-11",
+      "paymentDate": "2026-11-11",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — جومانة عبد الرازق",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_035",
+      "receiptNo": "RCP-202611-035",
+      "studentId": "stu_dash_034",
+      "month": "2026-11",
+      "amount": 275,
+      "date": "2026-11-03",
+      "paymentDate": "2026-11-03",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — جومانة عبد الرازق",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_036",
+      "receiptNo": "RCP-202610-036",
+      "studentId": "stu_dash_035",
+      "month": "2026-10",
+      "amount": 500,
+      "date": "2026-11-11",
+      "paymentDate": "2026-11-11",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — وردة محمد السيد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_037",
+      "receiptNo": "RCP-202610-037",
+      "studentId": "stu_dash_036",
+      "month": "2026-10",
+      "amount": 550,
+      "date": "2026-10-11",
+      "paymentDate": "2026-10-11",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — بسملة عبد الصمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_038",
+      "receiptNo": "RCP-202611-038",
+      "studentId": "stu_dash_037",
+      "month": "2026-11",
+      "amount": 400,
+      "date": "2026-11-10",
+      "paymentDate": "2026-11-10",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — فاطمة صالح",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_039",
+      "receiptNo": "RCP-202610-039",
+      "studentId": "stu_dash_038",
+      "month": "2026-10",
+      "amount": 375,
+      "date": "2026-10-11",
+      "paymentDate": "2026-10-11",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — مريم فتحي",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_040",
+      "receiptNo": "RCP-202610-040",
+      "studentId": "stu_dash_039",
+      "month": "2026-10",
+      "amount": 275,
+      "date": "2026-10-10",
+      "paymentDate": "2026-10-10",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — مريم أحمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_041",
+      "receiptNo": "RCP-202611-041",
+      "studentId": "stu_dash_040",
+      "month": "2026-11",
+      "amount": 275,
+      "date": "2026-11-08",
+      "paymentDate": "2026-11-08",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — رضوى سعيد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_042",
+      "receiptNo": "RCP-202610-042",
+      "studentId": "stu_dash_041",
+      "month": "2026-10",
+      "amount": 250,
+      "date": "2026-10-07",
+      "paymentDate": "2026-10-07",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — ولاء سالم",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_043",
+      "receiptNo": "RCP-202611-043",
+      "studentId": "stu_dash_043",
+      "month": "2026-11",
+      "amount": 400,
+      "date": "2026-11-10",
+      "paymentDate": "2026-11-10",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — منار علي",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_044",
+      "receiptNo": "RCP-202610-044",
+      "studentId": "stu_dash_044",
+      "month": "2026-10",
+      "amount": 175,
+      "date": "2026-10-25",
+      "paymentDate": "2026-10-25",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — أنهار محمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_045",
+      "receiptNo": "RCP-202611-045",
+      "studentId": "stu_dash_044",
+      "month": "2026-11",
+      "amount": 175,
+      "date": "2026-11-11",
+      "paymentDate": "2026-11-11",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — أنهار محمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_046",
+      "receiptNo": "RCP-202610-046",
+      "studentId": "stu_dash_045",
+      "month": "2026-10",
+      "amount": 175,
+      "date": "2026-10-14",
+      "paymentDate": "2026-10-14",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — منة الله عبد رب النبي",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_047",
+      "receiptNo": "RCP-202610-047",
+      "studentId": "stu_dash_046",
+      "month": "2026-10",
+      "amount": 175,
+      "date": "2026-11-11",
+      "paymentDate": "2026-11-11",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-10 — ولاء أحمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_048",
+      "receiptNo": "RCP-202611-048",
+      "studentId": "stu_dash_048",
+      "month": "2026-11",
+      "amount": 200,
+      "date": "2026-11-11",
+      "paymentDate": "2026-11-11",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — أشرقت يحيى",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_049",
+      "receiptNo": "RCP-202611-049",
+      "studentId": "stu_dash_049",
+      "month": "2026-11",
+      "amount": 200,
+      "date": "2026-11-11",
+      "paymentDate": "2026-11-11",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — حبيبة جمال منصور",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_050",
+      "receiptNo": "RCP-202611-050",
+      "studentId": "stu_dash_050",
+      "month": "2026-11",
+      "amount": 200,
+      "date": "2026-11-09",
+      "paymentDate": "2026-11-09",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — بسملة عيد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_051",
+      "receiptNo": "RCP-202611-051",
+      "studentId": "stu_dash_051",
+      "month": "2026-11",
+      "amount": 200,
+      "date": "2026-11-09",
+      "paymentDate": "2026-11-09",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — ندى أشرف",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_052",
+      "receiptNo": "RCP-202611-052",
+      "studentId": "stu_dash_052",
+      "month": "2026-11",
+      "amount": 200,
+      "date": "2026-11-05",
+      "paymentDate": "2026-11-05",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — شهد سعيد محمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_053",
+      "receiptNo": "RCP-202611-053",
+      "studentId": "stu_dash_053",
+      "month": "2026-11",
+      "amount": 200,
+      "date": "2026-11-11",
+      "paymentDate": "2026-11-11",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — شهد محمد خلف",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_054",
+      "receiptNo": "RCP-202611-054",
+      "studentId": "stu_dash_054",
+      "month": "2026-11",
+      "amount": 200,
+      "date": "2026-11-11",
+      "paymentDate": "2026-11-11",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — سجود هيثم نوار",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_055",
+      "receiptNo": "RCP-202611-055",
+      "studentId": "stu_dash_055",
+      "month": "2026-11",
+      "amount": 200,
+      "date": "2026-11-11",
+      "paymentDate": "2026-11-11",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — ولاء عاطف",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_056",
+      "receiptNo": "RCP-202611-056",
+      "studentId": "stu_dash_057",
+      "month": "2026-11",
+      "amount": 150,
+      "date": "2026-11-10",
+      "paymentDate": "2026-11-10",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — منة الله إبراهيم",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_057",
+      "receiptNo": "RCP-202611-057",
+      "studentId": "stu_dash_058",
+      "month": "2026-11",
+      "amount": 200,
+      "date": "2026-11-09",
+      "paymentDate": "2026-11-09",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — مريم أحمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_058",
+      "receiptNo": "RCP-202611-058",
+      "studentId": "stu_dash_059",
+      "month": "2026-11",
+      "amount": 275,
+      "date": "2026-11-09",
+      "paymentDate": "2026-11-09",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — يمنى صلاح",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_059",
+      "receiptNo": "RCP-202611-059",
+      "studentId": "stu_dash_060",
+      "month": "2026-11",
+      "amount": 200,
+      "date": "2026-11-09",
+      "paymentDate": "2026-11-09",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — هاجر عبد الحليم",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_060",
+      "receiptNo": "RCP-202611-060",
+      "studentId": "stu_dash_061",
+      "month": "2026-11",
+      "amount": 275,
+      "date": "2026-11-10",
+      "paymentDate": "2026-11-10",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — زينب أحمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_061",
+      "receiptNo": "RCP-202611-061",
+      "studentId": "stu_dash_062",
+      "month": "2026-11",
+      "amount": 150,
+      "date": "2026-11-10",
+      "paymentDate": "2026-11-10",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — جنة عمر",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_062",
+      "receiptNo": "RCP-202611-062",
+      "studentId": "stu_dash_063",
+      "month": "2026-11",
+      "amount": 275,
+      "date": "2026-11-10",
+      "paymentDate": "2026-11-10",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-11 — رضوى عبد المعين",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_063",
+      "receiptNo": "RCP-202609-063",
+      "studentId": "stu_sep_001",
+      "month": "2026-09",
+      "amount": 200,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — هند حامد أمين",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_064",
+      "receiptNo": "RCP-202609-064",
+      "studentId": "stu_sep_002",
+      "month": "2026-09",
+      "amount": 175,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — أمنية كرم",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_065",
+      "receiptNo": "RCP-202609-065",
+      "studentId": "stu_sep_003",
+      "month": "2026-09",
+      "amount": 275,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — مريم خالد صلاح",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_066",
+      "receiptNo": "RCP-202609-066",
+      "studentId": "stu_sep_004",
+      "month": "2026-09",
+      "amount": 200,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — مروة سليم",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_067",
+      "receiptNo": "RCP-202609-067",
+      "studentId": "stu_sep_005",
+      "month": "2026-09",
+      "amount": 175,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — ملك أمجد فرج",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_068",
+      "receiptNo": "RCP-202609-068",
+      "studentId": "stu_sep_006",
+      "month": "2026-09",
+      "amount": 175,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — ياسمين حجازي",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_069",
+      "receiptNo": "RCP-202609-069",
+      "studentId": "stu_sep_007",
+      "month": "2026-09",
+      "amount": 200,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — سامية مصطفى محمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_070",
+      "receiptNo": "RCP-202609-070",
+      "studentId": "stu_sep_008",
+      "month": "2026-09",
+      "amount": 200,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — آلاء",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_071",
+      "receiptNo": "RCP-202609-071",
+      "studentId": "stu_sep_009",
+      "month": "2026-09",
+      "amount": 275,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — فاطمة محمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_072",
+      "receiptNo": "RCP-202609-072",
+      "studentId": "stu_sep_010",
+      "month": "2026-09",
+      "amount": 175,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — دعاء أبو الغيط",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_073",
+      "receiptNo": "RCP-202609-073",
+      "studentId": "stu_sep_011",
+      "month": "2026-09",
+      "amount": 175,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — ندى عماد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_074",
+      "receiptNo": "RCP-202609-074",
+      "studentId": "stu_sep_012",
+      "month": "2026-09",
+      "amount": 175,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — سلوى زكريا يحيى",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_075",
+      "receiptNo": "RCP-202609-075",
+      "studentId": "stu_sep_013",
+      "month": "2026-09",
+      "amount": 200,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — شيماء خلف",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_076",
+      "receiptNo": "RCP-202609-076",
+      "studentId": "stu_sep_014",
+      "month": "2026-09",
+      "amount": 225,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — رغد أحمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_077",
+      "receiptNo": "RCP-202609-077",
+      "studentId": "stu_sep_015",
+      "month": "2026-09",
+      "amount": 250,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — حنين البدري رابح",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_078",
+      "receiptNo": "RCP-202609-078",
+      "studentId": "stu_sep_016",
+      "month": "2026-09",
+      "amount": 175,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — سلمى أحمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_079",
+      "receiptNo": "RCP-202609-079",
+      "studentId": "stu_sep_017",
+      "month": "2026-09",
+      "amount": 350,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — المعلمة شروق",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_080",
+      "receiptNo": "RCP-202609-080",
+      "studentId": "stu_sep_018",
+      "month": "2026-09",
+      "amount": 350,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — المعلمة نادية",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_081",
+      "receiptNo": "RCP-202609-081",
+      "studentId": "stu_sep_019",
+      "month": "2026-09",
+      "amount": 170,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — رحمة سمير",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_082",
+      "receiptNo": "RCP-202609-082",
+      "studentId": "stu_sep_022",
+      "month": "2026-09",
+      "amount": 250,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — هنا محمود مصطفى",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_083",
+      "receiptNo": "RCP-202609-083",
+      "studentId": "stu_sep_026",
+      "month": "2026-09",
+      "amount": 200,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — حبيبة سمير محمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_084",
+      "receiptNo": "RCP-202609-084",
+      "studentId": "stu_sep_032",
+      "month": "2026-09",
+      "amount": 250,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — ولاء سالم",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_085",
+      "receiptNo": "RCP-202609-085",
+      "studentId": "stu_sep_033",
+      "month": "2026-09",
+      "amount": 375,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — مريم فتحي",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_086",
+      "receiptNo": "RCP-202609-086",
+      "studentId": "stu_sep_034",
+      "month": "2026-09",
+      "amount": 550,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — بسملة عبد الصمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_087",
+      "receiptNo": "RCP-202609-087",
+      "studentId": "stu_sep_035",
+      "month": "2026-09",
+      "amount": 275,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — مريم أحمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_088",
+      "receiptNo": "RCP-202609-088",
+      "studentId": "stu_sep_036",
+      "month": "2026-09",
+      "amount": 215,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — منار علي",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_089",
+      "receiptNo": "RCP-202609-089",
+      "studentId": "stu_sep_037",
+      "month": "2026-09",
+      "amount": 215,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — فاطمة صالح",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_090",
+      "receiptNo": "RCP-202609-090",
+      "studentId": "stu_sep_038",
+      "month": "2026-09",
+      "amount": 275,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — رضوى عبد المعين",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_091",
+      "receiptNo": "RCP-202609-091",
+      "studentId": "stu_sep_039",
+      "month": "2026-09",
+      "amount": 275,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — جمانة عبد الرازق",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_092",
+      "receiptNo": "RCP-202609-092",
+      "studentId": "stu_sep_040",
+      "month": "2026-09",
+      "amount": 400,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — نور الله محمود",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_093",
+      "receiptNo": "RCP-202609-093",
+      "studentId": "stu_sep_041",
+      "month": "2026-09",
+      "amount": 400,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — عبير فتحي",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_094",
+      "receiptNo": "RCP-202609-094",
+      "studentId": "stu_sep_042",
+      "month": "2026-09",
+      "amount": 550,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — وردة محمد السيد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_095",
+      "receiptNo": "RCP-202609-095",
+      "studentId": "stu_sep_043",
+      "month": "2026-09",
+      "amount": 250,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — رضوى سعيد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_096",
+      "receiptNo": "RCP-202609-096",
+      "studentId": "stu_sep_044",
+      "month": "2026-09",
+      "amount": 175,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — آيات محمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_097",
+      "receiptNo": "RCP-202609-097",
+      "studentId": "stu_sep_045",
+      "month": "2026-09",
+      "amount": 175,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — منة الله عبد رب النبي",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_098",
+      "receiptNo": "RCP-202609-098",
+      "studentId": "stu_sep_046",
+      "month": "2026-09",
+      "amount": 175,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — ولاء أحمد",
+      "createdAt": ""
+    },
+    {
+      "id": "inst_bundled_099",
+      "receiptNo": "RCP-202609-099",
+      "studentId": "stu_sep_047",
+      "month": "2026-09",
+      "amount": 175,
+      "date": "2026-09-01",
+      "paymentDate": "2026-09-01",
+      "method": "تحويل / فودافون كاش",
+      "note": "اشتراك 2026-09 — أنهار محمد",
+      "createdAt": ""
+    }
+  ],
+  "groups": [
+    {
+      "id": "grp_sched_001",
+      "name": "حلقة بسملة (الزهراء سعد)",
+      "teacher": "الزهراء سعد",
+      "days": [
+        "الأحد",
+        "الأربعاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الأحد | الأربعاء — 6:30 مساءً"
+    },
+    {
+      "id": "grp_sched_002",
+      "name": "حلقة ندي (الزهراء سعد)",
+      "teacher": "الزهراء سعد",
+      "days": [
+        "الأحد",
+        "الثلاثاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الأحد | الثلاثاء — 10:00 صباحاً"
+    },
+    {
+      "id": "grp_sched_003",
+      "name": "حلقة حبيبة (الزهراء سعد)",
+      "teacher": "الزهراء سعد",
+      "days": [
+        "الأحد",
+        "الأربعاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الأحد | الأربعاء — 3:00 مساءً / 5:30 مساءً"
+    },
+    {
+      "id": "grp_sched_004",
+      "name": "حلقة هاجر (الزهراء سعد)",
+      "teacher": "الزهراء سعد",
+      "days": [
+        "السبت",
+        "الثلاثاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "السبت | الثلاثاء — 3:30 عصراً"
+    },
+    {
+      "id": "grp_sched_005",
+      "name": "حلقة ومنه الله (الزهراء سعد)",
+      "teacher": "الزهراء سعد",
+      "days": [
+        "السبت"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "السبت — 4:00 عصراً"
+    },
+    {
+      "id": "grp_sched_006",
+      "name": "حلقة مريم (الزهراء سعد)",
+      "teacher": "الزهراء سعد",
+      "days": [
+        "السبت",
+        "الثلاثاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "السبت | الثلاثاء — 7:00 مساءً"
+    },
+    {
+      "id": "grp_sched_007",
+      "name": "حلقة يمني (الزهراء سعد)",
+      "teacher": "الزهراء سعد",
+      "days": [
+        "السبت",
+        "الثلاثاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "السبت | الثلاثاء — 6:00 مساءً"
+    },
+    {
+      "id": "grp_sched_008",
+      "name": "حلقة زينب (الزهراء سعد)",
+      "teacher": "الزهراء سعد",
+      "days": [
+        "الأحد",
+        "الأربعاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الأحد | الأربعاء — 6:00 مساءً"
+    },
+    {
+      "id": "grp_sched_009",
+      "name": "حلقة شهد سعيد محمد (آيات مصطفى)",
+      "teacher": "آيات مصطفى",
+      "days": [
+        "السبت",
+        "الثلاثاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "السبت | الثلاثاء — 8:00"
+    },
+    {
+      "id": "grp_sched_010",
+      "name": "حلقة شهد محمد خلف (آيات مصطفى)",
+      "teacher": "آيات مصطفى",
+      "days": [
+        "السبت",
+        "الثلاثاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "السبت | الثلاثاء — 8:30"
+    },
+    {
+      "id": "grp_sched_011",
+      "name": "حلقة سجود هيثم نوار (آيات مصطفى)",
+      "teacher": "آيات مصطفى",
+      "days": [
+        "الاثنين",
+        "الخميس"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الاثنين | الخميس — 9:40"
+    },
+    {
+      "id": "grp_sched_012",
+      "name": "حلقة ولاء عاطف (آيات مصطفى)",
+      "teacher": "آيات مصطفى",
+      "days": [
+        "الاثنين",
+        "الجمعة"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الاثنين | الجمعة — 9:20"
+    },
+    {
+      "id": "grp_sched_013",
+      "name": "حلقة وردة (رويدا ابراهيم)",
+      "teacher": "رويدا ابراهيم",
+      "days": [
+        "الجمعة",
+        "السبت",
+        "الثلاثاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الجمعة | السبت | الثلاثاء — 8:00 صباحاً / 7:00 مساءً"
+    },
+    {
+      "id": "grp_sched_014",
+      "name": "حلقة جمانة (رويدا ابراهيم)",
+      "teacher": "رويدا ابراهيم",
+      "days": [
+        "السبت",
+        "الثلاثاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "السبت | الثلاثاء — 9:00 صباحاً / 8:00 مساءً"
+    },
+    {
+      "id": "grp_sched_015",
+      "name": "حلقة الأستاذة فاطمة ومنار (رويدا ابراهيم)",
+      "teacher": "رويدا ابراهيم",
+      "days": [
+        "الأحد",
+        "الأربعاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الأحد | الأربعاء — 7:00 مساءً"
+    },
+    {
+      "id": "grp_sched_016",
+      "name": "حلقة رضوي (روان ابراهيم)",
+      "teacher": "روان ابراهيم",
+      "days": [
+        "الأحد",
+        "الأربعاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الأحد | الأربعاء — 8:00"
+    },
+    {
+      "id": "grp_sched_017",
+      "name": "حلقة سلوي (روان ابراهيم)",
+      "teacher": "روان ابراهيم",
+      "days": [
+        "الاثنين",
+        "الخميس"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الاثنين | الخميس — بعد الفجر"
+    },
+    {
+      "id": "grp_sched_018",
+      "name": "حلقة آيات (روان ابراهيم)",
+      "teacher": "روان ابراهيم",
+      "days": [
+        "السبت",
+        "الثلاثاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "السبت | الثلاثاء — 8:00 مساءً"
+    },
+    {
+      "id": "grp_sched_019",
+      "name": "حلقة عبير (روان ابراهيم)",
+      "teacher": "روان ابراهيم",
+      "days": [
+        "السبت",
+        "الاثنين",
+        "الخميس"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "السبت | الاثنين | الخميس — 7:00 مساءً"
+    },
+    {
+      "id": "grp_sched_020",
+      "name": "حلقة هند (روان ابراهيم)",
+      "teacher": "روان ابراهيم",
+      "days": [
+        "السبت",
+        "الاثنين"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "السبت | الاثنين — 6:00 مساءً"
+    },
+    {
+      "id": "grp_sched_021",
+      "name": "حلقة مجموعة تامة (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "السبت",
+        "الأحد"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "السبت | الأحد — 4:00 - 8:00 ص / 4:00 ص"
+    },
+    {
+      "id": "grp_sched_022",
+      "name": "حلقة فاطمة محمد (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "السبت",
+        "الثلاثاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "السبت | الثلاثاء — 9:00 - 9:30 ص"
+    },
+    {
+      "id": "grp_sched_023",
+      "name": "حلقة مريم خالد (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "السبت",
+        "الثلاثاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "السبت | الثلاثاء — 9:30 - 10:00 ص"
+    },
+    {
+      "id": "grp_sched_024",
+      "name": "حلقة بسملة عبد الصمد (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "السبت",
+        "الثلاثاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "السبت | الثلاثاء — 10:00 - 11:00 ص"
+    },
+    {
+      "id": "grp_sched_025",
+      "name": "حلقة ملك محمود (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "السبت",
+        "الأحد"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "السبت | الأحد — 11:00 ص / 9:00 ص"
+    },
+    {
+      "id": "grp_sched_026",
+      "name": "حلقة م. فاطمة (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "السبت"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "السبت — 1:00 ظ"
+    },
+    {
+      "id": "grp_sched_027",
+      "name": "حلقة نادية (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "السبت"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "السبت — 3:00 - 4:00 م"
+    },
+    {
+      "id": "grp_sched_028",
+      "name": "حلقة حبيبة (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "السبت"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "السبت — 4:00 - 4:20 م"
+    },
+    {
+      "id": "grp_sched_029",
+      "name": "حلقة وفاء (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "السبت",
+        "الأربعاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "السبت | الأربعاء — 5:00 م"
+    },
+    {
+      "id": "grp_sched_030",
+      "name": "حلقة رحمة (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "السبت"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "السبت — 6:00 - 6:20 م"
+    },
+    {
+      "id": "grp_sched_031",
+      "name": "حلقة عائشة (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "السبت"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "السبت — 6:30 - 6:50 م"
+    },
+    {
+      "id": "grp_sched_032",
+      "name": "حلقة حنين (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "السبت"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "السبت — 7:00 - 8:00 م"
+    },
+    {
+      "id": "grp_sched_033",
+      "name": "حلقة شروق عطية (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "الأحد",
+        "الخميس"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الأحد | الخميس — 1:00 - 2:00 ظ"
+    },
+    {
+      "id": "grp_sched_034",
+      "name": "حلقة نور مصطفى (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "الأحد",
+        "الأربعاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الأحد | الأربعاء — 3:00 - 3:40 م"
+    },
+    {
+      "id": "grp_sched_035",
+      "name": "حلقة رغد أحمد (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "الاثنين",
+        "الخميس"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الاثنين | الخميس — 7:30 - 8:10 ص"
+    },
+    {
+      "id": "grp_sched_036",
+      "name": "حلقة رحمة إبراهيم (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "الاثنين",
+        "الثلاثاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الاثنين | الثلاثاء — 9:00 - 9:20 ص / 3:30 - 3:50 م"
+    },
+    {
+      "id": "grp_sched_037",
+      "name": "حلقة هند أحمد (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "الاثنين",
+        "الأربعاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الاثنين | الأربعاء — 10:00 - 10:40 ص / 6:00 - 6:40 م"
+    },
+    {
+      "id": "grp_sched_038",
+      "name": "حلقة حبيبة إبراهيم (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "الاثنين"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الاثنين — 2:00 - 2:20 ظ"
+    },
+    {
+      "id": "grp_sched_039",
+      "name": "حلقة هنا محمود (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "الاثنين"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الاثنين — 3:00 - 3:40 م"
+    },
+    {
+      "id": "grp_sched_040",
+      "name": "حلقة مجموعة تامة الأولى (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "الثلاثاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الثلاثاء — 4:00 - 8:00 ص"
+    },
+    {
+      "id": "grp_sched_041",
+      "name": "حلقة عائشة محمد (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "الثلاثاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الثلاثاء — 3:00 - 3:20 م"
+    },
+    {
+      "id": "grp_sched_042",
+      "name": "حلقة مجموعة تامة الثانية (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "الأربعاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الأربعاء — 4:00 ص"
+    },
+    {
+      "id": "grp_sched_043",
+      "name": "حلقة ندى رمضان (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "الأربعاء",
+        "الجمعة"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الأربعاء | الجمعة — 2:00 - 2:40 م / 3:00 - 3:40 م"
+    },
+    {
+      "id": "grp_sched_044",
+      "name": "حلقة حنين البدري (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "الأربعاء"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الأربعاء — 7:00 - 8:00 م"
+    },
+    {
+      "id": "grp_sched_045",
+      "name": "حلقة نادية عبد الحميد (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "الخميس"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الخميس — 10:00 - 11:00 ص"
+    },
+    {
+      "id": "grp_sched_046",
+      "name": "حلقة المعلمة فاطمة (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "الخميس"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الخميس — 2:00 ظ"
+    },
+    {
+      "id": "grp_sched_047",
+      "name": "حلقة هنا (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "الخميس"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الخميس — 3:00 - 3:40 م"
+    },
+    {
+      "id": "grp_sched_048",
+      "name": "حلقة الاختبار (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "الجمعة"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الجمعة — 10:00 ص"
+    },
+    {
+      "id": "grp_sched_049",
+      "name": "حلقة التجويد (خديجة أحمد)",
+      "teacher": "خديجة أحمد",
+      "days": [
+        "الجمعة"
+      ],
+      "time": "16:00",
+      "dur": 40,
+      "capacity": 8,
+      "notes": "الجمعة — 11:00 ص"
+    }
+  ],
+  "plans": [],
+  "sessions": [],
+  "memorization": [],
+  "madrasaBatches": [],
+  "madrasaEnrollments": [],
+  "madrasaLogs": [],
+  "certificates": [],
+  "dynamicMonths": [
+    {
+      "key": "2026-05",
+      "label": "مايو 2026"
+    },
+    {
+      "key": "2026-06",
+      "label": "يونيو 2026"
+    },
+    {
+      "key": "2026-07",
+      "label": "يوليو 2026"
+    },
+    {
+      "key": "2026-08",
+      "label": "أغسطس 2026"
+    },
+    {
+      "key": "2026-09",
+      "label": "سبتمبر 2026"
+    },
+    {
+      "key": "2026-10",
+      "label": "أكتوبر 2026"
+    },
+    {
+      "key": "2026-11",
+      "label": "نوفمبر 2026"
+    },
+    {
+      "key": "2026-12",
+      "label": "ديسمبر 2026"
+    },
+    {
+      "key": "2027-01",
+      "label": "يناير 2027"
+    },
+    {
+      "key": "2027-02",
+      "label": "فبراير 2027"
+    },
+    {
+      "key": "2027-03",
+      "label": "مارس 2027"
+    },
+    {
+      "key": "2027-04",
+      "label": "أبريل 2027"
+    },
+    {
+      "key": "2027-05",
+      "label": "مايو 2027"
+    }
+  ]
+}

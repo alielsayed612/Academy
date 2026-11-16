@@ -1,0 +1,1837 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أكاديمية يوم جديد — يوم جديد هو عهد جديد · v1.2.0</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="vendor/cairo.css">
+  <link rel="stylesheet" href="css/design-system.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Sidebar Navigation -->
+    <aside class="app-sidebar" aria-label="القائمة الرئيسية">
+      <div class="sidebar-brand">
+        <div class="sidebar-logo" id="sidebarLogo"><img src="assets/logo.png" alt="شعار أكاديمية يوم جديد" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+        <div class="sidebar-brand-text">
+          <h1 id="brandTitle">أكاديمية يوم جديد</h1>
+          <span id="brandSubtitle">يوم جديد هو عهد جديد • v1.2.0</span>
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-label">الرئيسية والرقابة وشؤون الطالبات</div>
+        <button type="button" class="nav-btn active" data-view="dashboard">
+          <span class="nav-icon">📊</span>
+          <span>لوحة القيادة التنفيذية</span>
+        </button>
+        <button type="button" class="nav-btn" data-view="statistics">
+          <span class="nav-icon">📈</span>
+          <span>الإحصائيات العامة</span>
+        </button>
+        <button type="button" class="nav-btn" data-view="alerts">
+          <span class="nav-icon">🔔</span>
+          <span>التنبيهات الرقابية</span>
+          <span class="nav-badge badge-alert-pill" id="navAlertsBadge">0</span>
+        </button>
+        <button type="button" class="nav-btn" data-view="students">
+          <span class="nav-icon">👩‍🎓</span>
+          <span>سجل الطالبات والاشتراكات</span>
+          <span class="nav-badge" id="navStudentsCount">0</span>
+        </button>
+        <button type="button" class="nav-btn" data-view="profile">
+          <span class="nav-icon">🪪</span>
+          <span>ملف الطالبة الشامل 360°</span>
+        </button>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-label">الإدارة المالية والمحاسبية</div>
+        <button type="button" class="nav-btn" data-view="collections">
+          <span class="nav-icon">💳</span>
+          <span>التحصيل وتواريخ الدفع والبدء</span>
+        </button>
+        <button type="button" class="nav-btn" data-view="payroll">
+          <span class="nav-icon">💰</span>
+          <span>رواتب المعلمات والمقارنة</span>
+        </button>
+        <button type="button" class="nav-btn" data-view="accounting">
+          <span class="nav-icon">🏦</span>
+          <span>الخزينة والمحاسبة العامة</span>
+        </button>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-label">الشؤون التعليمية والحلقات</div>
+        <button type="button" class="nav-btn" data-view="attendance">
+          <span class="nav-icon">🗓️</span>
+          <span>الحضور الذكي والمواعيد</span>
+        </button>
+        <button type="button" class="nav-btn" data-view="memorization">
+          <span class="nav-icon">📖</span>
+          <span>سجل الحفظ والمراجعة</span>
+        </button>
+        <button type="button" class="nav-btn" data-view="madrasa">
+          <span class="nav-icon">🕌</span>
+          <span>المدرسة الإيمانية</span>
+        </button>
+        <button type="button" class="nav-btn" data-view="certificates">
+          <span class="nav-icon">🎓</span>
+          <span>استوديو الشهادات</span>
+        </button>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-label">المعلمات والاستيراد والتقارير والنظام</div>
+        <button type="button" class="nav-btn" data-view="teachers">
+          <span class="nav-icon">👩‍🏫</span>
+          <span>أقسام وإدارة المعلمات</span>
+        </button>
+        <button type="button" class="nav-btn" data-view="import">
+          <span class="nav-icon">📥</span>
+          <span>استيراد من Excel</span>
+        </button>
+        <button type="button" class="nav-btn" data-view="exports">
+          <span class="nav-icon">📤</span>
+          <span>مركز التصدير والتقارير</span>
+        </button>
+        <button type="button" class="nav-btn" data-view="system">
+          <span class="nav-icon">🛡️</span>
+          <span>الإعدادات والنسخ الاحتياطية</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="app-main">
+      <!-- Top Command Bar -->
+      <header class="app-topbar">
+        <div class="topbar-right">
+          <div class="period-pill">
+            <span>📅 الشهر الدراسي:</span>
+            <select id="globalMonthSelect" aria-label="اختيار الشهر الدراسي"></select>
+            <span class="badge" id="monthLockBadge" style="display:none;">🔒 مقفل</span>
+          </div>
+          <div class="global-search-box">
+            <input type="search" id="globalSearchInput" placeholder="🔍 بحث سريع عن طالبة أو هاتف أو كود (Ctrl+K)..." aria-label="بحث سريع">
+          </div>
+        </div>
+        <div class="topbar-left">
+          <div class="save-status-wrap">
+            <span class="sync-status-chip" id="syncStatusChip" role="status" aria-live="polite">✓ متصل وجاهز</span>
+            <button type="button" class="btn btn-sm btn-danger" id="btnRetrySave" style="display:none;">🔄 إعادة محاولة الحفظ</button>
+          </div>
+          <button type="button" class="btn btn-bell" id="btnTopbarAlerts" title="التنبيهات الرقابية" aria-label="عرض التنبيهات الرقابية">
+            <span>🔔</span>
+            <span class="bell-badge" id="topbarAlertsBadge">0</span>
+          </button>
+          <button type="button" class="btn btn-primary" id="btnQuickAddStudent">+ إضافة طالبة جديدة</button>
+          <button type="button" class="btn" id="btnToggleTheme" title="تبديل الوضع الليلي/النهاري">🌓 المظهر</button>
+        </div>
+      </header>
+
+      <main class="app-content">
+        <!-- 1. EXECUTIVE DASHBOARD -->
+        <section id="view-dashboard" class="view-panel active" aria-labelledby="dashHeading">
+          <div class="section-header">
+            <div class="section-title">
+              <h2 id="dashHeading">📊 لوحة القيادة التنفيذية</h2>
+              <p id="dashSubtitle">نظرة شاملة ومباشرة على الأداء المالي، التحصيل حسب تاريخ الدفع، وفترات الدراسة حسب تاريخ البداية الفعلي</p>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="btn btn-accent" id="btnDashExportFull">📥 تصدير المصنف الشامل (.xlsx)</button>
+              <button type="button" class="btn" id="btnDashExportHtml">🌐 تصدير تقرير HTML للقراءة</button>
+              <button type="button" class="btn" id="btnDashGoStudents">👩‍🎓 إدارة سجل الطالبات</button>
+            </div>
+          </div>
+
+          <div id="dashboardAlertsStrip" class="alerts-strip" style="display:none;"></div>
+
+          <div class="dates-rule-banner">
+            <div>
+              <strong>⚖️ القاعدة المحاسبية والتربوية المعتمدة:</strong>
+              <span class="badge badge-pay">💳 تاريخ الدفع (Payment Date)</span> يُعتمد حصريًا لتتبع السداد والتقارير المالية، بينما
+              <span class="badge badge-start">📅 تاريخ البداية الفعلي (Actual Start Date)</span> يُعتمد حصريًا لحساب مدة الاشتراك ومواعيد الحصص دون دمجهما أبدًا.
+            </div>
+            <button type="button" class="btn btn-sm btn-primary" id="btnDashInspectDates">عرض تقرير الدفع والبدء ←</button>
+          </div>
+
+          <div id="dashboardEmptyBanner" class="card empty-guide-card" style="display:none;">
+            <img src="assets/banner.jpg" alt="أكاديمية يوم جديد هو عهد جديد" class="brand-banner">
+            <h3>👋 مرحبًا بك في أكاديمية يوم جديد</h3>
+            <p>قاعدة البيانات فارغة حاليًا وجاهزة لإدخال بيانات أكاديميتك. يمكنك البدء بإحدى الطرق التالية:</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;">
+              <button type="button" class="btn btn-primary" id="btnEmptyAddStudent">👩‍🎓 + إضافة أول طالبة</button>
+              <button type="button" class="btn btn-accent" id="btnEmptyGoImport">📥 استيراد من ملف Excel</button>
+              <button type="button" class="btn" id="btnEmptyOpenWizard">⚙️ إعدادات الأكاديمية والمعلمات</button>
+              <button type="button" class="btn" id="btnEmptyLoadDemo" style="display:none;">🧪 تحميل بيانات تجريبية (وهمية)</button>
+            </div>
+          </div>
+
+          <div class="kpi-grid" id="dashboardKpis"></div>
+
+          <div class="grid-2">
+            <div class="card">
+              <div class="card-header">
+                <h3 id="dashComparativeHeading">📈 مقارنة الأداء الشهري للمعلمات</h3>
+                <button type="button" class="btn btn-sm" id="btnDashExportTeachers">تصدير جدول المقارنة</button>
+              </div>
+              <div class="table-wrap" id="dashTeachersTableWrap"></div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3>⏱️ تحليل توقيت السداد وفترات الدراسة الفعلية</h3>
+              </div>
+              <div id="dashDatesBreakdown"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. GENERAL STATISTICS (PHASE 4) -->
+        <section id="view-statistics" class="view-panel" aria-labelledby="statsHeading">
+          <div class="section-header">
+            <div class="section-title">
+              <h2 id="statsHeading">📈 الإحصائيات العامة والتقارير التحليلية</h2>
+              <p>مؤشرات شاملة للطالبات، التحصيل (النقدي والاستحقاق)، المعلمات، الباقات، الحضور، الحفظ، والمدرسة الإيمانية</p>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="btn btn-accent" id="btnStatsExportXlsx">📥 تصدير إكسيل (.xlsx)</button>
+              <button type="button" class="btn btn-primary" id="btnStatsExportHtml">🌐 تصدير صفحة HTML مستقلة</button>
+            </div>
+          </div>
+
+          <div class="filter-bar">
+            <div class="filter-group">
+              <label for="statsPeriodSelect">الفترة الزمنية</label>
+              <select id="statsPeriodSelect">
+                <option value="all_time" selected>كل الأوقات (منذ بداية الأكاديمية)</option>
+                <option value="this_month">الشهر المحدد فقط</option>
+                <option value="last_3">آخر 3 أشهر</option>
+                <option value="last_6">آخر 6 أشهر</option>
+                <option value="this_year">السنة الحالية</option>
+                <option value="custom">نطاق تاريخ مخصص</option>
+              </select>
+            </div>
+            <div class="filter-group" id="statsCustomFromGroup" style="display:none;">
+              <label for="statsCustomFrom">من تاريخ</label>
+              <input type="date" id="statsCustomFrom">
+            </div>
+            <div class="filter-group" id="statsCustomToGroup" style="display:none;">
+              <label for="statsCustomTo">إلى تاريخ</label>
+              <input type="date" id="statsCustomTo">
+            </div>
+            <div class="filter-group">
+              <label for="statsTeacherFilter">المعلمة</label>
+              <select id="statsTeacherFilter">
+                <option value="">جميع المعلمات</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label>&nbsp;</label>
+              <button type="button" class="btn" id="btnRefreshStatistics">🔄 تحديث الإحصائيات</button>
+            </div>
+          </div>
+
+          <div id="statisticsContainer"></div>
+        </section>
+
+        <!-- 3. DETAILED ALERTS WITH DIRECT NAVIGATION (PHASE 5) -->
+        <section id="view-alerts" class="view-panel" aria-labelledby="alertsHeading">
+          <div class="section-header">
+            <div class="section-title">
+              <h2 id="alertsHeading">🔔 مركز التنبيهات الرقابية الذكية</h2>
+              <p>متابعة استباقية للاشتراكات، المتأخرات، مواعيد الدراسة، الحصص غير المعوضة، وسلامة النسخ الاحتياطية مع انتقال مباشر</p>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="btn" id="btnRefreshAlerts">🔄 فحص الآن</button>
+              <button type="button" class="btn" id="btnMarkAllAlertsRead">✓ تعليم الكل كمقروء</button>
+              <button type="button" class="btn btn-primary" id="btnExportAlertsHtml">🌐 تصدير التنبيهات (HTML)</button>
+            </div>
+          </div>
+
+          <div class="filter-bar">
+            <div class="filter-group">
+              <label for="alertsSeverityFilter">مستوى الأهمية</label>
+              <select id="alertsSeverityFilter">
+                <option value="">الكل (حرجة + تحذيرية + معلوماتية)</option>
+                <option value="critical">🔴 حرجة فقط</option>
+                <option value="warning">🟠 تحذيرية فقط</option>
+                <option value="info">🔵 معلوماتية فقط</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="alertsCategoryFilter">نوع التنبيه</label>
+              <select id="alertsCategoryFilter">
+                <option value="">جميع التصنيفات</option>
+                <option value="expiring_soon">قرب انتهاء اشتراك</option>
+                <option value="expired_unrenewed">اشتراك منتهٍ غير مجدد</option>
+                <option value="unpaid">اشتراك غير مسدد</option>
+                <option value="partial_overdue">دفعة جزئية متأخرة</option>
+                <option value="paid_no_start">مسدد بدون تاريخ بداية</option>
+                <option value="studying_not_paid">بدأت الدراسة ولم تسدد</option>
+                <option value="uncompensated_cancel">حصة ملغاة بلا تعويض</option>
+                <option value="scheduling_conflict">تعارض مواعيد الحصص</option>
+                <option value="consecutive_absence">غياب متتالي</option>
+                <option value="unpaid_teacher_balance">رصيد معلمة غير مصروف</option>
+                <option value="duplicate_student">تكرار بيانات طالبة</option>
+                <option value="date_anomaly">ملاحظة في التواريخ</option>
+                <option value="stale_backup">تأخر النسخ الاحتياطي</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="alertsShowDismissedToggle">التنبيهات المؤجلة/المخفاة</label>
+              <select id="alertsShowDismissedToggle">
+                <option value="0">إخفاء المؤجل</option>
+                <option value="1">عرض المؤجل لاستعادته</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="kpi-grid" id="alertsSummaryKpis"></div>
+          <div id="alertsGroupsContainer"></div>
+        </section>
+
+        <!-- 4. STUDENTS & SUBSCRIPTIONS MATRIX -->
+        <section id="view-students" class="view-panel" aria-labelledby="studentsHeading">
+          <div class="section-header">
+            <div class="section-title">
+              <h2 id="studentsHeading">👩‍🎓 سجل الطالبات والاشتراكات الشهرية</h2>
+              <p>إدخال وتعديل مستقل لكل من <strong>تاريخ الدفع الفعلي (Payment Date)</strong> و<strong>تاريخ بدء الدراسة الفعلي (Actual Start Date)</strong></p>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="btn btn-primary" id="btnAddStudentMain">+ إضافة طالبة</button>
+              <button type="button" class="btn" id="btnGoImportFromStudents">📥 استيراد من Excel</button>
+              <button type="button" class="btn btn-accent" id="btnExportStudentsXlsx">📥 تصدير السجل (.xlsx)</button>
+            </div>
+          </div>
+
+          <div class="filter-bar">
+            <div class="filter-group">
+              <label for="stuFilterSearch">بحث بالاسم أو الهاتف أو الكود</label>
+              <input type="search" id="stuFilterSearch" placeholder="ابحث عن طالبة...">
+            </div>
+            <div class="filter-group">
+              <label for="stuFilterTeacher">المعلمة</label>
+              <select id="stuFilterTeacher"></select>
+            </div>
+            <div class="filter-group">
+              <label for="stuFilterType">نوع الاشتراك</label>
+              <select id="stuFilterType"></select>
+            </div>
+            <div class="filter-group">
+              <label for="stuFilterPayStatus">حالة السداد (حسب الإيصالات)</label>
+              <select id="stuFilterPayStatus">
+                <option value="">الكل</option>
+                <option value="paid">مسدد بالكامل</option>
+                <option value="partial">مسدد جزئيًا</option>
+                <option value="unpaid">غير مسدد</option>
+                <option value="advance">دفع مسبق (قبل تاريخ البداية)</option>
+                <option value="deferred">دفع لاحق (بعد تاريخ البداية)</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="stuFilterStudyStatus">حالة الدراسة (حسب تاريخ البداية الفعلي)</label>
+              <select id="stuFilterStudyStatus">
+                <option value="">الكل</option>
+                <option value="active">دراسة نشطة</option>
+                <option value="not_started">لم تبدأ بعد (بداية مستقبلية)</option>
+                <option value="expiring_soon">قريبة الانتهاء</option>
+                <option value="expired">منتهية</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="stuViewMode">نطاق العرض</label>
+              <select id="stuViewMode">
+                <option value="selected">الشهر المحدد فقط</option>
+                <option value="two_months">الشهر المحدد + الشهر السابق</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="card" id="bulkOpsBar" style="margin-bottom:14px;padding:12px 16px;border-right:4px solid var(--brand-primary);">
+            <div style="display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap;">
+              <div class="filter-group" style="min-width:250px;">
+                <label for="bulkOpSelect">⚡ العمليات الجماعية الآمنة (للطالبات المصفاة حاليًا)</label>
+                <select id="bulkOpSelect">
+                  <option value="assign_teacher">👩‍🏫 إسناد / نقل المعلمة للطالبات المصفاة</option>
+                  <option value="assign_package">📦 توحيد / تحديث باقة الاشتراك</option>
+                  <option value="set_actual_start_date">📅 تعيين تاريخ البداية الفعلي الموحد للشهر</option>
+                  <option value="normalize_phones_and_codes">✨ فحص وتوحيد الأكواد وأرقام الهواتف والأسماء</option>
+                </select>
+              </div>
+              <div class="filter-group" id="bulkTeacherGroup">
+                <label for="bulkTeacherSelect">المعلمة الجديدة</label>
+                <select id="bulkTeacherSelect"></select>
+              </div>
+              <div class="filter-group" id="bulkPackageGroup" style="display:none;">
+                <label for="bulkPackageSelect">الباقة الجديدة</label>
+                <select id="bulkPackageSelect"></select>
+              </div>
+              <div class="filter-group" id="bulkStartDateGroup" style="display:none;">
+                <label for="bulkActualStartInput">📅 تاريخ البداية الفعلي</label>
+                <input type="date" id="bulkActualStartInput">
+              </div>
+              <div class="filter-group">
+                <button type="button" class="btn btn-primary" id="btnPreviewBulkOp">🔍 معاينة التأثير قبل التنفيذ</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-wrap" id="studentsTableWrap"></div>
+        </section>
+
+        <!-- 5. STUDENT 360 PROFILE -->
+        <section id="view-profile" class="view-panel" aria-labelledby="profileHeading">
+          <div class="section-header">
+            <div class="section-title">
+              <h2 id="profileHeading">🪪 الملف الشامل للطالبة 360°</h2>
+              <p>عرض تفصيلي مستقل للسجل المالي (تاريخ الدفع والإيصالات) والسجل الدراسي (تاريخ البداية الفعلي ومدة الاشتراك)</p>
+            </div>
+            <div class="section-actions">
+              <select id="profileStudentSelect" aria-label="اختيار الطالبة"></select>
+              <button type="button" class="btn btn-primary" id="btnProfileEditStudent">✏️ تعديل بيانات الطالبة</button>
+              <button type="button" class="btn" id="btnProfileExportHtml">🌐 تصدير بطاقة الطالبة (HTML)</button>
+            </div>
+          </div>
+          <div id="studentProfileContainer"></div>
+        </section>
+
+        <!-- 6. COLLECTIONS, INVOICES & INDEPENDENT DATES HUB -->
+        <section id="view-collections" class="view-panel" aria-labelledby="collectionsHeading">
+          <div class="section-header">
+            <div class="section-title">
+              <h2 id="collectionsHeading">💳 التحصيل المالي وتقارير تواريخ الدفع والبدء</h2>
+              <p>اعتماد الإيصالات كمصدر وحيد لحالة السداد مع مقارنة تاريخ الدفع (Payment Date) بتاريخ البداية الفعلي (Actual Start Date)</p>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="btn" id="btnExportCollectionsHtml">🌐 تصدير كشف التحصيل (HTML)</button>
+            </div>
+          </div>
+
+          <div class="filter-bar">
+            <div class="filter-group">
+              <label for="collBasisSelect">أساس التقرير</label>
+              <select id="collBasisSelect">
+                <option value="accrual">أساس الاستحقاق (حسب شهر الاشتراك)</option>
+                <option value="cash">الأساس النقدي (حسب تاريخ الإيصال الفعلي)</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="collTeacherFilter">المعلمة</label>
+              <select id="collTeacherFilter">
+                <option value="">جميع المعلمات</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="collFromPayDate">من تاريخ دفع (Payment Date)</label>
+              <input type="date" id="collFromPayDate">
+            </div>
+            <div class="filter-group">
+              <label for="collToPayDate">إلى تاريخ دفع (Payment Date)</label>
+              <input type="date" id="collToPayDate">
+            </div>
+            <div class="filter-group">
+              <label for="collTimingFilter">تصنيف توقيت الدفع مقابل البداية</label>
+              <select id="collTimingFilter">
+                <option value="">جميع السجلات</option>
+                <option value="paid_in_advance">دفع مسبق (Payment Date &lt; Actual Start Date)</option>
+                <option value="paid_on_start">دفع يوم البدء (Payment Date = Actual Start Date)</option>
+                <option value="paid_after_start">دفع لاحق (Payment Date &gt; Actual Start Date)</option>
+                <option value="unpaid">غير مسدد بعد</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label>&nbsp;</label>
+              <button type="button" class="btn" id="btnResetCollFilters">إعادة ضبط الفلاتر</button>
+            </div>
+          </div>
+
+          <div class="kpi-grid" id="collectionsKpis"></div>
+
+          <div class="grid-2">
+            <div class="card">
+              <div class="card-header">
+                <h3>🧾 تسجيل إيصال دفعة / سداد اشتراك (حسب تاريخ الدفع)</h3>
+              </div>
+              <form id="formAddInstallment" class="grid-3">
+                <div class="filter-group">
+                  <label for="instStudentSelect">الطالبة</label>
+                  <select id="instStudentSelect" required></select>
+                </div>
+                <div class="filter-group">
+                  <label for="instAmountInput">المبلغ المسدد (ج.م)</label>
+                  <input type="number" id="instAmountInput" min="1" step="1" placeholder="200" required>
+                </div>
+                <div class="filter-group">
+                  <label for="instPayDateInput">💳 تاريخ الدفع الفعلي (Payment Date)</label>
+                  <input type="date" id="instPayDateInput" required>
+                </div>
+                <div class="filter-group">
+                  <label for="instMethodInput">وسيلة الدفع</label>
+                  <select id="instMethodInput">
+                    <option value="فودافون كاش">فودافون كاش</option>
+                    <option value="إنستاباي">إنستاباي (InstaPay)</option>
+                    <option value="نقدي">نقدي</option>
+                    <option value="تحويل بنكي">تحويل بنكي</option>
+                  </select>
+                </div>
+                <div class="filter-group">
+                  <label for="instNoteInput">ملاحظة الإيصال</label>
+                  <input type="text" id="instNoteInput" placeholder="دفعة اشتراك...">
+                </div>
+                <div class="filter-group">
+                  <label>&nbsp;</label>
+                  <button type="submit" class="btn btn-primary">💾 حفظ الإيصال وتحديث التحصيل</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3>⚡ محاكاة وحاسبة فصل تاريخ الدفع عن تاريخ البداية الفعلي</h3>
+              </div>
+              <div class="grid-3">
+                <div class="filter-group">
+                  <label for="simPayDate">💳 تاريخ الدفع (Payment Date)</label>
+                  <input type="date" id="simPayDate">
+                </div>
+                <div class="filter-group">
+                  <label for="simActualStart">📅 تاريخ البداية الفعلي (Actual Start)</label>
+                  <input type="date" id="simActualStart">
+                </div>
+                <div class="filter-group">
+                  <label for="simDurationDays">مدة الدورة (أيام دراسية)</label>
+                  <input type="number" id="simDurationDays" value="30" min="1" max="365">
+                </div>
+              </div>
+              <div id="simDatesResult" style="margin-top:12px;"></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>📋 كشف التحصيل التفصيلي ومقارنة تاريخ الدفع بتاريخ البداية الفعلي</h3>
+            </div>
+            <div class="table-wrap" id="collectionsTableWrap"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>🧾 سجل إيصالات الدفعات والأقساط (مع طباعة إيصال مستقل)</h3>
+            </div>
+            <div class="table-wrap" id="installmentsTableWrap"></div>
+          </div>
+        </section>
+
+        <!-- 7. TEACHER PAYROLL & COMPARATIVE ANALYTICS -->
+        <section id="view-payroll" class="view-panel" aria-labelledby="payrollHeading">
+          <div class="section-header">
+            <div class="section-title">
+              <h2 id="payrollHeading">💰 رواتب المعلمات والمقارنة الشهرية</h2>
+              <p>حساب آلي دقيق بقاعدة التقريب القياسية (Round Half Up) مع سجل صرف المستحقات</p>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="btn btn-accent" id="btnExportPayrollXlsx">📥 تصدير كشف الرواتب (.xlsx)</button>
+              <button type="button" class="btn" id="btnExportPayrollHtml">🌐 تصدير كشف الرواتب (HTML)</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 id="payrollComparativeTitle">📊 الجدول المقارن لرواتب المعلمات</h3>
+            </div>
+            <div class="table-wrap" id="payrollComparativeWrap"></div>
+          </div>
+
+          <div class="card" id="payrollPrepCard" style="border-right:4px solid var(--brand-primary);">
+            <div class="card-header">
+              <h3>🧭 تجهيز ومراجعة استحقاق الرواتب الشهرية (إعداد آلي بدون صرف تلقائي)</h3>
+            </div>
+            <div id="payrollPrepPolicyBanner" style="margin-bottom:10px;"></div>
+            <div class="table-wrap" id="payrollPrepWrap"></div>
+          </div>
+
+          <div class="grid-2">
+            <div class="card">
+              <div class="card-header">
+                <h3>💵 تسجيل صرف راتب لمعلمة</h3>
+              </div>
+              <form id="formAddPayout" class="grid-2">
+                <div class="filter-group">
+                  <label for="payTeacherSelect">المعلمة</label>
+                  <select id="payTeacherSelect" required></select>
+                </div>
+                <div class="filter-group">
+                  <label for="payAmountInput">المبلغ المصروف (ج.م)</label>
+                  <input type="number" id="payAmountInput" min="1" step="1" required>
+                </div>
+                <div class="filter-group">
+                  <label for="payDateInput">تاريخ الصرف</label>
+                  <input type="date" id="payDateInput" required>
+                </div>
+                <div class="filter-group">
+                  <label for="payNoteInput">بيان الصرف</label>
+                  <input type="text" id="payNoteInput" placeholder="صرف مستحقات الشهر...">
+                </div>
+                <div class="filter-group">
+                  <button type="submit" class="btn btn-primary">💾 تسجيل عملية الصرف</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3>📜 سجل الدفعات المصروفة للمعلمات</h3>
+              </div>
+              <div class="table-wrap" id="payoutsHistoryWrap"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 8. GENERAL ACCOUNTING & TREASURY -->
+        <section id="view-accounting" class="view-panel" aria-labelledby="accountingHeading">
+          <div class="section-header">
+            <div class="section-title">
+              <h2 id="accountingHeading">🏦 الخزينة والمحاسبة العامة</h2>
+              <p>متابعة التدفقات النقدية الداخلة والخارجة (أساس نقدي) ومقارنتها بصافي الاستحقاق التشغيلي (أساس استحقاق)</p>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="btn btn-accent" id="btnExportAccountingXlsx">📥 تصدير المحاسبة (.xlsx)</button>
+            </div>
+          </div>
+
+          <div class="kpi-grid" id="accountingKpis"></div>
+
+          <div class="grid-2">
+            <div class="card">
+              <div class="card-header">
+                <h3>➕ إضافة قيد محاسبي (إيراد إضافي / مصروف تشغيلي)</h3>
+              </div>
+              <form id="formAddTransaction" class="grid-2">
+                <div class="filter-group">
+                  <label for="txTypeSelect">نوع القيد</label>
+                  <select id="txTypeSelect">
+                    <option value="revenue">إيراد إضافي (+)</option>
+                    <option value="expense">مصروف تشغيلي (-)</option>
+                  </select>
+                </div>
+                <div class="filter-group">
+                  <label for="txCategoryInput">التصنيف / البند</label>
+                  <input type="text" id="txCategoryInput" placeholder="مثال: رسوم أنشطة / إعلانات" required>
+                </div>
+                <div class="filter-group">
+                  <label for="txAmountInput">المبلغ (ج.م)</label>
+                  <input type="number" id="txAmountInput" min="1" step="1" required>
+                </div>
+                <div class="filter-group">
+                  <label for="txDateInput">تاريخ القيد</label>
+                  <input type="date" id="txDateInput" required>
+                </div>
+                <div class="filter-group">
+                  <label for="txMethodInput">وسيلة الدفع</label>
+                  <input type="text" id="txMethodInput" value="نقدي">
+                </div>
+                <div class="filter-group">
+                  <label for="txNoteInput">ملاحظات</label>
+                  <input type="text" id="txNoteInput" placeholder="تفاصيل القيد...">
+                </div>
+                <div class="filter-group">
+                  <button type="submit" class="btn btn-primary">💾 حفظ القيد المحاسبي</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3>📒 دفتر القيود المحاسبية</h3>
+              </div>
+              <div class="table-wrap" id="transactionsTableWrap"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. SMART ATTENDANCE & SESSIONS -->
+        <section id="view-attendance" class="view-panel" aria-labelledby="attendanceHeading">
+          <div class="section-header">
+            <div class="section-title">
+              <h2 id="attendanceHeading">🗓️ الحضور الذكي وجدولة الحصص</h2>
+              <p>توليد مواعيد الحصص انطلاقًا من <strong>تاريخ البداية الفعلي (Actual Start Date)</strong> مع التعويض التلقائي عند إلغاء المعلمة</p>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="btn btn-accent" id="btnExportAttendanceXlsx">📥 تصدير سجل المواعيد (.xlsx)</button>
+            </div>
+          </div>
+
+          <div class="filter-bar">
+            <div class="filter-group">
+              <label for="attTeacherFilter">تصفية حسب المعلمة</label>
+              <select id="attTeacherFilter">
+                <option value="">جميع المعلمات</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="card">
+              <div class="card-header">
+                <h3>🗓️ توليد خطة حصص ذكية (مبنية على تاريخ البداية الفعلي)</h3>
+              </div>
+              <form id="formCreatePlan" class="grid-2">
+                <div class="filter-group">
+                  <label for="planStudentSelect">الطالبة</label>
+                  <select id="planStudentSelect" required></select>
+                </div>
+                <div class="filter-group">
+                  <label for="planActualStartInput">📅 تاريخ البداية الفعلي للدراسة (Actual Start Date)</label>
+                  <input type="date" id="planActualStartInput" required>
+                </div>
+                <div class="filter-group">
+                  <label for="planCountInput">عدد الحصص في الدورة</label>
+                  <input type="number" id="planCountInput" value="8" min="1" max="60" required>
+                </div>
+                <div class="filter-group">
+                  <label for="planTimeInput">وقت الحصة</label>
+                  <input type="time" id="planTimeInput" value="16:00" required>
+                </div>
+                <div class="filter-group">
+                  <label for="planDaysSelect">أيام الحصص الأسبوعية</label>
+                  <select id="planDaysSelect">
+                    <option value="0,3">الأحد والأربعاء</option>
+                    <option value="1,4">الإثنين والخميس</option>
+                    <option value="6,2">السبت والثلاثاء</option>
+                    <option value="0,2,4">الأحد والثلاثاء والخميس</option>
+                  </select>
+                </div>
+                <div class="filter-group">
+                  <label>&nbsp;</label>
+                  <button type="submit" class="btn btn-primary">✨ توليد الحصص وتحديث تاريخ النهاية</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3>📋 سجل الحصص والمواعيد والتعويض التلقائي</h3>
+              </div>
+              <div class="table-wrap" id="sessionsTableWrap"></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>✅ متابعة الحضور الأسبوعي السريع للشهر المحدد</h3>
+            </div>
+            <div class="table-wrap" id="weeklyAttendanceTableWrap"></div>
+          </div>
+        </section>
+
+        <!-- 10. MEMORIZATION & REVISION -->
+        <section id="view-memorization" class="view-panel" aria-labelledby="memHeading">
+          <div class="section-header">
+            <div class="section-title">
+              <h2 id="memHeading">📖 سجل الحفظ والمراجعة القرآنية</h2>
+              <p>توثيق تسميع الطالبات، السور والآيات، عدد الأوجه، والدرجات التقييمية</p>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="btn btn-accent" id="btnExportMemXlsx">📥 تصدير سجل الحفظ (.xlsx)</button>
+            </div>
+          </div>
+
+          <div class="filter-bar">
+            <div class="filter-group">
+              <label for="memTeacherFilter">تصفية حسب المعلمة</label>
+              <select id="memTeacherFilter">
+                <option value="">جميع المعلمات</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>➕ تسجيل تسميع / مراجعة جديدة</h3>
+            </div>
+            <form id="formAddMem" class="grid-3">
+              <div class="filter-group">
+                <label for="memStudentSelect">الطالبة</label>
+                <select id="memStudentSelect" required></select>
+              </div>
+              <div class="filter-group">
+                <label for="memTrackSelect">المسار</label>
+                <select id="memTrackSelect">
+                  <option value="حفظ جديد">حفظ جديد</option>
+                  <option value="مراجعة صغرى">مراجعة صغرى</option>
+                  <option value="مراجعة كبرى">مراجعة كبرى</option>
+                  <option value="تصحيح تلاوة وتجويد">تصحيح تلاوة وتجويد</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label for="memDateInput">تاريخ التسميع</label>
+                <input type="date" id="memDateInput" required>
+              </div>
+              <div class="filter-group">
+                <label for="memFromSurahInput">من سورة</label>
+                <input type="text" id="memFromSurahInput" value="الملك" required>
+              </div>
+              <div class="filter-group">
+                <label for="memPagesInput">عدد الأوجه</label>
+                <input type="number" id="memPagesInput" value="2" min="0.5" step="0.5" required>
+              </div>
+              <div class="filter-group">
+                <label for="memScoreInput">الدرجة (من 100)</label>
+                <input type="number" id="memScoreInput" value="98" min="0" max="100" required>
+              </div>
+              <div class="filter-group">
+                <label for="memNotesInput">ملاحظات المعلمة</label>
+                <input type="text" id="memNotesInput" placeholder="أحكام التجويد والمدود ممتازة...">
+              </div>
+              <div class="filter-group">
+                <label>&nbsp;</label>
+                <button type="submit" class="btn btn-primary">💾 حفظ سجل التسميع</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>📚 سجلات التسميع والمراجعة</h3>
+            </div>
+            <div class="table-wrap" id="memorizationTableWrap"></div>
+          </div>
+        </section>
+
+        <!-- 11. FAITH SCHOOL (MADRASA) -->
+        <section id="view-madrasa" class="view-panel" aria-labelledby="madrasaHeading">
+          <div class="section-header">
+            <div class="section-title">
+              <h2 id="madrasaHeading">🕌 المدرسة الإيمانية — «يوم لا يخلو من القرآن»</h2>
+              <p>متابعة الدفعات الإيمانية، المسارات الأربعة (القرآني، التعبدي، العلمي، التربوي)، وأيام الحماسة المتتالية</p>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="btn btn-accent" id="btnExportMadrasaXlsx">📥 تصدير المدرسة الإيمانية (.xlsx)</button>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="card">
+              <div class="card-header">
+                <h3>🌟 تسجيل طالبة في دفعة المدرسة الإيمانية</h3>
+              </div>
+              <form id="formEnrollMadrasa" class="grid-2">
+                <div class="filter-group">
+                  <label for="madBatchNameInput">اسم الدفعة</label>
+                  <input type="text" id="madBatchNameInput" value="دفعة الفجر - الأولى" required>
+                </div>
+                <div class="filter-group">
+                  <label for="madStudentSelect">الطالبة</label>
+                  <select id="madStudentSelect" required></select>
+                </div>
+                <div class="filter-group">
+                  <label for="madFeeInput">رسوم الاشتراك المسددة (ج.م)</label>
+                  <input type="number" id="madFeeInput" value="60" min="0" required>
+                </div>
+                <div class="filter-group">
+                  <label>&nbsp;</label>
+                  <button type="submit" class="btn btn-primary">🌿 ضم الطالبة للدفعة</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3>🔥 قائمة المنتسبات وأيام الحماسة</h3>
+              </div>
+              <div class="table-wrap" id="madrasaTableWrap"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 12. CERTIFICATE STUDIO -->
+        <section id="view-certificates" class="view-panel" aria-labelledby="certHeading">
+          <div class="section-header">
+            <div class="section-title">
+              <h2 id="certHeading">🎓 استوديو الشهادات التقديرية</h2>
+              <p>تصميم وإصدار شهادات إتمام الحفظ والتميز الفورية للطالبات</p>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="card">
+              <div class="card-header">
+                <h3>🏅 بيانات الشهادة</h3>
+              </div>
+              <form id="formIssueCert" class="grid-2">
+                <div class="filter-group">
+                  <label for="certStudentSelect">الطالبة</label>
+                  <select id="certStudentSelect" required></select>
+                </div>
+                <div class="filter-group">
+                  <label for="certTitleInput">عنوان الإنجاز / الدورة</label>
+                  <input type="text" id="certTitleInput" value="إتمام حفظ ومراجعة جزء عمّ بتقدير ممتاز" required>
+                </div>
+                <div class="filter-group">
+                  <label for="certGradeInput">التقدير</label>
+                  <input type="text" id="certGradeInput" value="ممتاز متقن" required>
+                </div>
+                <div class="filter-group">
+                  <label for="certDateInput">تاريخ الإصدار</label>
+                  <input type="date" id="certDateInput" required>
+                </div>
+                <div class="filter-group">
+                  <button type="submit" class="btn btn-primary">🎓 إصدار وحفظ الشهادة</button>
+                </div>
+                <div class="filter-group">
+                  <button type="button" class="btn btn-accent" id="btnDownloadCertPng">📥 تحميل صورة الشهادة (PNG)</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="card" style="text-align:center;">
+              <div class="card-header">
+                <h3>🖼️ معاينة الشهادة الفورية</h3>
+              </div>
+              <canvas id="certCanvas" width="800" height="540" style="max-width:100%;height:auto;border-radius:12px;border:1px solid var(--border-color);"></canvas>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>📜 سجل الشهادات الصادرة</h3>
+            </div>
+            <div class="table-wrap" id="certsTableWrap"></div>
+          </div>
+        </section>
+
+        <!-- 13. TEACHERS & SECTIONS -->
+        <section id="view-teachers" class="view-panel" aria-labelledby="teachersHeading">
+          <div class="section-header">
+            <div class="section-title">
+              <h2 id="teachersHeading">👩‍🏫 أقسام وإدارة المعلمات والباقات</h2>
+              <p>إدارة قائمة المعلمات (إضافة، تعديل الاسم والنسبة، إيقاف مؤقت أو إعادة تفعيل)، وباقات الاشتراك الموحدة</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 id="teacherFormHeading">➕ إضافة أو تحديث معلمة</h3>
+            </div>
+            <form id="formAddTeacher" class="grid-3">
+              <input type="hidden" id="tOriginalNameInput" value="">
+              <div class="filter-group">
+                <label for="tNameInput">اسم المعلمة</label>
+                <input type="text" id="tNameInput" placeholder="اسم المعلمة..." required>
+              </div>
+              <div class="filter-group">
+                <label for="tPctInput">النسبة الافتراضية (0..100% — اختياري وقابل للتعديل)</label>
+                <input type="number" id="tPctInput" value="70" min="0" max="100" step="1" placeholder="اختياري (مثال: 70)">
+              </div>
+              <div class="filter-group">
+                <label>&nbsp;</label>
+                <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                  <button type="submit" class="btn btn-primary" id="btnSubmitTeacher">💾 حفظ المعلمة</button>
+                  <button type="button" class="btn" id="btnCancelTeacherEdit" style="display:none;">إلغاء التعديل</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="filter-bar">
+            <div class="filter-group">
+              <label for="teacherSearchInput">بحث في المعلمات</label>
+              <input type="search" id="teacherSearchInput" placeholder="ابحث باسم المعلمة...">
+            </div>
+            <div class="filter-group">
+              <label for="teacherStatusFilter">حالة التفعيل</label>
+              <select id="teacherStatusFilter">
+                <option value="all">جميع المعلمات (نشطة + غير نشطة)</option>
+                <option value="active">المعلمات النشطة فقط</option>
+                <option value="inactive">غير النشطة / المؤرشفة فقط</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid-3" id="teachersCardsGrid"></div>
+
+          <div class="card" style="margin-top:16px;">
+            <div class="card-header">
+              <h3>📦 إدارة باقات وأنظمة الاشتراك الموحدة (مصدر موحد لجميع القوائم)</h3>
+            </div>
+            <form id="formAddPackage" class="grid-3" style="margin-bottom:12px;">
+              <div class="filter-group">
+                <label for="pkgNameInput">اسم الباقة / النظام الجديد</label>
+                <input type="text" id="pkgNameInput" placeholder="مثال: 8 حلقات - 45 دقيقة...">
+              </div>
+              <div class="filter-group">
+                <label>&nbsp;</label>
+                <button type="submit" class="btn btn-primary">➕ إضافة باقة للقوائم</button>
+              </div>
+            </form>
+            <div id="packagesListWrap" style="display:flex;gap:8px;flex-wrap:wrap;"></div>
+          </div>
+        </section>
+
+        <!-- 14. EXCEL IMPORT (PHASE 6) -->
+        <section id="view-import" class="view-panel" aria-labelledby="importHeading">
+          <div class="section-header">
+            <div class="section-title">
+              <h2 id="importHeading">📥 استيراد البيانات من Excel / CSV</h2>
+              <p>استيراد آمن مع معاينة مسبقة (Dry-Run)، مطابقة تلقائية للأعمدة العربية، وفصل تام بين تاريخ الدفع وتاريخ البداية الفعلي</p>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="btn btn-primary" id="btnLoadBundledWorkbooks" title="تحميل ودمج جميع بيانات قواعد شهر 9 (منتهي الاشتراك) ولوحة تحكم أكتوبر ونوفمبر والمواعيد">📥 تحميل بيانات ملفي الأكاديمية المدمجة (شهر 9 + أكتوبر ونوفمبر)</button>
+              <button type="button" class="btn btn-accent" id="btnDownloadImportTemplate">📄 تحميل قالب Excel الجاهز (.xlsx)</button>
+              <button type="button" class="btn" id="btnUndoLastImport">↩️ التراجع عن آخر عملية استيراد</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>1️⃣ اختيار نوع البيانات ورفع الملف</h3>
+            </div>
+            <div class="grid-3">
+              <div class="filter-group">
+                <label for="importDatasetSelect">نوع السجلات المراد استيرادها</label>
+                <select id="importDatasetSelect">
+                  <option value="students">👩‍🎓 الطالبات والاشتراكات الشهرية</option>
+                  <option value="receipts">🧾 إيصالات السداد والأقساط</option>
+                  <option value="teachers">👩‍🏫 المعلمات ونسب الأجور</option>
+                  <option value="packages">📦 باقات وأنظمة الاشتراك</option>
+                  <option value="transactions">🏦 قيود الخزينة والمحاسبة</option>
+                  <option value="salaries">💰 صرف رواتب المعلمات</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label for="importModeSelect">سياسة التعامل مع السجلات الموجودة</label>
+                <select id="importModeSelect">
+                  <option value="update_existing">تحديث الموجود وإضافة الجديد</option>
+                  <option value="add_only">إضافة السجلات الجديدة فقط</option>
+                  <option value="skip_duplicates">تخطي السجلات المكررة</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label for="importFileInput">ملف الإكسيل (.xlsx) أو (.csv) — حد أقصى 10MB</label>
+                <input type="file" id="importFileInput" accept=".xlsx,.csv">
+              </div>
+              <div class="filter-group" id="importSheetGroup" style="display:none;">
+                <label for="importSheetSelect">ورقة العمل (Sheet)</label>
+                <select id="importSheetSelect"></select>
+              </div>
+              <div class="filter-group">
+                <label style="display:flex;align-items:center;gap:6px;margin-top:8px;cursor:pointer;">
+                  <input type="checkbox" id="importAutoCreateDeps" checked>
+                  <span>إنشاء المراجع الجديدة تلقائيًا (الكل)</span>
+                </label>
+                <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px;font-size:12px;">
+                  <label style="display:flex;align-items:center;gap:4px;cursor:pointer;">
+                    <input type="checkbox" id="importAutoCreateTeachers" checked>
+                    <span>👩‍🏫 المعلمات الجديدة</span>
+                  </label>
+                  <label style="display:flex;align-items:center;gap:4px;cursor:pointer;">
+                    <input type="checkbox" id="importAutoCreatePackages" checked>
+                    <span>📦 الباقات الجديدة</span>
+                  </label>
+                </div>
+              </div>
+              <div class="filter-group">
+                <label>&nbsp;</label>
+                <button type="button" class="btn btn-primary" id="btnPreviewImport">🔍 تحليل ومعاينة الملف قبل الحفظ</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="importPreviewContainer" style="display:none;">
+            <div class="card">
+              <div class="card-header">
+                <h3>2️⃣ مطابقة الأعمدة وملخص الفحص</h3>
+                <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                  <button type="button" class="btn" id="btnDownloadImportErrorReport" style="display:none;">⚠️ تحميل تقرير الأخطاء (.xlsx)</button>
+                  <button type="button" class="btn btn-primary" id="btnCommitImport">✅ اعتماد وحفظ السجلات الصالحة في قاعدة البيانات</button>
+                </div>
+              </div>
+              <div id="importStaleBanner" style="display:none;background:var(--warn-bg);color:var(--warn-text);border:1px solid #f59e0b;padding:10px 14px;border-radius:8px;margin-bottom:12px;font-weight:700;font-size:13px;">
+                ⚠️ تم تغيير الملف أو خيارات الاستيراد بعد آخر معاينة؛ يرجى الضغط على «تحليل ومعاينة الملف قبل الحفظ» لتحديث المعاينة قبل الاعتماد.
+              </div>
+              <div id="importCommitResultBanner" style="display:none;"></div>
+              <div id="importAutoCreateWarningBanner" style="display:none;"></div>
+              <div id="importSummaryKpis" class="kpi-grid"></div>
+              <div id="importMappingWrap" style="margin-bottom:14px;"></div>
+              <div class="table-wrap" id="importPreviewTableWrap"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 15. EXPORT & REPORTS CENTER (PHASE 7 + EXCEL/JSON) -->
+        <section id="view-exports" class="view-panel" aria-labelledby="exportsHeading">
+          <div class="section-header">
+            <div class="section-title">
+              <h2 id="exportsHeading">📤 مركز التصدير والتقارير الثابتة</h2>
+              <p>تصدير تقارير إكسيل (.xlsx)، صفحات HTML ثابتة للقراءة فقط والطباعة، أو نسخ قواعد البيانات (.json)</p>
+            </div>
+          </div>
+
+          <div class="card" style="border-right:4px solid var(--brand-primary);">
+            <div class="card-header">
+              <h3>🌐 تصدير صفحة تقرير HTML ثابتة للقراءة فقط (قابلة للفتح والطباعة على أي جهاز بدون إنترنت)</h3>
+            </div>
+            <div class="grid-3">
+              <div class="filter-group">
+                <label for="htmlExportScope">نطاق التقرير</label>
+                <select id="htmlExportScope">
+                  <option value="full">📊 التقرير التنفيذي الشامل</option>
+                  <option value="statistics">📈 الإحصائيات العامة</option>
+                  <option value="month_finance">💳 التقرير المالي الشهري</option>
+                  <option value="collections">🧾 كشف التحصيل والإيصالات</option>
+                  <option value="payroll">💰 كشف رواتب المعلمات</option>
+                  <option value="teacher">👩‍🏫 تقرير معلمة محددة</option>
+                  <option value="student">🪪 بطاقة طالبة محددة</option>
+                  <option value="alerts">🔔 التقرير الرقابي للتنبيهات</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label for="htmlExportTeacher">المعلمة (عند اختيار تقرير معلمة)</label>
+                <select id="htmlExportTeacher"></select>
+              </div>
+              <div class="filter-group">
+                <label for="htmlExportStudent">الطالبة (عند اختيار بطاقة طالبة)</label>
+                <select id="htmlExportStudent"></select>
+              </div>
+              <div class="filter-group">
+                <label style="display:flex;align-items:center;gap:6px;margin-top:20px;cursor:pointer;">
+                  <input type="checkbox" id="htmlExportHidePrivacy" checked>
+                  <span>🔒 إخفاء/تشفير أرقام الهواتف والبيانات الشخصية افتراضيًا (وضع الخصوصية)</span>
+                </label>
+              </div>
+              <div class="filter-group">
+                <label>&nbsp;</label>
+                <button type="button" class="btn btn-primary" id="btnDownloadHtmlExport">🌐 تحميل ملف التقرير (.html)</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-3">
+            <div class="card">
+              <h3>📦 1. المصنف الشامل الكامل (Full ERP)</h3>
+              <p style="font-size:12.5px;color:var(--text-muted);">يضم سجل الطالبات (بتاريخ الدفع وتاريخ البداية الفعلي)، ورقة تتبع التواريخ، رواتب المعلمات المقارنة، الملخص، والأقسام.</p>
+              <button type="button" class="btn btn-primary" data-export-scope="full">📥 تحميل المصنف الشامل (.xlsx)</button>
+            </div>
+            <div class="card">
+              <h3>👩‍🎓 2. سجل الطالبات وتواريخ الدفع والبدء</h3>
+              <p style="font-size:12.5px;color:var(--text-muted);">يصدّر جدول الطالبات الشهري مع ورقة مراجعة تواريخ الدفع المالية وتواريخ البداية الفعلية.</p>
+              <button type="button" class="btn btn-primary" data-export-scope="students">📥 تصدير سجل الطالبات (.xlsx)</button>
+            </div>
+            <div class="card">
+              <h3>💰 3. إحصائية ورواتب المعلمات الشهرية</h3>
+              <p style="font-size:12.5px;color:var(--text-muted);">يصدّر جدول المقارنة وإجمالي الرواتب وصافي الأكاديمية وسجل الصرف.</p>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <button type="button" class="btn btn-primary" data-export-scope="teachers_stats">📥 إحصائية المعلمات (.xlsx)</button>
+                <button type="button" class="btn" data-export-scope="payroll">📥 سجل صرف الرواتب (.xlsx)</button>
+              </div>
+            </div>
+            <div class="card">
+              <h3>🏦 4. المحاسبة العامة وإيصالات الأقساط</h3>
+              <p style="font-size:12.5px;color:var(--text-muted);">يصدّر الخزينة، القيود المحاسبية، الإيصالات، وتقرير تواريخ الدفع والبدء.</p>
+              <button type="button" class="btn btn-primary" data-export-scope="accounting">📥 تصدير المحاسبة (.xlsx)</button>
+            </div>
+            <div class="card">
+              <h3>🗓️ 5. الحلقات والمواعيد والحفظ والمدرسة الإيمانية</h3>
+              <p style="font-size:12.5px;color:var(--text-muted);">يصدّر جداول الحصص والحضور وسجل تسميع ومراجعة القرآن الكريم والمدرسة الإيمانية.</p>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <button type="button" class="btn" data-export-scope="attendance">📥 الحضور (.xlsx)</button>
+                <button type="button" class="btn" data-export-scope="memorization">📥 الحفظ (.xlsx)</button>
+                <button type="button" class="btn" data-export-scope="madrasa">📥 المدرسة الإيمانية (.xlsx)</button>
+              </div>
+            </div>
+            <div class="card">
+              <h3>🔄 6. نسخ حالة المنظومة (JSON) وتصدير جدول الطالبات (CSV)</h3>
+              <p style="font-size:12.5px;color:var(--text-muted);">ملف JSON يمثل نسخة كاملة لجميع بيانات المنظومة قابلة للاستعادة، بينما ملف CSV يصدّر جدول الطالبات للشهر المحدد فقط (قابل لإعادة الاستيراد في قسم الطالبات).</p>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <button type="button" class="btn" id="btnExportJson">📥 تصدير نسخة كاملة (.json)</button>
+                <button type="button" class="btn" id="btnExportCsv">📥 تصدير جدول الشهر (.csv)</button>
+                <label class="btn" style="cursor:pointer;">
+                  📂 استيراد نسخة كاملة (.json)
+                  <input type="file" id="inputImportJson" accept=".json" style="display:none;">
+                </label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 16. SETTINGS & CONTROL CENTER (13 CATEGORIES + WINDOWS AUTO-START + DIAGNOSTICS) -->
+        <section id="view-system" class="view-panel" aria-labelledby="systemHeading">
+          <div class="section-header">
+            <div class="section-title">
+              <h2 id="systemHeading">🛡️ مركز الإعدادات والتحكم الشامل (Settings &amp; Control Center)</h2>
+              <p>تحكم مركزي في 13 قسمًا: الإعدادات العامة، التشغيل التلقائي مع ويندوز، المظهر، السياسات المالية، النسخ الاحتياطي، والتشخيص</p>
+            </div>
+            <div class="section-actions" style="display:flex;gap:8px;flex-wrap:wrap;">
+              <button type="button" class="btn btn-primary" id="btnCreateManualBackup">💾 إنشاء نسخة احتياطية الآن</button>
+              <button type="button" class="btn btn-accent" id="btnExportSettingsJson">📤 تصدير الإعدادات (.json)</button>
+              <label class="btn" style="cursor:pointer;margin:0;">
+                📂 استيراد الإعدادات (.json)
+                <input type="file" id="inputImportSettingsJson" accept=".json" style="display:none;">
+              </label>
+              <button type="button" class="btn" id="btnResetAllSettings">↺ استعادة الإعدادات الافتراضية</button>
+              <button type="button" class="btn" id="btnOpenOnboardingWizard">🧙‍♂️ معالج الإعداد الأولي</button>
+            </div>
+          </div>
+
+          <div id="backupHealthBanner"></div>
+
+          <!-- Search & Category Tabs Bar -->
+          <div class="filter-bar" style="margin-bottom:10px;">
+            <div class="filter-group" style="flex:1;min-width:260px;">
+              <label for="settingsSearchInput">🔍 بحث فوري في جميع الإعدادات والسياسات (بالعربية أو الإنجليزية)</label>
+              <input type="search" id="settingsSearchInput" placeholder="ابحث عن: التشغيل التلقائي، المظهر، نسبة المعلمة، النسخ الاحتياطي، العملة...">
+            </div>
+            <div class="filter-group">
+              <label>القسم النشط</label>
+              <span class="badge badge-pay" id="settingsActiveCategoryBadge">📋 جميع الأقسام (13)</span>
+            </div>
+          </div>
+
+          <div class="settings-tabs-bar" id="settingsCategoryTabs" role="tablist" aria-label="أقسام مركز الإعدادات">
+            <button type="button" class="settings-cat-tab active" data-cat="all">📋 الكل (13)</button>
+            <button type="button" class="settings-cat-tab" data-cat="general">🏛️ 1. الإعدادات العامة والتشغيل التلقائي</button>
+            <button type="button" class="settings-cat-tab" data-cat="appearance">🎨 2. المظهر واللغة والعرض</button>
+            <button type="button" class="settings-cat-tab" data-cat="students">👩‍🎓 3. الطالبات والتسجيل</button>
+            <button type="button" class="settings-cat-tab" data-cat="teachers">👩‍🏫 4. المعلمات والأقسام</button>
+            <button type="button" class="settings-cat-tab" data-cat="packages">📦 5. الباقات والاشتراكات</button>
+            <button type="button" class="settings-cat-tab" data-cat="attendance">🗓️ 6. الحضور والجلسات</button>
+            <button type="button" class="settings-cat-tab" data-cat="financial">⚖️ 7. قواعد النظام المالي</button>
+            <button type="button" class="settings-cat-tab" data-cat="reports">📊 8. التقارير والطباعة</button>
+            <button type="button" class="settings-cat-tab" data-cat="import_export">🔄 9. الاستيراد والتصدير</button>
+            <button type="button" class="settings-cat-tab" data-cat="backup_restore">💾 10. النسخ الاحتياطي والاستعادة</button>
+            <button type="button" class="settings-cat-tab" data-cat="notifications">🔔 11. التنبيهات والإشعارات</button>
+            <button type="button" class="settings-cat-tab" data-cat="system_info">🖥️ 12. معلومات النظام والتشخيص</button>
+            <button type="button" class="settings-cat-tab" data-cat="maintenance">🛠️ 13. الصيانة والإدارة المتقدمة</button>
+          </div>
+
+          <!-- Windows Auto-Start Control Card (Phase 5A-2) -->
+          <div class="card settings-section-card" data-settings-cat="general" data-setting-keywords="autostart windows startup التشغيل التلقائي عند بدء تشغيل ويندوز" style="border-right:4px solid var(--brand-primary);margin-bottom:14px;">
+            <div class="card-header">
+              <h3>🚀 التشغيل التلقائي عند بدء تشغيل ويندوز (Windows Auto-Start — HKCU\...\Run)</h3>
+              <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+                <span class="badge" id="autostartStatusBadge">جاري الفحص...</span>
+                <button type="button" class="btn btn-sm btn-primary" id="btnToggleAutoStart">تبديل التشغيل التلقائي</button>
+                <button type="button" class="btn btn-sm" id="btnRepairAutoStart" style="display:none;">🔧 إصلاح مسار التشغيل التلقائي</button>
+              </div>
+            </div>
+            <div id="autostartDetailsBox" style="font-size:13px;line-height:1.6;"></div>
+          </div>
+
+          <!-- Unified Settings Form Covering Categories 1..11 -->
+          <div class="card settings-section-card" id="mainSettingsFormCard" data-settings-cat="general appearance students teachers packages attendance financial reports import_export backup_restore notifications" style="margin-bottom:14px;">
+            <div class="card-header">
+              <h3>⚙️ ضبط إعدادات الأكاديمية والمظهر والسياسات التشغيلية والمالية</h3>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <button type="button" class="btn btn-sm" id="btnResetCurrentCategory">↺ إعادة ضبط القسم الحالي</button>
+              </div>
+            </div>
+            <form id="formSystemSettings">
+              <div class="grid-3">
+                <!-- Category 1: General -->
+                <div class="filter-group setting-item" data-settings-cat="general" data-setting-key="academyName" data-setting-keywords="اسم الأكاديمية academy name">
+                  <label for="setAcademyName">🏛️ اسم الأكاديمية <button type="button" class="btn btn-reset-single-setting" data-reset-key="academyName" title="استعادة الافتراضي">↺</button></label>
+                  <input type="text" id="setAcademyName" required>
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="general" data-setting-key="academySubtitle" data-setting-keywords="الشعار الفرعي وصف الأكاديمية subtitle">
+                  <label for="setAcademySubtitle">✨ الشعار الفرعي للأكاديمية <button type="button" class="btn btn-reset-single-setting" data-reset-key="academySubtitle" title="استعادة الافتراضي">↺</button></label>
+                  <input type="text" id="setAcademySubtitle" placeholder="نظام إدارة الأكاديمية الموحد">
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="general" data-setting-key="currency" data-setting-keywords="العملة رمز العملة currency">
+                  <label for="setCurrency">💴 العملة المعتمدة <button type="button" class="btn btn-reset-single-setting" data-reset-key="currency" title="استعادة الافتراضي">↺</button></label>
+                  <input type="text" id="setCurrency" value="ج.م" required>
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="general" data-setting-key="defaultLandingView" data-setting-keywords="الشاشة الافتراضية عند الفتح landing view">
+                  <label for="setDefaultLandingView">🏠 الشاشة الافتراضية عند الفتح <button type="button" class="btn btn-reset-single-setting" data-reset-key="defaultLandingView" title="استعادة الافتراضي">↺</button></label>
+                  <select id="setDefaultLandingView">
+                    <option value="dashboard">📊 لوحة القيادة التنفيذية</option>
+                    <option value="students">👩‍🎓 سجل الطالبات والاشتراكات</option>
+                    <option value="attendance">🗓️ الحضور الذكي والمواعيد</option>
+                    <option value="memorization">📖 سجل الحفظ والمراجعة</option>
+                    <option value="teachers">👩‍🏫 أقسام وإدارة المعلمات</option>
+                    <option value="accounting">🏦 الخزينة والمحاسبة العامة</option>
+                    <option value="statistics">📈 الإحصائيات العامة</option>
+                    <option value="alerts">🔔 التنبيهات الرقابية</option>
+                  </select>
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="general" data-setting-key="defaultPageSize" data-setting-keywords="عدد الصفوف في الجداول page size">
+                  <label for="setDefaultPageSize">📄 عدد الصفوف الافتراضي بالجداول <button type="button" class="btn btn-reset-single-setting" data-reset-key="defaultPageSize" title="استعادة الافتراضي">↺</button></label>
+                  <input type="number" id="setDefaultPageSize" min="10" max="500" value="50">
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="general" data-setting-key="startMinimized" data-setting-keywords="بدء البرنامج مصغرا minimized autostart">
+                  <label style="display:flex;align-items:center;gap:6px;margin-top:22px;cursor:pointer;">
+                    <input type="checkbox" id="setStartMinimized">
+                    <span>🗕 بدء البرنامج مصغّرًا عند التشغيل التلقائي</span>
+                  </label>
+                </div>
+
+                <!-- Category 2: Appearance -->
+                <div class="filter-group setting-item" data-settings-cat="appearance" data-setting-key="theme" data-setting-keywords="المظهر اللون الوضع الليلي النهاري theme dark light sepia">
+                  <label for="setTheme">🎨 نمط المظهر (Theme) <button type="button" class="btn btn-reset-single-setting" data-reset-key="theme" title="استعادة الافتراضي">↺</button></label>
+                  <select id="setTheme">
+                    <option value="light">☀️ نهاري (كريمي وزيتوني)</option>
+                    <option value="dark">🌙 ليلي داكن مريح للعين</option>
+                    <option value="sepia">📜 دافئ كلاسيكي (Sepia)</option>
+                  </select>
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="appearance" data-setting-key="fontScale" data-setting-keywords="حجم الخط تكبير تصغير font scale">
+                  <label for="setFontScale">🔠 حجم خط الواجهة <button type="button" class="btn btn-reset-single-setting" data-reset-key="fontScale" title="استعادة الافتراضي">↺</button></label>
+                  <select id="setFontScale">
+                    <option value="sm">صغير (92%)</option>
+                    <option value="md">متوسط افتراضي (100%)</option>
+                    <option value="lg">كبير (108%)</option>
+                    <option value="xl">كبير جدًا (115%)</option>
+                  </select>
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="appearance" data-setting-key="tableDensity" data-setting-keywords="كثافة الجداول المسافات table density">
+                  <label for="setTableDensity">📐 كثافة عرض الجداول <button type="button" class="btn btn-reset-single-setting" data-reset-key="tableDensity" title="استعادة الافتراضي">↺</button></label>
+                  <select id="setTableDensity">
+                    <option value="compact">مضغوط (Compact)</option>
+                    <option value="comfortable">مريح افتراضي (Comfortable)</option>
+                    <option value="spacious">واسع (Spacious)</option>
+                  </select>
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="appearance" data-setting-key="useArabicDigits" data-setting-keywords="الأرقام العربية الهندية digits">
+                  <label style="display:flex;align-items:center;gap:6px;margin-top:22px;cursor:pointer;">
+                    <input type="checkbox" id="setUseArabicDigits">
+                    <span>🔢 استخدام الأرقام العربية الشرقية (٠١٢٣٤٥٦٧٨٩)</span>
+                  </label>
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="appearance" data-setting-key="tableZebraStripes" data-setting-keywords="تظليل الصفوف المتبادلة zebra stripes">
+                  <label style="display:flex;align-items:center;gap:6px;margin-top:22px;cursor:pointer;">
+                    <input type="checkbox" id="setTableZebraStripes" checked>
+                    <span>🦓 تظليل الصفوف المتبادلة في الجداول</span>
+                  </label>
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="appearance" data-setting-key="sidebarCompact" data-setting-keywords="الشريط الجانبي المضغوط sidebar compact">
+                  <label style="display:flex;align-items:center;gap:6px;margin-top:22px;cursor:pointer;">
+                    <input type="checkbox" id="setSidebarCompact">
+                    <span>📐 شريط جانبي مضغوط</span>
+                  </label>
+                </div>
+
+                <!-- Category 3: Students -->
+                <div class="filter-group setting-item" data-settings-cat="students" data-setting-key="studentCodePrefix" data-setting-keywords="بادئة كود الطالبة student code prefix">
+                  <label for="setStudentCodePrefix">🏷️ بادئة كود الطالبة التلقائي <button type="button" class="btn btn-reset-single-setting" data-reset-key="studentCodePrefix" title="استعادة الافتراضي">↺</button></label>
+                  <input type="text" id="setStudentCodePrefix" value="STD-" dir="ltr">
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="students" data-setting-key="defaultStudentViewMode" data-setting-keywords="نمط عرض الطالبات جدول بطاقات student view">
+                  <label for="setDefaultStudentViewMode">👩‍🎓 نمط عرض سجل الطالبات <button type="button" class="btn btn-reset-single-setting" data-reset-key="defaultStudentViewMode" title="استعادة الافتراضي">↺</button></label>
+                  <select id="setDefaultStudentViewMode">
+                    <option value="table">جدول تفصيلي (Table)</option>
+                    <option value="cards">بطاقات مرئية (Cards)</option>
+                  </select>
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="students" data-setting-key="requireStudentPhone" data-setting-keywords="إلزامية رقم هاتف الطالبة require phone">
+                  <label style="display:flex;align-items:center;gap:6px;margin-top:22px;cursor:pointer;">
+                    <input type="checkbox" id="setRequireStudentPhone">
+                    <span>📱 إلزامية إدخال رقم الهاتف عند تسجيل طالبة</span>
+                  </label>
+                </div>
+
+                <!-- Category 4: Teachers -->
+                <div class="filter-group setting-item" data-settings-cat="teachers financial" data-setting-key="defaultTeacherPct" data-setting-keywords="نسبة المعلمة الافتراضية teacher pct">
+                  <label for="setDefaultTeacherPct">👩‍🏫 نسبة المعلمة الافتراضية (0..100%) <button type="button" class="btn btn-reset-single-setting" data-reset-key="defaultTeacherPct" title="استعادة الافتراضي">↺</button></label>
+                  <input type="number" id="setDefaultTeacherPct" min="0" max="100" value="70" required>
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="teachers financial" data-setting-key="pctSource" data-setting-keywords="مصدر نسبة المعلمة student teacher pctSource">
+                  <label for="setPctSource">⚖️ مصدر نسبة المعلمة بالحسابات <button type="button" class="btn btn-reset-single-setting" data-reset-key="pctSource" title="استعادة الافتراضي">↺</button></label>
+                  <select id="setPctSource">
+                    <option value="student">نسبة الطالبة ثم المعلمة (Student Override)</option>
+                    <option value="teacher">نسبة المعلمة الافتراضية دائمًا (Teacher Default)</option>
+                  </select>
+                </div>
+
+                <!-- Category 5: Packages & Subscriptions -->
+                <div class="filter-group setting-item" data-settings-cat="packages" data-setting-key="defaultDurationDays" data-setting-keywords="مدة الدورة الافتراضية أيام الاشتراك duration days">
+                  <label for="setDurationDays">📅 مدة الدورة الافتراضية (أيام) <button type="button" class="btn btn-reset-single-setting" data-reset-key="defaultDurationDays" title="استعادة الافتراضي">↺</button></label>
+                  <input type="number" id="setDurationDays" min="1" max="365" value="30" required>
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="packages notifications" data-setting-key="expiringSoonDays" data-setting-keywords="تنبيه قرب انتهاء الاشتراك expiring soon days">
+                  <label for="setExpiringDays">⏳ تنبيه قرب انتهاء الاشتراك (أيام) <button type="button" class="btn btn-reset-single-setting" data-reset-key="expiringSoonDays" title="استعادة الافتراضي">↺</button></label>
+                  <input type="number" id="setExpiringDays" min="0" max="90" value="5" required>
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="packages" data-setting-key="monthsRangePast" data-setting-keywords="الشهور السابقة في القائمة months range past">
+                  <label for="setMonthsRangePast">⏪ عدد الشهور السابقة بالقوائم <button type="button" class="btn btn-reset-single-setting" data-reset-key="monthsRangePast" title="استعادة الافتراضي">↺</button></label>
+                  <input type="number" id="setMonthsRangePast" min="1" max="36" value="6">
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="packages" data-setting-key="monthsRangeFuture" data-setting-keywords="الشهور القادمة في القائمة months range future">
+                  <label for="setMonthsRangeFuture">⏩ عدد الشهور القادمة بالقوائم <button type="button" class="btn btn-reset-single-setting" data-reset-key="monthsRangeFuture" title="استعادة الافتراضي">↺</button></label>
+                  <input type="number" id="setMonthsRangeFuture" min="1" max="36" value="6">
+                </div>
+
+                <!-- Category 6: Attendance & Sessions -->
+                <div class="filter-group setting-item" data-settings-cat="attendance" data-setting-key="defaultSessionDurationMin" data-setting-keywords="مدة الحصة الافتراضية دقائق session duration">
+                  <label for="setDefaultSessionDurationMin">⏱️ مدة الحصة الافتراضية (دقيقة) <button type="button" class="btn btn-reset-single-setting" data-reset-key="defaultSessionDurationMin" title="استعادة الافتراضي">↺</button></label>
+                  <input type="number" id="setDefaultSessionDurationMin" min="10" max="300" value="40">
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="attendance" data-setting-key="defaultPlanSessionCount" data-setting-keywords="عدد الحصص في الخطة الشهرية plan session count">
+                  <label for="setDefaultPlanSessionCount">🗓️ عدد الحصص الافتراضي بالخطة <button type="button" class="btn btn-reset-single-setting" data-reset-key="defaultPlanSessionCount" title="استعادة الافتراضي">↺</button></label>
+                  <input type="number" id="setDefaultPlanSessionCount" min="1" max="100" value="8">
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="attendance" data-setting-key="defaultSessionStartTime" data-setting-keywords="وقت بدء الحصة الافتراضي session start time">
+                  <label for="setDefaultSessionStartTime">🕓 وقت الحصة الافتراضي <button type="button" class="btn btn-reset-single-setting" data-reset-key="defaultSessionStartTime" title="استعادة الافتراضي">↺</button></label>
+                  <input type="time" id="setDefaultSessionStartTime" value="16:00">
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="attendance notifications" data-setting-key="consecutiveAbsenceThreshold" data-setting-keywords="حد تنبيه الغياب المتتالي consecutive absence">
+                  <label for="setConsecutiveAbsenceThreshold">🚨 حد تنبيه الغياب المتتالي (حصص) <button type="button" class="btn btn-reset-single-setting" data-reset-key="consecutiveAbsenceThreshold" title="استعادة الافتراضي">↺</button></label>
+                  <input type="number" id="setConsecutiveAbsenceThreshold" min="1" max="30" value="2">
+                </div>
+
+                <!-- Category 7: Financial Rules -->
+                <div class="filter-group setting-item" data-settings-cat="financial" data-setting-key="wageBasis" data-setting-keywords="أساس حساب نسبة المعلمة صافي إجمالي wage basis net gross">
+                  <label for="setWageBasis">💰 أساس حساب نسبة المعلمة ⚠️ <button type="button" class="btn btn-reset-single-setting" data-reset-key="wageBasis" title="استعادة الافتراضي">↺</button></label>
+                  <select id="setWageBasis">
+                    <option value="net">من صافي الاشتراك بعد الخصم (Net)</option>
+                    <option value="gross">من إجمالي الاشتراك قبل الخصم (Gross)</option>
+                  </select>
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="financial" data-setting-key="wageAccrualMode" data-setting-keywords="سياسة استحقاق أجر المعلمة accrued collected">
+                  <label for="setWageAccrualMode">🏦 سياسة استحقاق أجر المعلمة ⚠️ <button type="button" class="btn btn-reset-single-setting" data-reset-key="wageAccrualMode" title="استعادة الافتراضي">↺</button></label>
+                  <select id="setWageAccrualMode">
+                    <option value="accrued">بمجرد تسجيل الاشتراك (Accrued)</option>
+                    <option value="collected">من المبلغ المحصّل فعليًا فقط (Collected)</option>
+                  </select>
+                </div>
+
+                <!-- Category 8: Reports & Printing -->
+                <div class="filter-group setting-item" data-settings-cat="reports" data-setting-key="defaultStatsPeriod" data-setting-keywords="الفترة الافتراضية للإحصائيات والتقارير stats period">
+                  <label for="setDefaultStatsPeriod">📊 الفترة الافتراضية للإحصائيات <button type="button" class="btn btn-reset-single-setting" data-reset-key="defaultStatsPeriod" title="استعادة الافتراضي">↺</button></label>
+                  <select id="setDefaultStatsPeriod">
+                    <option value="all_time">كل الفترات (All Time)</option>
+                    <option value="current_month">الشهر الحالي (Current Month)</option>
+                    <option value="last_3_months">آخر 3 أشهر</option>
+                    <option value="current_year">السنة الحالية</option>
+                  </select>
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="reports" data-setting-key="defaultCollectionBasis" data-setting-keywords="أساس تقارير التحصيل نقدي استحقاق cash accrual">
+                  <label for="setDefaultCollectionBasis">🧾 أساس تقارير التحصيل الافتراضي <button type="button" class="btn btn-reset-single-setting" data-reset-key="defaultCollectionBasis" title="استعادة الافتراضي">↺</button></label>
+                  <select id="setDefaultCollectionBasis">
+                    <option value="cash">الأساس النقدي حسب تاريخ الدفع (Cash Basis)</option>
+                    <option value="accrual">أساس الاستحقاق حسب شهر الاشتراك (Accrual)</option>
+                  </select>
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="reports" data-setting-key="hidePersonalDataByDefault" data-setting-keywords="إخفاء أرقام الهواتف في تقارير HTML الخصوصية privacy">
+                  <label style="display:flex;align-items:center;gap:6px;margin-top:22px;cursor:pointer;">
+                    <input type="checkbox" id="setHidePersonalDataByDefault" checked>
+                    <span>🔒 إخفاء أرقام الهواتف افتراضيًا عند تصدير HTML</span>
+                  </label>
+                </div>
+
+                <!-- Category 9: Import & Export -->
+                <div class="filter-group setting-item" data-settings-cat="import_export" data-setting-key="defaultImportMode" data-setting-keywords="وضع الاستيراد الافتراضي import mode">
+                  <label for="setDefaultImportMode">📥 وضع الاستيراد الافتراضي <button type="button" class="btn btn-reset-single-setting" data-reset-key="defaultImportMode" title="استعادة الافتراضي">↺</button></label>
+                  <select id="setDefaultImportMode">
+                    <option value="update_existing">تحديث السجلات المطابقة وإضافة الجديد</option>
+                    <option value="append_only">إضافة السجلات الجديدة فقط</option>
+                    <option value="skip_existing">تخطي السجلات الموجودة</option>
+                  </select>
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="import_export" data-setting-key="defaultAutoCreateTeachers" data-setting-keywords="إنشاء المعلمات تلقائيا عند الاستيراد auto create teachers">
+                  <label style="display:flex;align-items:center;gap:6px;margin-top:22px;cursor:pointer;">
+                    <input type="checkbox" id="setDefaultAutoCreateTeachers" checked>
+                    <span>👩‍🏫 تفعيل إنشاء المعلمات تلقائيًا عند الاستيراد</span>
+                  </label>
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="import_export" data-setting-key="defaultAutoCreatePackages" data-setting-keywords="إنشاء الباقات تلقائيا عند الاستيراد auto create packages">
+                  <label style="display:flex;align-items:center;gap:6px;margin-top:22px;cursor:pointer;">
+                    <input type="checkbox" id="setDefaultAutoCreatePackages" checked>
+                    <span>📦 تفعيل إنشاء الباقات تلقائيًا عند الاستيراد</span>
+                  </label>
+                </div>
+
+                <!-- Category 10: Backup & Restore + Security PIN -->
+                <div class="filter-group setting-item" data-settings-cat="backup_restore" data-setting-key="extraBackupFolder" data-setting-keywords="مجلد النسخ الاحتياطي الإضافي extra backup folder usb onedrive">
+                  <label for="setExtraBackupFolder">💾 مجلد النسخ الاحتياطي الإضافي (USB / قرص خارجي) <button type="button" class="btn btn-reset-single-setting" data-reset-key="extraBackupFolder" title="استعادة الافتراضي">↺</button></label>
+                  <input type="text" id="setExtraBackupFolder" dir="ltr" placeholder="D:\YawmJadidBackups">
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="backup_restore notifications" data-setting-key="backupWarnDays" data-setting-keywords="التنبيه عند تأخر النسخ الاحتياطي backup warn days">
+                  <label for="setBackupWarnDays">⏰ التنبيه عند تأخر النسخ الاحتياطي (أيام) <button type="button" class="btn btn-reset-single-setting" data-reset-key="backupWarnDays" title="استعادة الافتراضي">↺</button></label>
+                  <input type="number" id="setBackupWarnDays" min="1" max="90" value="3">
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="maintenance" data-setting-key="pinCode" data-setting-keywords="رمز القفل السري pin lock security">
+                  <label for="setPinCodeInput">🔐 رمز القفل السري (PIN) — اتركه فارغًا للإبقاء</label>
+                  <input type="password" id="setPinCodeInput" placeholder="أدخل رمز PIN جديد (اختياري)...">
+                </div>
+                <div class="filter-group setting-item" data-settings-cat="maintenance" data-setting-key="idleLockMinutes" data-setting-keywords="قفل تلقائي بعد الخمول دقائق idle lock minutes">
+                  <label for="setIdleMinutes">⏳ قفل تلقائي بعد الخمول (دقائق، 0 = معطل) <button type="button" class="btn btn-reset-single-setting" data-reset-key="idleLockMinutes" title="استعادة الافتراضي">↺</button></label>
+                  <input type="number" id="setIdleMinutes" min="0" max="480" value="15">
+                </div>
+
+                <!-- Category 11: Notifications -->
+                <div class="filter-group setting-item" data-settings-cat="notifications appearance" data-setting-key="showDashAlertsStrip" data-setting-keywords="إظهار شريط التنبيهات العاجلة في لوحة القيادة alerts strip">
+                  <label style="display:flex;align-items:center;gap:6px;margin-top:22px;cursor:pointer;">
+                    <input type="checkbox" id="setShowDashAlertsStrip" checked>
+                    <span>🔔 إظهار شريط التنبيهات العاجلة في لوحة القيادة</span>
+                  </label>
+                </div>
+              </div>
+
+              <div style="margin-top:14px;display:flex;gap:10px;align-items:center;justify-content:flex-end;border-top:1px solid var(--border-color);padding-top:12px;">
+                <span style="font-size:12px;color:var(--text-muted);margin-left:auto;">💡 جميع التعديلات تُحفظ في قاعدة البيانات مع توثيق كامل في سجل تغييرات الإعدادات أدناه.</span>
+                <button type="submit" class="btn btn-primary">💾 حفظ الإعدادات والسياسات المعتمدة</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Category 3/4/5 Master Data & Category 7 Hardcoded Financial Policies -->
+          <div class="grid-2">
+            <div class="card settings-section-card" data-settings-cat="students teachers packages" data-setting-keywords="حالات الطالبات المعلمات الباقات master data statuses">
+              <div class="card-header">
+                <h3>🗂️ إدارة البيانات الأساسية المرجعية (حالات الطالبات، المعلمات، والباقات)</h3>
+              </div>
+              <div style="font-size:13px;">
+                <label for="setStudentStatusesInput" style="font-weight:700;display:block;margin-bottom:6px;">حالات الطالبات المعتمدة (مفصولة بفاصلة):</label>
+                <div style="display:flex;gap:8px;margin-bottom:12px;">
+                  <input type="text" id="setStudentStatusesInput" value="نشطة, متوقفة مؤقتاً, منقطعة, خريجة" style="flex:1;">
+                  <button type="button" class="btn btn-sm btn-primary" id="btnSaveStudentStatuses">حفظ الحالات</button>
+                </div>
+                <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
+                  <button type="button" class="btn btn-sm" id="btnGoManageTeachers">👩‍🏫 انتقال لإدارة المعلمات والنسب ←</button>
+                  <button type="button" class="btn btn-sm" id="btnGoManagePackages">📦 انتقال لإدارة الباقات والأسعار ←</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card settings-section-card" data-settings-cat="financial" data-setting-keywords="القواعد المحاسبية الثابتة التقريب فصل التواريخ إقفال الشهور parity">
+              <div class="card-header">
+                <h3>⚖️ الثوابت والقواعد المحاسبية المعتمدة (Hardcoded Financial Invariants)</h3>
+              </div>
+              <div id="hardcodedFinancialPoliciesBox" style="font-size:12.5px;line-height:1.6;"></div>
+            </div>
+          </div>
+
+          <!-- Category 7 & 13: Month Locking, Demo Quarantine Cleaner & Factory Reset -->
+          <div class="grid-2">
+            <div class="card settings-section-card" data-settings-cat="financial maintenance" data-setting-keywords="إقفال الشهور المحاسبية فتح الشهر closed months lock">
+              <div class="card-header">
+                <h3>🔒 إقفال الشهور المحاسبية وحماية الأرصدة التاريخية</h3>
+              </div>
+              <p style="font-size:13px;color:var(--text-secondary);margin:0 0 8px;">إقفال الشهر يمنع أي تعديل على اشتراكات أو إيصالات أو رواتب الشهر المقفل لحين إعادة فتحه (يأخذ النظام نسخة احتياطية قبل الإقفال).</p>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <button type="button" class="btn btn-primary" id="btnCloseSelectedMonth">🔒 إقفال الشهر المحدد حاليًا</button>
+                <button type="button" class="btn" id="btnReopenSelectedMonth">🔓 إعادة فتح الشهر المحدد</button>
+              </div>
+              <div id="closedMonthsList" style="margin-top:10px;font-size:12.5px;"></div>
+            </div>
+
+            <div class="card settings-section-card" data-settings-cat="maintenance" data-setting-keywords="البيانات التجريبية عزل تنظيف إعادة ضبط المصنع demo quarantine reset">
+              <div class="card-header">
+                <h3>🧹 فحص وعزل البيانات التجريبية وإعادة ضبط المصنع</h3>
+              </div>
+              <div id="demoInventorySummaryBox" style="margin-bottom:10px;font-size:12.5px;"></div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;">
+                <button type="button" class="btn" id="btnLoadDemoData" style="display:none;">🧪 تحميل بيانات تجريبية وهمية</button>
+                <button type="button" class="btn btn-primary" id="btnCleanQuarantineDemo">🛡️ فحص وعزل البيانات التجريبية بأمان (Quarantine)</button>
+                <button type="button" class="btn" id="btnClearDemoData">🧹 مسح السجلات التجريبية</button>
+              </div>
+
+              <hr style="border:0;border-top:1px solid var(--border-color);margin:12px 0;">
+
+              <div>
+                <h4 style="margin:0 0 6px;font-size:13.5px;color:#dc2626;">⚠️ إعادة ضبط المصنع (مسح شامل للبيانات مع أخذ نسخة احتياطية تلقائية)</h4>
+                <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+                  <input type="text" id="resetConfirmWordInput" placeholder="اكتب: إعادة ضبط" style="max-width:160px;">
+                  <button type="button" class="btn btn-danger" id="btnResetApplication">🗑️ إعادة ضبط التطبيق بالكامل</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 12: System Info, Diagnostics & Application Log Tail -->
+          <div class="card settings-section-card" data-settings-cat="system_info maintenance" data-setting-keywords="معلومات النظام التشخيص بايثون قاعدة البيانات المسارات السجل diagnostics python">
+            <div class="card-header">
+              <h3>🖥️ معلومات النظام والتشخيص الفوري (System Diagnostics &amp; Paths)</h3>
+              <button type="button" class="btn btn-sm" id="btnRefreshSystemDiagnostics">🔄 تحديث التشخيص والسجل</button>
+            </div>
+            <div id="systemDiagnosticsBox"></div>
+          </div>
+
+          <!-- Category 10 & 13: Data Quality Audit & Verified SQLite Backups -->
+          <div class="grid-2">
+            <div class="card settings-section-card" data-settings-cat="maintenance students financial" data-setting-keywords="جودة البيانات التكرار فحص data quality">
+              <div class="card-header">
+                <h3>🩺 تقرير فحص جودة البيانات والتكرار</h3>
+              </div>
+              <div id="dataHealthReport"></div>
+            </div>
+
+            <div class="card settings-section-card" data-settings-cat="backup_restore" data-setting-keywords="النسخ الاحتياطية المحفوظة استعادة backups sqlite wal">
+              <div class="card-header">
+                <h3>💾 النسخ الاحتياطية المحفوظة والمفحوصة (SQLite WAL + Integrity Check)</h3>
+              </div>
+              <div class="table-wrap" id="backupsTableWrap"></div>
+            </div>
+          </div>
+
+          <!-- Settings Change Audit Log & General Operational Audit Log -->
+          <div class="grid-2">
+            <div class="card settings-section-card" data-settings-cat="maintenance general financial" data-setting-keywords="سجل تغييرات الإعدادات قبل وبعد settings audit log">
+              <div class="card-header">
+                <h3>⚙️ سجل تغييرات الإعدادات (Settings Audit Trail — قبل / بعد)</h3>
+              </div>
+              <div class="table-wrap" id="settingsAuditTableWrap"></div>
+            </div>
+
+            <div class="card settings-section-card" data-settings-cat="maintenance system_info" data-setting-keywords="سجل التدقيق والعمليات العام audit log">
+              <div class="card-header">
+                <h3>📜 سجل التدقيق والعمليات العام (Operational Audit Log)</h3>
+                <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                  <input type="search" id="auditFilterAction" placeholder="فلترة حسب العملية...">
+                  <input type="search" id="auditFilterQuery" placeholder="بحث في التفاصيل...">
+                  <button type="button" class="btn btn-sm" id="btnFilterAudit">🔍 بحث</button>
+                </div>
+              </div>
+              <div class="table-wrap" id="auditTableWrap"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- ADD / EDIT STUDENT MODAL -->
+  <div class="modal-backdrop" id="studentModal" role="dialog" aria-modal="true" aria-labelledby="studentModalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="studentModalTitle">إضافة / تعديل بيانات الطالبة والاشتراك</h3>
+        <button type="button" class="btn btn-sm" id="btnCloseStudentModal">✕ إغلاق</button>
+      </div>
+      <form id="formStudentModal">
+        <div class="modal-body">
+          <input type="hidden" id="modalStudentId">
+          <div class="grid-3">
+            <div class="filter-group">
+              <label for="modalStudentName">اسم الطالبة *</label>
+              <input type="text" id="modalStudentName" required placeholder="الاسم الثلاثي...">
+            </div>
+            <div class="filter-group">
+              <label for="modalStudentPhone">رقم الهاتف / واتساب</label>
+              <input type="text" id="modalStudentPhone" placeholder="010...">
+            </div>
+            <div class="filter-group">
+              <label for="modalStudentCode">كود الطالبة</label>
+              <input type="text" id="modalStudentCode" placeholder="STU-0001">
+            </div>
+            <div class="filter-group">
+              <label for="modalStudentTeacher">المعلمة</label>
+              <select id="modalStudentTeacher"></select>
+            </div>
+            <div class="filter-group">
+              <label for="modalStudentType">نوع الاشتراك</label>
+              <select id="modalStudentType"></select>
+            </div>
+            <div class="filter-group">
+              <label for="modalStudentPct">نسبة المعلمة (0..100% — اختياري ومرن)</label>
+              <input type="number" id="modalStudentPct" min="0" max="100" step="1" value="70" placeholder="اختياري (مثال: 70)">
+            </div>
+          </div>
+
+          <div class="dates-rule-banner" style="margin-top:16px;">
+            <div>
+              <strong>📅 بيانات اشتراك الشهر المحدد (<span id="modalMonthLabel"></span>):</strong>
+              لاحظ أن <strong>تاريخ الدفع (Payment Date)</strong> مستقل تمامًا عن <strong>تاريخ البداية الفعلي (Actual Start Date)</strong>.
+            </div>
+            <button type="button" class="btn btn-sm" id="btnModalCalcEndFromStart">⚡ حساب تاريخ النهاية من تاريخ البداية الفعلي</button>
+          </div>
+
+          <div class="grid-3">
+            <div class="filter-group">
+              <label for="modalMonthValue">قيمة الاشتراك الشهري (ج.م)</label>
+              <input type="number" id="modalMonthValue" min="0" step="1" placeholder="275">
+            </div>
+            <div class="filter-group">
+              <label for="modalMonthDiscount">الخصم (ج.م)</label>
+              <input type="number" id="modalMonthDiscount" min="0" step="1" placeholder="0">
+            </div>
+            <div class="filter-group">
+              <label for="modalMonthCustomWage">أجر المعلمة (اختياري — قابل للتعديل الحر أو تلقائي من النسبة)</label>
+              <input type="number" id="modalMonthCustomWage" min="0" step="1" placeholder="يُحسب تلقائيًا من النسبة أو اكتب أي مبلغ">
+            </div>
+            <div class="filter-group">
+              <label for="modalMonthPaymentDate" style="color:var(--pay-text);">💳 تاريخ الدفع الفعلي (Payment Date)</label>
+              <input type="date" id="modalMonthPaymentDate" class="cell-pay">
+            </div>
+            <div class="filter-group">
+              <label for="modalMonthActualStartDate" style="color:var(--start-text);">📅 تاريخ البداية الفعلي (Actual Start Date)</label>
+              <input type="date" id="modalMonthActualStartDate" class="cell-start">
+            </div>
+            <div class="filter-group">
+              <label for="modalMonthEndDate" style="color:var(--end-text);">🏁 تاريخ نهاية الاشتراك (End Date)</label>
+              <input type="date" id="modalMonthEndDate" class="cell-end">
+            </div>
+          </div>
+          <div style="margin-top:10px;">
+            <label style="display:flex;align-items:center;gap:6px;font-size:12.5px;cursor:pointer;">
+              <input type="checkbox" id="modalCreateReceiptCheck">
+              <span>🧾 إصدار إيصال سداد تلقائي بصافي قيمة الاشتراك عند تحديد تاريخ دفع (إن لم يكن هناك إيصال مسجل لهذا الشهر)</span>
+            </label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" id="btnModalDeleteStudent" style="margin-left:auto;display:none;">🗑️ حذف الطالبة</button>
+          <button type="button" class="btn" id="btnCancelStudentModal">إلغاء</button>
+          <button type="submit" class="btn btn-primary">💾 حفظ البيانات</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- FIRST-RUN ONBOARDING WIZARD MODAL (PHASE 1) -->
+  <div class="modal-backdrop" id="onboardingModal" role="dialog" aria-modal="true" aria-labelledby="onboardingModalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="onboardingModalTitle">🧙‍♂️ إعداد منظومة الأكاديمية لأول مرة (First-Run Setup)</h3>
+        <button type="button" class="btn btn-sm" id="btnCloseOnboardingModal">✕ إغلاق</button>
+      </div>
+      <form id="formOnboardingWizard">
+        <div class="modal-body">
+          <p style="margin-top:0;font-size:13px;color:var(--text-secondary);">مرحبا بك! قم بضبط الإعدادات الأساسية لأكاديميتك، المعلمات، والباقات المعتمدة لتخصيص المنظومة بالكامل.</p>
+          <div class="grid-3">
+            <div class="filter-group">
+              <label for="wizAcademyName">اسم الأكاديمية *</label>
+              <input type="text" id="wizAcademyName" value="أكاديمية يوم جديد" required>
+            </div>
+            <div class="filter-group">
+              <label for="wizCurrency">رمز العملة *</label>
+              <input type="text" id="wizCurrency" value="ج.م" required>
+            </div>
+            <div class="filter-group">
+              <label for="wizLogoFile">شعار الأكاديمية (اختياري — يُحفظ محليًا)</label>
+              <input type="file" id="wizLogoFile" accept="image/*">
+            </div>
+            <div class="filter-group">
+              <label for="wizDurationDays">مدة الدورة الافتراضية (أيام)</label>
+              <input type="number" id="wizDurationDays" value="30" min="1" max="365" required>
+            </div>
+            <div class="filter-group">
+              <label for="wizExpiringDays">حد تنبيه قرب الانتهاء (أيام)</label>
+              <input type="number" id="wizExpiringDays" value="5" min="1" max="60" required>
+            </div>
+            <div class="filter-group">
+              <label for="wizTeacherPct">النسبة الافتراضية للمعلمة (0..100%)</label>
+              <input type="number" id="wizTeacherPct" value="70" min="0" max="100" required>
+            </div>
+            <div class="filter-group">
+              <label for="wizWageBasis">أساس حساب أجر المعلمة</label>
+              <select id="wizWageBasis">
+                <option value="net">صافي الاشتراك بعد الخصم (Net)</option>
+                <option value="gross">إجمالي الاشتراك قبل الخصم (Gross)</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="wizWageAccrual">سياسة استحقاق أجر المعلمة</label>
+              <select id="wizWageAccrual">
+                <option value="accrued">بمجرد تسجيل الاشتراك (Accrued)</option>
+                <option value="collected">من المحصّل فعليًا فقط (Collected)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid-2" style="margin-top:14px;">
+            <div class="filter-group">
+              <label for="wizTeachersList">قائمة المعلمات المبدئية (كل معلمة في سطر أو بصيغة: الاسم | النسبة)</label>
+              <textarea id="wizTeachersList" rows="4" placeholder="مثال:&#10;أ. مريم | 70&#10;أ. خديجة | 70"></textarea>
+            </div>
+            <div class="filter-group">
+              <label for="wizPackagesList">أنظمة وباقات الاشتراك (كل باقة في سطر)</label>
+              <textarea id="wizPackagesList" rows="4">خاص
+8 حلقات-ساعة
+8 حلقات-40 دقيقة
+8 حلقات-30 دقيقة
+4 حلقات - نصف ساعة
+مجموعة</textarea>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" id="btnWizardLoadDemo" style="margin-left:auto;display:none;">🧪 تخطي وتحميل بيانات تجريبية وهمية</button>
+          <button type="submit" class="btn btn-primary">🚀 حفظ الإعدادات وبدء العمل</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- PIN LOCK MODAL (PHASE 2) -->
+  <div class="modal-backdrop" id="pinLockModal" role="dialog" aria-modal="true" aria-labelledby="pinModalTitle">
+    <div class="modal-card" style="max-width:420px;">
+      <div class="modal-header">
+        <img src="assets/logo.png" alt="" class="pin-logo">
+        <h3 id="pinModalTitle">🔒 المنظومة مقفلة برمز الحماية (PIN)</h3>
+      </div>
+      <form id="formPinUnlock">
+        <div class="modal-body">
+          <p style="margin-top:0;font-size:13px;">أدخل رمز القفل الشخصي للمتابعة:</p>
+          <div class="filter-group">
+            <label for="pinUnlockInput">رمز PIN</label>
+            <input type="password" id="pinUnlockInput" required autocomplete="off" style="font-size:18px;text-align:center;">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" style="width:100%;">🔓 فتح القفل</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- CONCURRENCY CONFLICT MODAL (PHASE 2 HTTP 409) -->
+  <div class="modal-backdrop" id="conflictModal" role="dialog" aria-modal="true" aria-labelledby="conflictModalTitle">
+    <div class="modal-card" style="max-width:480px;">
+      <div class="modal-header">
+        <h3 id="conflictModalTitle">⚠️ تغيرت البيانات في نافذة أخرى</h3>
+      </div>
+      <div class="modal-body">
+        <p style="margin:0;font-size:13.5px;line-height:1.6;">تم تحديث قاعدة البيانات من نافذة أخرى أو عملية متزامنة (تعارض رقم المراجعة <code>rev</code>). لحماية بياناتك من الكتابة الفوقية الصامتة، يرجى إعادة تحميل أحدث البيانات من الخادم.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="btnReloadAfterConflict">🔄 إعادة تحميل أحدث البيانات الآن</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JSON FULL-STATE RESTORE PREVIEW & CONFIRMATION MODAL (TASK 10) -->
+  <div class="modal-backdrop" id="jsonRestoreModal" role="dialog" aria-modal="true" aria-labelledby="jsonRestoreModalTitle">
+    <div class="modal-card" style="max-width:760px;">
+      <div class="modal-header">
+        <h3 id="jsonRestoreModalTitle">🛡️ معاينة وتأكيد استعادة نسخة قاعدة البيانات الكاملة (JSON)</h3>
+        <button type="button" class="btn btn-sm" id="btnCloseJsonRestoreModal">✕ إغلاق</button>
+      </div>
+      <div class="modal-body">
+        <div id="jsonRestoreWarningBanner" style="margin-bottom:12px;"></div>
+        <div class="kpi-grid" id="jsonRestoreSummaryKpis" style="margin-bottom:12px;"></div>
+        <div class="table-wrap" id="jsonRestoreTableWrap"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" id="btnCancelJsonRestore">إلغاء</button>
+        <button type="button" class="btn btn-primary" id="btnConfirmJsonRestore">✅ تأكيد الاستعادة (مع حفظ نسخة أمان فورية)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SAFE PREVIEW-FIRST BULK OPERATIONS MODAL (PHASE 4 TASK 10) -->
+  <div class="modal-backdrop" id="bulkPreviewModal" role="dialog" aria-modal="true" aria-labelledby="bulkPreviewModalTitle">
+    <div class="modal-card" style="max-width:760px;">
+      <div class="modal-header">
+        <h3 id="bulkPreviewModalTitle">🔍 معاينة وتأكيد العملية الجماعية قبل التنفيذ</h3>
+        <button type="button" class="btn btn-sm" id="btnCloseBulkPreviewModal">✕ إغلاق</button>
+      </div>
+      <div class="modal-body">
+        <div id="bulkPreviewWarningBanner" style="margin-bottom:12px;"></div>
+        <div class="kpi-grid" id="bulkPreviewSummaryKpis" style="margin-bottom:12px;"></div>
+        <div class="table-wrap" id="bulkPreviewTableWrap" style="max-height:320px;overflow-y:auto;"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" id="btnCancelBulkPreview">إلغاء</button>
+        <button type="button" class="btn btn-primary" id="btnConfirmBulkOp">✅ تأكيد وتنفيذ العملية الجماعية (مع حفظ نسخة أمان)</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <script src="js/finance-engine.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

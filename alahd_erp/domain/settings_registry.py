@@ -1,0 +1,726 @@
+"""Phase 5 — Authoritative Settings & Control Center Registry (13 Categories).
+
+Provides:
+1. Unified metadata & schema (`SETTINGS_CATALOG` and `SETTINGS_CATEGORIES`) covering all 13 categories:
+   - `general`: General & Startup (including Windows Auto-Start per 5A-2)
+   - `appearance`: Theme, Typography, Density, Table Display, Sidebar & Dashboard Layout
+   - `students`: Student Statuses, Code Prefix, Validation & Defaults
+   - `teachers`: Teacher Defaults & Authoritative Master Data
+   - `packages`: Subscription Packages & Expiring-Soon Thresholds
+   - `attendance`: Session Defaults, Conflict Policy & Status Labels
+   - `financial`: Financial Policy Display, Hardcoded Invariants Inventory & Month Locking
+   - `reports`: Dashboard & Reports Defaults, Privacy Masking & Date Window
+   - `import_export`: Import/Export Defaults, Formats & History
+   - `backup_restore`: Backup Location, Frequency, Retention & Restore Verification
+   - `notifications`: Alert Category Toggles, Thresholds & Automation Event Log
+   - `system_info`: Read-Only Database, Runtime, Build Tier & Auto-Start Diagnostics
+   - `maintenance`: Integrity Checks, Demo-Data Quarantine Cleaner, Settings Audit Trail & Reset/Import/Export
+2. Validation, category-scoped reset, individual setting reset, preview-first settings import, and audit trail recording.
+"""
+from __future__ import annotations
+
+import datetime
+import hashlib
+import json
+from typing import Any
+
+from .models import DEFAULT_SETTINGS
+
+SETTINGS_CATEGORIES: list[dict[str, str]] = [
+    {"id": "general", "icon": "⚙️", "title": "1. الإعدادات العامة والتشغيل التلقائي", "description": "هوية الأكاديمية، صفحة البداية، سلوك البحث، والتشغيل التلقائي مع ويندوز"},
+    {"id": "appearance", "icon": "🎨", "title": "2. المظهر والعرض وتنسيق الجداول", "description": "السمة اللونية، حجم الخط، كثافة الجداول، الشريط الجانبي، وعناصر لوحة القيادة"},
+    {"id": "students", "icon": "👩‍🎓", "title": "3. إعدادات الطالبات والتسجيل", "description": "بادئة الأكواد، الحالات الإدارية للطالبات، وقواعد التحقق من التكرار والهاتف"},
+    {"id": "teachers", "icon": "👩‍🏫", "title": "4. إدارة وإعدادات المعلمات", "description": "المصدر الموحد للمعلمات (إضافة، تعديل، تفعيل، إيقاف مؤقت) والنسبة الافتراضية"},
+    {"id": "packages", "icon": "📦", "title": "5. الباقات والاشتراكات والتنبيهات", "description": "إدارة باقات الاشتراك المعتمدة، مدة الدورة الافتراضية، ومهلة تنبيه قرب الانتهاء"},
+    {"id": "attendance", "icon": "🗓️", "title": "6. الحضور والجلسات والحلقات", "description": "الوقت والمدة الافتراضية للحصة، عدد حصص الخطة، وسياسة فحص تعارض المواعيد"},
+    {"id": "financial", "icon": "💰", "title": "7. السياسات المالية والشهور المقفلة", "description": "أساس احتساب الأجور، القواعد المحاسبية الثابتة، وإقفال/فتح الشهور المحاسبية"},
+    {"id": "reports", "icon": "📊", "title": "8. التقارير ولوحة القيادة والخصوصية", "description": "الفترة الافتراضية للإحصائيات، أساس كشف التحصيل، وإخفاء الهواتف عند التصدير"},
+    {"id": "import_export", "icon": "📥", "title": "9. الاستيراد والتصدير", "description": "الخيارات الافتراضية لاستيراد الإكسيل/CSV، حدود الأمان، وسجل دفعات الاستيراد"},
+    {"id": "backup_restore", "icon": "💾", "title": "10. النسخ الاحتياطي والاستعادة", "description": "مجلد النسخ الإضافي، مهلة التنبيه، النسخ المحفوظة، واستعادة JSON الآمنة"},
+    {"id": "notifications", "icon": "🔔", "title": "11. التنبيهات والأتمتة الرقابية", "description": "تفعيل/تعطيل تصنيفات التنبيهات، عتبات الرقابة، وسجل أحداث الأتمتة"},
+    {"id": "system_info", "icon": "🖥️", "title": "12. معلومات النظام وقاعدة البيانات", "description": "إصدار التطبيق، حالة البناء (Release / Provisional)، مسار وحجم وسلامة قاعدة البيانات"},
+    {"id": "maintenance", "icon": "🛠️", "title": "13. الصيانة والتشخيص وتدقيق الإعدادات", "description": "فحص سلامة قاعدة البيانات، تطهير البيانات التجريبية، سجل تدقيق الإعدادات، واستعادة الإعدادات"},
+]
+
+HARDCODED_FINANCIAL_POLICIES: list[dict[str, str]] = [
+    {
+        "id": "FIN-RULE-01",
+        "title": "فصل تام بين تاريخ الدفع وتاريخ البداية الفعلي (Payment Date ⊥ Actual Start Date)",
+        "rule": "يُعتمد تاريخ الدفع (Payment Date) حصريًا للتقارير المالية والتحصيل، بينما يُعتمد تاريخ البداية الفعلي (Actual Start Date) حصريًا لحساب مدة الاشتراك ومواعيد الحصص.",
+        "authority": "قرار عمل أساسي (لا يُعدّل إلا بقرار صريح من المالك)",
+    },
+    {
+        "id": "FIN-RULE-02",
+        "title": "حساب المبالغ والأجور بالجنيه الصحيح بتقريب قياسي (Decimal ROUND_HALF_UP)",
+        "rule": "تُحفظ وتُحسب كافة المبالغ المالية كأعداد صحيحة (Integer EGP) باستخدام Decimal مع التقريب القياسي النصف للأعلى لمنع أخطاء الفاصلة العائمة.",
+        "authority": "قرار محاسبي أساسي (ثابت)",
+    },
+    {
+        "id": "FIN-RULE-03",
+        "title": "الإيصالات مصدر الحقيقة الوحيد للتحصيل (Receipt-Driven Collection Status)",
+        "rule": "تُشتق حالة السداد (مسدد / جزئي / غير مسدد) والمبلغ المحصّل من إيصالات الدفع الفعلية المسجلة حتى تاريخ المرجع.",
+        "authority": "قرار محاسبي أساسي (PARITY-1 موثق لمراجعة المالك)",
+    },
+    {
+        "id": "FIN-RULE-04",
+        "title": "حماية الشهور المقفلة مالياً (Closed-Month Immutability)",
+        "rule": "لا يُسمح بتعديل أو حذف أو نقل أي اشتراك أو إيصال أو راتب أو قيد خزينة ينتمي إلى شهر مقفل إلا بعد إعادة فتح الشهر صراحةً.",
+        "authority": "قرار رقابي أساسي (ثابت)",
+    },
+]
+
+SETTINGS_CATALOG: list[dict[str, Any]] = [
+    # 1. General
+    {
+        "key": "academyName",
+        "category": "general",
+        "labelAr": "اسم الأكاديمية",
+        "descriptionAr": "الاسم الرسمي للأكاديمية الظاهر في الشريط الجانبي والتقارير والشهادات",
+        "type": "string",
+        "default": "أكاديمية يوم جديد",
+        "scope": "global",
+        "impactAr": "يتحدث فورًا في الواجهة والتقارير والشهادات",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "academySubtitle",
+        "category": "general",
+        "labelAr": "الشعار النصي الفرعي (Tagline)",
+        "descriptionAr": "العبارة الترحيبية تحت اسم الأكاديمية",
+        "type": "string",
+        "default": "يوم جديد هو عهد جديد",
+        "scope": "global",
+        "impactAr": "يتحدث فورًا في الشريط الجانبي والتقارير",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "currency",
+        "category": "general",
+        "labelAr": "رمز العملة",
+        "descriptionAr": "رمز العملة المستخدم في عرض المبالغ المالية والتقارير",
+        "type": "string",
+        "default": "ج.م",
+        "scope": "global",
+        "impactAr": "يتحدث فورًا في جميع الجداول والمؤشرات",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "defaultLandingView",
+        "category": "general",
+        "labelAr": "الشاشة الافتراضية عند فتح البرنامج",
+        "descriptionAr": "القسم الذي يفتح تلقائيًا عند تشغيل التطبيق",
+        "type": "enum",
+        "options": ["dashboard", "students", "collections", "payroll", "attendance", "alerts", "system"],
+        "default": "dashboard",
+        "scope": "ui",
+        "impactAr": "يُطبّق عند فتح التطبيق",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "defaultPageSize",
+        "category": "general",
+        "labelAr": "عدد الصفوف الافتراضي في الجداول",
+        "descriptionAr": "الحد الافتراضي لعدد السجلات المعروضة في الصفحة الواحدة",
+        "type": "int",
+        "min": 10,
+        "max": 5000,
+        "default": 100,
+        "scope": "ui",
+        "impactAr": "يُطبّق فورًا على عرض الجداول",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "useArabicDigits",
+        "category": "general",
+        "labelAr": "عرض الأرقام بالصيغة العربية المشرقية (٠١٢٣٤٥٦٧٨٩)",
+        "descriptionAr": "التحكم في شكل عرض الأرقام داخل الواجهة (مع قبول الإدخال بكلتا الصيغتين دائمًا)",
+        "type": "bool",
+        "default": False,
+        "scope": "ui",
+        "impactAr": "يتحدث فورًا في العرض",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "autoStartEnabled",
+        "category": "general",
+        "labelAr": "التشغيل التلقائي عند بدء تشغيل ويندوز (Windows Auto-Start)",
+        "descriptionAr": "فتح التطبيق تلقائيًا عند تسجيل الدخول إلى ويندوز (للملف التنفيذي المبني YawmJadidAcademy.exe)",
+        "type": "bool",
+        "default": True,
+        "scope": "system",
+        "impactAr": "يُسجل أو يحذف مفتاح التشغيل التلقائي للمستخدم الحالي في ويندوز",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "startMinimized",
+        "category": "general",
+        "labelAr": "بدء التشغيل مصغرًا عند الإقلاع التلقائي",
+        "descriptionAr": "فتح نافذة البرنامج مصغرة عند التشغيل التلقائي مع بدء ويندوز",
+        "type": "bool",
+        "default": False,
+        "scope": "system",
+        "impactAr": "يُحدّث معاملة سطر الأوامر (--minimized) في التشغيل التلقائي",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    # 2. Appearance
+    {
+        "key": "theme",
+        "category": "appearance",
+        "labelAr": "المظهر اللوني (الوضع النهاري / الليلي)",
+        "descriptionAr": "اختيار السمة اللونية للواجهة بالكامل",
+        "type": "enum",
+        "options": ["light", "dark"],
+        "default": "light",
+        "scope": "ui",
+        "impactAr": "يُطبّق فورًا على جميع الشاشات",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "fontScale",
+        "category": "appearance",
+        "labelAr": "حجم الخط العام في الواجهة",
+        "descriptionAr": "تكبير أو تصغير النصوص والجداول لراحة القراءة",
+        "type": "enum",
+        "options": ["small", "normal", "large"],
+        "default": "normal",
+        "scope": "ui",
+        "impactAr": "يُطبّق فورًا عبر متغيرات التصميم",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "tableDensity",
+        "category": "appearance",
+        "labelAr": "كثافة عرض الجداول",
+        "descriptionAr": "التحكم في المسافات الداخلية لصفوف الجداول (مضغوط / مريح / واسع)",
+        "type": "enum",
+        "options": ["compact", "comfortable", "spacious"],
+        "default": "comfortable",
+        "scope": "ui",
+        "impactAr": "يُطبّق فورًا على جميع الجداول",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "tableZebraStripes",
+        "category": "appearance",
+        "labelAr": "تلوين صفوف الجداول بالتبادل (Zebra Stripes)",
+        "descriptionAr": "تمييز الصفوف الزوجية والفردية لتسهيل تتبع السجلات الطويلة",
+        "type": "bool",
+        "default": True,
+        "scope": "ui",
+        "impactAr": "يُطبّق فورًا على جميع الجداول",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "sidebarCompact",
+        "category": "appearance",
+        "labelAr": "الوضع المختصر للشريط الجانبي",
+        "descriptionAr": "تقليص عرض قائمة التنقل الجانبية لتوفير مساحة أكبر للجداول",
+        "type": "bool",
+        "default": False,
+        "scope": "ui",
+        "impactAr": "يُطبّق فورًا على تخطيط الشاشة",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "showDashAlertsStrip",
+        "category": "appearance",
+        "labelAr": "إظهار شريط التنبيهات العاجلة في لوحة القيادة",
+        "descriptionAr": "عرض ملخص التنبيهات الرقابية أعلى لوحة القيادة التنفيذية",
+        "type": "bool",
+        "default": True,
+        "scope": "ui",
+        "impactAr": "يُطبّق فورًا في لوحة القيادة",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    # 3. Students
+    {
+        "key": "studentCodePrefix",
+        "category": "students",
+        "labelAr": "بادئة كود الطالبة التلقائي",
+        "descriptionAr": "البادئة المستخدمة عند توليد أكواد الطالبات الجديدة (مثال: STU-)",
+        "type": "string",
+        "default": "STU-",
+        "scope": "students",
+        "impactAr": "يُستخدم عند إضافة طالبة جديدة أو توحيد الأكواد",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "requireStudentPhone",
+        "category": "students",
+        "labelAr": "إلزامية رقم الهاتف عند إضافة طالبة جديدة",
+        "descriptionAr": "منع حفظ طالبة جديدة من النموذج بدون إدخال رقم تواصل صالح",
+        "type": "bool",
+        "default": False,
+        "scope": "students",
+        "impactAr": "يُطبّق فورًا في نموذج إضافة/تعديل الطالبة",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "defaultStudentViewMode",
+        "category": "students",
+        "labelAr": "نطاق العرض الافتراضي في جدول الطالبات",
+        "descriptionAr": "عرض الشهر المحدد فقط أو الشهر المحدد مع الشهر السابق",
+        "type": "enum",
+        "options": ["selected", "two_months"],
+        "default": "selected",
+        "scope": "students",
+        "impactAr": "يُطبّق في شاشة سجل الطالبات",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "studentStatuses",
+        "category": "students",
+        "labelAr": "قائمة الحالات الإدارية المعتمدة للطالبات",
+        "descriptionAr": "التصنيفات الإدارية المتاحة للطالبات (منتظمة، معلقة مؤقتًا، منقطعة، خريجة)",
+        "type": "list",
+        "default": ["منتظمة", "معلقة مؤقتًا", "منقطعة", "خريجة"],
+        "scope": "students",
+        "impactAr": "تظهر في ملفات الطالبات والفلاتر",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    # 4. Teachers & 7. Financial
+    {
+        "key": "defaultTeacherPct",
+        "category": "teachers",
+        "labelAr": "نسبة المعلمة الافتراضية (0..100%)",
+        "descriptionAr": "النسبة الافتراضية المطبقة عند إضافة معلمة أو طالبة جديدة",
+        "type": "int",
+        "min": 0,
+        "max": 100,
+        "default": 70,
+        "scope": "financial",
+        "impactAr": "تُطبق كقيمة افتراضية للمعلمات والطالبات الجدد",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": True,
+    },
+    # 5. Packages & Subscriptions
+    {
+        "key": "defaultDurationDays",
+        "category": "packages",
+        "labelAr": "مدة الدورة الدراسية الافتراضية (أيام)",
+        "descriptionAr": "عدد الأيام المحسوب تلقائيًا من تاريخ البداية الفعلي لتحديد تاريخ نهاية الاشتراك",
+        "type": "int",
+        "min": 1,
+        "max": 365,
+        "default": 30,
+        "scope": "subscriptions",
+        "impactAr": "يُطبّق عند حساب فترات الدراسة وتاريخ النهاية",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": True,
+    },
+    {
+        "key": "expiringSoonDays",
+        "category": "packages",
+        "labelAr": "مهلة التنبيه قبل انتهاء الاشتراك (أيام)",
+        "descriptionAr": "عدد الأيام المتبقية قبل تاريخ النهاية لإظهار تنبيه «قرب انتهاء الاشتراك»",
+        "type": "int",
+        "min": 0,
+        "max": 90,
+        "default": 5,
+        "scope": "subscriptions",
+        "impactAr": "يتحدث فورًا في مركز التنبيهات وحالة الدراسة",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    # 6. Attendance & Sessions
+    {
+        "key": "defaultSessionDurationMin",
+        "category": "attendance",
+        "labelAr": "مدة الحصة الافتراضية (دقائق)",
+        "descriptionAr": "المدة الزمنية الافتراضية للحصة عند توليد خطة حصص جديدة",
+        "type": "int",
+        "min": 10,
+        "max": 300,
+        "default": 40,
+        "scope": "attendance",
+        "impactAr": "يُطبّق في مولد خطط الحضور الذكي وفحص التعارض",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "defaultPlanSessionCount",
+        "category": "attendance",
+        "labelAr": "عدد الحصص الافتراضي في الدورة الشهرية",
+        "descriptionAr": "العدد الافتراضي للحصص عند توليد خطة حضور لطالبة",
+        "type": "int",
+        "min": 1,
+        "max": 60,
+        "default": 8,
+        "scope": "attendance",
+        "impactAr": "يُطبّق في نموذج توليد خطة الحصص",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "defaultSessionStartTime",
+        "category": "attendance",
+        "labelAr": "وقت الحصة الافتراضي (HH:MM)",
+        "descriptionAr": "التوقيت المبدئي المقترح عند جدولة حصص جديدة",
+        "type": "string",
+        "default": "16:00",
+        "scope": "attendance",
+        "impactAr": "يُطبّق في نموذج توليد خطة الحصص",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "consecutiveAbsenceThreshold",
+        "category": "attendance",
+        "labelAr": "عتبة تنبيه الغياب المتتالي (عدد الحصص)",
+        "descriptionAr": "عدد حصص الغياب المتتالية التي تستوجب إطلاق تنبيه رقابي",
+        "type": "int",
+        "min": 1,
+        "max": 30,
+        "default": 2,
+        "scope": "attendance",
+        "impactAr": "يتحدث فورًا في مركز التنبيهات الرقابية",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    # 7. Financial & Accounting
+    {
+        "key": "wageBasis",
+        "category": "financial",
+        "labelAr": "أساس احتساب نسبة المعلمة (Net / Gross)",
+        "descriptionAr": "حساب نسبة أجر المعلمة من صافي الاشتراك بعد الخصم (net) أو من الإجمالي قبل الخصم (gross)",
+        "type": "enum",
+        "options": ["net", "gross"],
+        "default": "net",
+        "scope": "financial",
+        "impactAr": "يؤثر مباشرة على حساب أجور المعلمات وصافي الأكاديمية",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": True,
+    },
+    {
+        "key": "wageAccrualMode",
+        "category": "financial",
+        "labelAr": "سياسة استحقاق أجر المعلمة (Accrued / Collected)",
+        "descriptionAr": "استحقاق الأجر بمجرد تسجيل الاشتراك (accrued) أو من المبلغ المحصّل فعليًا فقط (collected)",
+        "type": "enum",
+        "options": ["accrued", "collected"],
+        "default": "accrued",
+        "scope": "financial",
+        "impactAr": "يؤثر مباشرة على تقارير الرواتب والمحاسبة",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": True,
+    },
+    {
+        "key": "pctSource",
+        "category": "financial",
+        "labelAr": "مصدر نسبة أجر المعلمة (Student / Teacher)",
+        "descriptionAr": "اعتماد النسبة المحفوظة في سجل الطالبة (student) أو النسبة الحالية للمعلمة (teacher)",
+        "type": "enum",
+        "options": ["student", "teacher"],
+        "default": "student",
+        "scope": "financial",
+        "impactAr": "يؤثر على طريقة قراءة نسبة الأجر في الواجهة والتنبيهات وتجهيز الرواتب",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": True,
+    },
+    # 8. Reports & Dashboard
+    {
+        "key": "defaultStatsPeriod",
+        "category": "reports",
+        "labelAr": "الفترة الزمنية الافتراضية في الإحصائيات العامة",
+        "descriptionAr": "النطاق الزمني المختار تلقائيًا عند فتح شاشة الإحصائيات العامة",
+        "type": "enum",
+        "options": ["all_time", "this_month", "last_3", "last_6", "this_year"],
+        "default": "all_time",
+        "scope": "reports",
+        "impactAr": "يُطبّق في شاشة الإحصائيات العامة",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "defaultCollectionBasis",
+        "category": "reports",
+        "labelAr": "أساس كشف التحصيل الافتراضي (Accrual / Cash)",
+        "descriptionAr": "عرض كشف التحصيل حسب شهر الاشتراك (accrual) أو حسب تاريخ الإيصال الفعلي (cash)",
+        "type": "enum",
+        "options": ["accrual", "cash"],
+        "default": "accrual",
+        "scope": "reports",
+        "impactAr": "يُطبّق في شاشة التحصيل المالي",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "hidePersonalDataByDefault",
+        "category": "reports",
+        "labelAr": "تشفير/إخفاء أرقام الهواتف افتراضيًا في تقارير HTML",
+        "descriptionAr": "تفعيل وضع الخصوصية تلقائيًا عند تصدير صفحات التقارير الثابتة",
+        "type": "bool",
+        "default": True,
+        "scope": "reports",
+        "impactAr": "يُطبّق في مركز التصدير والتقارير",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "monthsRangePast",
+        "category": "reports",
+        "labelAr": "عدد الأشهر السابقة في قائمة الشهور الديناميكية",
+        "descriptionAr": "عدد الأشهر الماضية المعروضة حول الشهر الحالي في محدد الشهر الدراسي",
+        "type": "int",
+        "min": 1,
+        "max": 36,
+        "default": 6,
+        "scope": "reports",
+        "impactAr": "يتحدث فورًا في قائمة الشهور الدراسية",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "monthsRangeFuture",
+        "category": "reports",
+        "labelAr": "عدد الأشهر القادمة في قائمة الشهور الديناميكية",
+        "descriptionAr": "عدد الأشهر المستقبلية المعروضة حول الشهر الحالي في محدد الشهر الدراسي",
+        "type": "int",
+        "min": 1,
+        "max": 36,
+        "default": 6,
+        "scope": "reports",
+        "impactAr": "يتحدث فورًا في قائمة الشهور الدراسية",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    # 9. Import / Export
+    {
+        "key": "defaultImportMode",
+        "category": "import_export",
+        "labelAr": "سياسة الاستيراد الافتراضية للسجلات الموجودة",
+        "descriptionAr": "الوضع الافتراضي للتعامل مع السجلات المطابقة عند استيراد ملفات Excel/CSV",
+        "type": "enum",
+        "options": ["update_existing", "add_only", "skip_duplicates"],
+        "default": "update_existing",
+        "scope": "import_export",
+        "impactAr": "يُطبّق في شاشة استيراد Excel/CSV",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "defaultAutoCreateTeachers",
+        "category": "import_export",
+        "labelAr": "إنشاء المعلمات الجديدة تلقائيًا عند الاستيراد افتراضيًا",
+        "descriptionAr": "تفعيل خيار إضافة المعلمات غير المسجلات تلقائيًا أثناء استيراد الطالبات",
+        "type": "bool",
+        "default": True,
+        "scope": "import_export",
+        "impactAr": "يُطبّق في شاشة استيراد Excel/CSV",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "defaultAutoCreatePackages",
+        "category": "import_export",
+        "labelAr": "إنشاء الباقات الجديدة تلقائيًا عند الاستيراد افتراضيًا",
+        "descriptionAr": "تفعيل خيار إضافة باقات الاشتراك الجديدة تلقائيًا أثناء استيراد الطالبات",
+        "type": "bool",
+        "default": True,
+        "scope": "import_export",
+        "impactAr": "يُطبّق في شاشة استيراد Excel/CSV",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    # 10. Backup / Restore
+    {
+        "key": "extraBackupFolder",
+        "category": "backup_restore",
+        "labelAr": "مجلد النسخ الاحتياطي الإضافي (قرص خارجي / مجلد محلي)",
+        "descriptionAr": "مسار إضافي اختياري لنسخ ملفات النسخ الاحتياطي المفحوصة تلقائيًا",
+        "type": "string",
+        "default": "",
+        "scope": "backup_restore",
+        "impactAr": "يُنسخ إليه كل ملف نسخ احتياطي جديد بعد فحص سلامته",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    {
+        "key": "backupWarnDays",
+        "category": "backup_restore",
+        "labelAr": "مهلة التنبيه عند تأخر النسخ الاحتياطي (أيام)",
+        "descriptionAr": "إطلاق تنبيه حرج إذا مضى هذا العدد من الأيام دون إنشاء نسخة احتياطية",
+        "type": "int",
+        "min": 1,
+        "max": 90,
+        "default": 3,
+        "scope": "backup_restore",
+        "impactAr": "يتحدث فورًا في فحص صحة النسخ الاحتياطية والتنبيهات",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    # 11. Notifications & Automation
+    {
+        "key": "alertsConfig",
+        "category": "notifications",
+        "labelAr": "تفضيلات تفعيل تصنيفات التنبيهات الرقابية",
+        "descriptionAr": "التحكم في تفعيل أو إيقاف كل فئة من فئات التنبيهات الرقابية السبعة عشر",
+        "type": "dict",
+        "default": {},
+        "scope": "notifications",
+        "impactAr": "يتحدث فورًا في مركز التنبيهات الرقابية",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+    # 13. Maintenance & Security
+    {
+        "key": "idleLockMinutes",
+        "category": "maintenance",
+        "labelAr": "مهلة القفل التلقائي عند عدم الاستخدام (دقائق، 0 = معطل)",
+        "descriptionAr": "قفل الواجهة تلقائيًا برمز PIN بعد فترة الخمول المحددة",
+        "type": "int",
+        "min": 0,
+        "max": 480,
+        "default": 15,
+        "scope": "security",
+        "impactAr": "يُطبّق فورًا على مؤقت الخمول في الواجهة",
+        "restartRequired": False,
+        "immediateApply": True,
+        "highImpactConfirmation": False,
+    },
+]
+
+CATALOG_BY_KEY: dict[str, dict[str, Any]] = {item["key"]: item for item in SETTINGS_CATALOG}
+SETTINGS_BY_KEY: dict[str, dict[str, Any]] = CATALOG_BY_KEY
+
+
+def get_category_keys(category_id: str) -> list[str]:
+    return [item["key"] for item in SETTINGS_CATALOG if item["category"] == category_id]
+
+
+def build_settings_catalog_payload(current_settings: dict[str, Any], autostart_status: dict[str, Any] | None = None) -> dict[str, Any]:
+    """Builds the complete Settings Center metadata + current/default values payload for the UI."""
+    items_out: list[dict[str, Any]] = []
+    for meta in SETTINGS_CATALOG:
+        k = meta["key"]
+        cur_val = current_settings.get(k, meta["default"])
+        if k == "autoStartEnabled" and isinstance(autostart_status, dict) and autostart_status.get("eligible"):
+            cur_val = bool(autostart_status.get("enabled", False))
+        items_out.append({
+            **meta,
+            "currentValue": cur_val,
+            "isModified": cur_val != meta["default"],
+        })
+    return {
+        "ok": True,
+        "categories": SETTINGS_CATEGORIES,
+        "settings": items_out,
+        "hardcodedFinancialPolicies": HARDCODED_FINANCIAL_POLICIES,
+        "autostart": autostart_status or {},
+    }
+
+
+build_settings_catalog_Payload = build_settings_catalog_payload
+
+
+def compute_settings_diff(
+    current_settings: dict[str, Any],
+    incoming_patch: dict[str, Any],
+    actor: str = "admin",
+    source: str = "settings_update",
+) -> list[dict[str, Any]]:
+    """Computes a structured list of changed settings with metadata for audit trail and preview."""
+    changes: list[dict[str, Any]] = []
+    now_iso = datetime.datetime.now().isoformat(timespec="seconds")
+    for k, new_val in (incoming_patch or {}).items():
+        if k not in CATALOG_BY_KEY and k not in DEFAULT_SETTINGS:
+            continue
+        meta = CATALOG_BY_KEY.get(k, {})
+        old_val = current_settings.get(k, meta.get("default", DEFAULT_SETTINGS.get(k)))
+        if old_val == new_val:
+            continue
+        changes.append({
+            "key": k,
+            "labelAr": meta.get("labelAr", k),
+            "labelEn": meta.get("labelEn", k),
+            "category": meta.get("category", "general"),
+            "oldValue": old_val,
+            "newValue": new_val,
+            "timestamp": now_iso,
+            "tsIso": now_iso,
+            "actor": actor,
+            "source": source,
+            "confirmationRequired": bool(meta.get("highImpactConfirmation", False)),
+            "restartRequired": bool(meta.get("restartRequired", False)),
+            "result": "applied",
+        })
+    return changes
+
+
+def preview_settings_reset_or_import(
+    current_settings: dict[str, Any],
+    target_settings: dict[str, Any],
+    mode_label: str = "import",
+) -> dict[str, Any]:
+    """Previews changes between `current_settings` and `target_settings` with a deterministic hash."""
+    changes = compute_settings_diff(current_settings, target_settings)
+    sig = json.dumps({"mode": mode_label, "changes": changes}, ensure_ascii=False, sort_keys=True)
+    preview_hash = hashlib.sha256(sig.encode("utf-8")).hexdigest()
+    high_impact = sum(1 for c in changes if c["confirmationRequired"])
+    return {
+        "ok": True,
+        "mode": mode_label,
+        "changesCount": len(changes),
+        "highImpactCount": high_impact,
+        "changes": changes,
+        "requiresConfirmation": any(c["confirmationRequired"] for c in changes) or len(changes) > 0,
+        "requiresRestart": any(c["restartRequired"] for c in changes),
+        "previewHash": preview_hash,
+    }

@@ -1,0 +1,23 @@
+__pycache__/
+*.pyc
+build/
+dist/
+*.egg-info/
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+CHECKPOINTS/
+# Added in Gemini handoff (privacy/provenance guards; no product behaviour impact)
+.venv/
+*.exe
+*.db
+*.sqlite
+seed_state.json
+seed-data.js
+requirements.lock.tmp
+release/
+.venv/
+requirements.lock.tmp

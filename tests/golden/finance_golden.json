@@ -1,0 +1,1850 @@
+{
+ "accrual|gross|accrued|2026-10": {
+  "month": "2026-10",
+  "records": [
+   {
+    "actualStartDate": "",
+    "collected": 500,
+    "discount": 0,
+    "endDate": "",
+    "month": "2026-10",
+    "netSubscription": 500,
+    "paymentDate": "2026-10-03",
+    "paymentTiming": "paid",
+    "remaining": 0,
+    "status": "paid",
+    "studentId": "g1",
+    "studentName": "طالب اصطناعي 1",
+    "subscription": 500,
+    "teacher": "معلمة أ"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 0,
+    "discount": 0,
+    "endDate": "",
+    "month": "2026-10",
+    "netSubscription": 333,
+    "paymentDate": "",
+    "paymentTiming": "unpaid",
+    "remaining": 333,
+    "status": "unpaid",
+    "studentId": "g2",
+    "studentName": "طالب اصطناعي 2",
+    "subscription": 333,
+    "teacher": "معلمة أ"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 0,
+    "discount": 0,
+    "endDate": "",
+    "month": "2026-10",
+    "netSubscription": 250,
+    "paymentDate": "",
+    "paymentTiming": "unpaid",
+    "remaining": 250,
+    "status": "unpaid",
+    "studentId": "g4",
+    "studentName": "طالب اصطناعي 4",
+    "subscription": 250,
+    "teacher": "معلمة ب"
+   }
+  ],
+  "summary": {
+   "collected": 500,
+   "discounts": 0,
+   "grossSubs": 1083,
+   "n": 3,
+   "subs": 1083,
+   "uncollected": 583,
+   "wages": 750
+  },
+  "teachers": [
+   {
+    "collected": 500,
+    "discounts": 0,
+    "grossSubs": 833,
+    "n": 2,
+    "subs": 833,
+    "teacher": "معلمة أ",
+    "uncollected": 333,
+    "wages": 550
+   },
+   {
+    "collected": 0,
+    "discounts": 0,
+    "grossSubs": 250,
+    "n": 1,
+    "subs": 250,
+    "teacher": "معلمة ب",
+    "uncollected": 250,
+    "wages": 200
+   }
+  ],
+  "totalCollected": 500,
+  "totalDiscounts": 0,
+  "totalGrossSubscriptions": 1083,
+  "totalNetSubscriptions": 1083,
+  "totalRemaining": 583
+ },
+ "accrual|gross|accrued|2026-11": {
+  "month": "2026-11",
+  "records": [
+   {
+    "actualStartDate": "",
+    "collected": 150,
+    "discount": 100,
+    "endDate": "",
+    "month": "2026-11",
+    "netSubscription": 400,
+    "paymentDate": "2026-11-02",
+    "paymentTiming": "paid",
+    "remaining": 250,
+    "status": "partial",
+    "studentId": "g1",
+    "studentName": "طالب اصطناعي 1",
+    "subscription": 500,
+    "teacher": "معلمة أ"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 300,
+    "discount": 33,
+    "endDate": "",
+    "month": "2026-11",
+    "netSubscription": 300,
+    "paymentDate": "2026-11-05",
+    "paymentTiming": "paid",
+    "remaining": 0,
+    "status": "paid",
+    "studentId": "g2",
+    "studentName": "طالب اصطناعي 2",
+    "subscription": 333,
+    "teacher": "معلمة أ"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 0,
+    "discount": 700,
+    "endDate": "",
+    "month": "2026-11",
+    "netSubscription": 0,
+    "paymentDate": "",
+    "paymentTiming": "unpaid",
+    "remaining": 0,
+    "status": "over_discounted",
+    "studentId": "g3",
+    "studentName": "طالب اصطناعي 3",
+    "subscription": 700,
+    "teacher": "معلمة ب"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 0,
+    "discount": 0,
+    "endDate": "",
+    "month": "2026-11",
+    "netSubscription": 250,
+    "paymentDate": "",
+    "paymentTiming": "unpaid",
+    "remaining": 250,
+    "status": "unpaid",
+    "studentId": "g4",
+    "studentName": "طالب اصطناعي 4",
+    "subscription": 250,
+    "teacher": "معلمة ب"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 400,
+    "discount": 150,
+    "endDate": "",
+    "month": "2026-11",
+    "netSubscription": 850,
+    "paymentDate": "2026-11-10",
+    "paymentTiming": "paid",
+    "remaining": 450,
+    "status": "partial",
+    "studentId": "g5",
+    "studentName": "طالب اصطناعي 5",
+    "subscription": 1000,
+    "teacher": "معلمة ج"
+   }
+  ],
+  "summary": {
+   "collected": 850,
+   "discounts": 983,
+   "grossSubs": 2783,
+   "n": 5,
+   "subs": 1800,
+   "uncollected": 950,
+   "wages": 1750
+  },
+  "teachers": [
+   {
+    "collected": 400,
+    "discounts": 150,
+    "grossSubs": 1000,
+    "n": 1,
+    "subs": 850,
+    "teacher": "معلمة ج",
+    "uncollected": 450,
+    "wages": 650
+   },
+   {
+    "collected": 450,
+    "discounts": 133,
+    "grossSubs": 833,
+    "n": 2,
+    "subs": 700,
+    "teacher": "معلمة أ",
+    "uncollected": 250,
+    "wages": 550
+   },
+   {
+    "collected": 0,
+    "discounts": 700,
+    "grossSubs": 950,
+    "n": 2,
+    "subs": 250,
+    "teacher": "معلمة ب",
+    "uncollected": 250,
+    "wages": 550
+   }
+  ],
+  "totalCollected": 850,
+  "totalDiscounts": 983,
+  "totalGrossSubscriptions": 2783,
+  "totalNetSubscriptions": 1800,
+  "totalRemaining": 950
+ },
+ "accrual|net|accrued|2026-10": {
+  "month": "2026-10",
+  "records": [
+   {
+    "actualStartDate": "",
+    "collected": 500,
+    "discount": 0,
+    "endDate": "",
+    "month": "2026-10",
+    "netSubscription": 500,
+    "paymentDate": "2026-10-03",
+    "paymentTiming": "paid",
+    "remaining": 0,
+    "status": "paid",
+    "studentId": "g1",
+    "studentName": "طالب اصطناعي 1",
+    "subscription": 500,
+    "teacher": "معلمة أ"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 0,
+    "discount": 0,
+    "endDate": "",
+    "month": "2026-10",
+    "netSubscription": 333,
+    "paymentDate": "",
+    "paymentTiming": "unpaid",
+    "remaining": 333,
+    "status": "unpaid",
+    "studentId": "g2",
+    "studentName": "طالب اصطناعي 2",
+    "subscription": 333,
+    "teacher": "معلمة أ"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 0,
+    "discount": 0,
+    "endDate": "",
+    "month": "2026-10",
+    "netSubscription": 250,
+    "paymentDate": "",
+    "paymentTiming": "unpaid",
+    "remaining": 250,
+    "status": "unpaid",
+    "studentId": "g4",
+    "studentName": "طالب اصطناعي 4",
+    "subscription": 250,
+    "teacher": "معلمة ب"
+   }
+  ],
+  "summary": {
+   "collected": 500,
+   "discounts": 0,
+   "grossSubs": 1083,
+   "n": 3,
+   "subs": 1083,
+   "uncollected": 583,
+   "wages": 750
+  },
+  "teachers": [
+   {
+    "collected": 500,
+    "discounts": 0,
+    "grossSubs": 833,
+    "n": 2,
+    "subs": 833,
+    "teacher": "معلمة أ",
+    "uncollected": 333,
+    "wages": 550
+   },
+   {
+    "collected": 0,
+    "discounts": 0,
+    "grossSubs": 250,
+    "n": 1,
+    "subs": 250,
+    "teacher": "معلمة ب",
+    "uncollected": 250,
+    "wages": 200
+   }
+  ],
+  "totalCollected": 500,
+  "totalDiscounts": 0,
+  "totalGrossSubscriptions": 1083,
+  "totalNetSubscriptions": 1083,
+  "totalRemaining": 583
+ },
+ "accrual|net|accrued|2026-11": {
+  "month": "2026-11",
+  "records": [
+   {
+    "actualStartDate": "",
+    "collected": 150,
+    "discount": 100,
+    "endDate": "",
+    "month": "2026-11",
+    "netSubscription": 400,
+    "paymentDate": "2026-11-02",
+    "paymentTiming": "paid",
+    "remaining": 250,
+    "status": "partial",
+    "studentId": "g1",
+    "studentName": "طالب اصطناعي 1",
+    "subscription": 500,
+    "teacher": "معلمة أ"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 300,
+    "discount": 33,
+    "endDate": "",
+    "month": "2026-11",
+    "netSubscription": 300,
+    "paymentDate": "2026-11-05",
+    "paymentTiming": "paid",
+    "remaining": 0,
+    "status": "paid",
+    "studentId": "g2",
+    "studentName": "طالب اصطناعي 2",
+    "subscription": 333,
+    "teacher": "معلمة أ"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 0,
+    "discount": 700,
+    "endDate": "",
+    "month": "2026-11",
+    "netSubscription": 0,
+    "paymentDate": "",
+    "paymentTiming": "unpaid",
+    "remaining": 0,
+    "status": "over_discounted",
+    "studentId": "g3",
+    "studentName": "طالب اصطناعي 3",
+    "subscription": 700,
+    "teacher": "معلمة ب"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 0,
+    "discount": 0,
+    "endDate": "",
+    "month": "2026-11",
+    "netSubscription": 250,
+    "paymentDate": "",
+    "paymentTiming": "unpaid",
+    "remaining": 250,
+    "status": "unpaid",
+    "studentId": "g4",
+    "studentName": "طالب اصطناعي 4",
+    "subscription": 250,
+    "teacher": "معلمة ب"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 400,
+    "discount": 150,
+    "endDate": "",
+    "month": "2026-11",
+    "netSubscription": 850,
+    "paymentDate": "2026-11-10",
+    "paymentTiming": "paid",
+    "remaining": 450,
+    "status": "partial",
+    "studentId": "g5",
+    "studentName": "طالب اصطناعي 5",
+    "subscription": 1000,
+    "teacher": "معلمة ج"
+   }
+  ],
+  "summary": {
+   "collected": 850,
+   "discounts": 983,
+   "grossSubs": 2783,
+   "n": 5,
+   "subs": 1800,
+   "uncollected": 950,
+   "wages": 1213
+  },
+  "teachers": [
+   {
+    "collected": 400,
+    "discounts": 150,
+    "grossSubs": 1000,
+    "n": 1,
+    "subs": 850,
+    "teacher": "معلمة ج",
+    "uncollected": 450,
+    "wages": 553
+   },
+   {
+    "collected": 450,
+    "discounts": 133,
+    "grossSubs": 833,
+    "n": 2,
+    "subs": 700,
+    "teacher": "معلمة أ",
+    "uncollected": 250,
+    "wages": 460
+   },
+   {
+    "collected": 0,
+    "discounts": 700,
+    "grossSubs": 950,
+    "n": 2,
+    "subs": 250,
+    "teacher": "معلمة ب",
+    "uncollected": 250,
+    "wages": 200
+   }
+  ],
+  "totalCollected": 850,
+  "totalDiscounts": 983,
+  "totalGrossSubscriptions": 2783,
+  "totalNetSubscriptions": 1800,
+  "totalRemaining": 950
+ },
+ "accrual|net|collected|2026-10": {
+  "month": "2026-10",
+  "records": [
+   {
+    "actualStartDate": "",
+    "collected": 500,
+    "discount": 0,
+    "endDate": "",
+    "month": "2026-10",
+    "netSubscription": 500,
+    "paymentDate": "2026-10-03",
+    "paymentTiming": "paid",
+    "remaining": 0,
+    "status": "paid",
+    "studentId": "g1",
+    "studentName": "طالب اصطناعي 1",
+    "subscription": 500,
+    "teacher": "معلمة أ"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 0,
+    "discount": 0,
+    "endDate": "",
+    "month": "2026-10",
+    "netSubscription": 333,
+    "paymentDate": "",
+    "paymentTiming": "unpaid",
+    "remaining": 333,
+    "status": "unpaid",
+    "studentId": "g2",
+    "studentName": "طالب اصطناعي 2",
+    "subscription": 333,
+    "teacher": "معلمة أ"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 0,
+    "discount": 0,
+    "endDate": "",
+    "month": "2026-10",
+    "netSubscription": 250,
+    "paymentDate": "",
+    "paymentTiming": "unpaid",
+    "remaining": 250,
+    "status": "unpaid",
+    "studentId": "g4",
+    "studentName": "طالب اصطناعي 4",
+    "subscription": 250,
+    "teacher": "معلمة ب"
+   }
+  ],
+  "summary": {
+   "collected": 500,
+   "discounts": 0,
+   "grossSubs": 1083,
+   "n": 3,
+   "subs": 1083,
+   "uncollected": 583,
+   "wages": 350
+  },
+  "teachers": [
+   {
+    "collected": 500,
+    "discounts": 0,
+    "grossSubs": 833,
+    "n": 2,
+    "subs": 833,
+    "teacher": "معلمة أ",
+    "uncollected": 333,
+    "wages": 350
+   },
+   {
+    "collected": 0,
+    "discounts": 0,
+    "grossSubs": 250,
+    "n": 1,
+    "subs": 250,
+    "teacher": "معلمة ب",
+    "uncollected": 250,
+    "wages": 0
+   }
+  ],
+  "totalCollected": 500,
+  "totalDiscounts": 0,
+  "totalGrossSubscriptions": 1083,
+  "totalNetSubscriptions": 1083,
+  "totalRemaining": 583
+ },
+ "accrual|net|collected|2026-11": {
+  "month": "2026-11",
+  "records": [
+   {
+    "actualStartDate": "",
+    "collected": 150,
+    "discount": 100,
+    "endDate": "",
+    "month": "2026-11",
+    "netSubscription": 400,
+    "paymentDate": "2026-11-02",
+    "paymentTiming": "paid",
+    "remaining": 250,
+    "status": "partial",
+    "studentId": "g1",
+    "studentName": "طالب اصطناعي 1",
+    "subscription": 500,
+    "teacher": "معلمة أ"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 300,
+    "discount": 33,
+    "endDate": "",
+    "month": "2026-11",
+    "netSubscription": 300,
+    "paymentDate": "2026-11-05",
+    "paymentTiming": "paid",
+    "remaining": 0,
+    "status": "paid",
+    "studentId": "g2",
+    "studentName": "طالب اصطناعي 2",
+    "subscription": 333,
+    "teacher": "معلمة أ"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 0,
+    "discount": 700,
+    "endDate": "",
+    "month": "2026-11",
+    "netSubscription": 0,
+    "paymentDate": "",
+    "paymentTiming": "unpaid",
+    "remaining": 0,
+    "status": "over_discounted",
+    "studentId": "g3",
+    "studentName": "طالب اصطناعي 3",
+    "subscription": 700,
+    "teacher": "معلمة ب"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 0,
+    "discount": 0,
+    "endDate": "",
+    "month": "2026-11",
+    "netSubscription": 250,
+    "paymentDate": "",
+    "paymentTiming": "unpaid",
+    "remaining": 250,
+    "status": "unpaid",
+    "studentId": "g4",
+    "studentName": "طالب اصطناعي 4",
+    "subscription": 250,
+    "teacher": "معلمة ب"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 400,
+    "discount": 150,
+    "endDate": "",
+    "month": "2026-11",
+    "netSubscription": 850,
+    "paymentDate": "2026-11-10",
+    "paymentTiming": "paid",
+    "remaining": 450,
+    "status": "partial",
+    "studentId": "g5",
+    "studentName": "طالب اصطناعي 5",
+    "subscription": 1000,
+    "teacher": "معلمة ج"
+   }
+  ],
+  "summary": {
+   "collected": 850,
+   "discounts": 983,
+   "grossSubs": 2783,
+   "n": 5,
+   "subs": 1800,
+   "uncollected": 950,
+   "wages": 545
+  },
+  "teachers": [
+   {
+    "collected": 450,
+    "discounts": 133,
+    "grossSubs": 833,
+    "n": 2,
+    "subs": 700,
+    "teacher": "معلمة أ",
+    "uncollected": 250,
+    "wages": 285
+   },
+   {
+    "collected": 400,
+    "discounts": 150,
+    "grossSubs": 1000,
+    "n": 1,
+    "subs": 850,
+    "teacher": "معلمة ج",
+    "uncollected": 450,
+    "wages": 260
+   },
+   {
+    "collected": 0,
+    "discounts": 700,
+    "grossSubs": 950,
+    "n": 2,
+    "subs": 250,
+    "teacher": "معلمة ب",
+    "uncollected": 250,
+    "wages": 0
+   }
+  ],
+  "totalCollected": 850,
+  "totalDiscounts": 983,
+  "totalGrossSubscriptions": 2783,
+  "totalNetSubscriptions": 1800,
+  "totalRemaining": 950
+ },
+ "collection|2026-10": {
+  "advancePaymentsCount": 0,
+  "basis": "accrual",
+  "cashCollectedInPeriod": 1650,
+  "cashReceipts": [
+   {
+    "actualStartDate": "",
+    "amount": 500,
+    "method": "نقدي",
+    "note": "",
+    "paymentDate": "2026-10-03",
+    "receiptId": "r1",
+    "receiptNo": "RCP-G-1",
+    "studentId": "g1",
+    "studentName": "طالب اصطناعي 1",
+    "subscriptionMonth": "2026-10",
+    "teacher": "معلمة أ"
+   },
+   {
+    "actualStartDate": "",
+    "amount": 150,
+    "method": "نقدي",
+    "note": "",
+    "paymentDate": "2026-11-02",
+    "receiptId": "r2",
+    "receiptNo": "RCP-G-2",
+    "studentId": "g1",
+    "studentName": "طالب اصطناعي 1",
+    "subscriptionMonth": "2026-11",
+    "teacher": "معلمة أ"
+   },
+   {
+    "actualStartDate": "",
+    "amount": 600,
+    "method": "نقدي",
+    "note": "",
+    "paymentDate": "2026-11-05",
+    "receiptId": "r3",
+    "receiptNo": "RCP-G-3",
+    "studentId": "g2",
+    "studentName": "طالب اصطناعي 2",
+    "subscriptionMonth": "2026-11",
+    "teacher": "معلمة أ"
+   },
+   {
+    "actualStartDate": "",
+    "amount": 400,
+    "method": "نقدي",
+    "note": "",
+    "paymentDate": "2026-11-10",
+    "receiptId": "r5",
+    "receiptNo": "RCP-G-5",
+    "studentId": "g5",
+    "studentName": "طالب اصطناعي 5",
+    "subscriptionMonth": "2026-11",
+    "teacher": "معلمة ج"
+   }
+  ],
+  "deferredPaymentsCount": 0,
+  "month": "2026-10",
+  "records": [
+   {
+    "actualStartDate": "",
+    "collected": 500,
+    "discount": 0,
+    "endDate": "",
+    "month": "2026-10",
+    "netSubscription": 500,
+    "paymentDate": "2026-10-03",
+    "paymentTiming": "paid",
+    "remaining": 0,
+    "status": "paid",
+    "studentId": "g1",
+    "studentName": "طالب اصطناعي 1",
+    "subscription": 500,
+    "teacher": "معلمة أ"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 0,
+    "discount": 0,
+    "endDate": "",
+    "month": "2026-10",
+    "netSubscription": 333,
+    "paymentDate": "",
+    "paymentTiming": "unpaid",
+    "remaining": 333,
+    "status": "unpaid",
+    "studentId": "g2",
+    "studentName": "طالب اصطناعي 2",
+    "subscription": 333,
+    "teacher": "معلمة أ"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 0,
+    "discount": 0,
+    "endDate": "",
+    "month": "2026-10",
+    "netSubscription": 250,
+    "paymentDate": "",
+    "paymentTiming": "unpaid",
+    "remaining": 250,
+    "status": "unpaid",
+    "studentId": "g4",
+    "studentName": "طالب اصطناعي 4",
+    "subscription": 250,
+    "teacher": "معلمة ب"
+   }
+  ],
+  "totalCollected": 500,
+  "totalDiscounts": 0,
+  "totalGrossSubscriptions": 1083,
+  "totalNetSubscriptions": 1083,
+  "totalRemaining": 583
+ },
+ "collection|2026-11": {
+  "advancePaymentsCount": 0,
+  "basis": "accrual",
+  "cashCollectedInPeriod": 1650,
+  "cashReceipts": [
+   {
+    "actualStartDate": "",
+    "amount": 500,
+    "method": "نقدي",
+    "note": "",
+    "paymentDate": "2026-10-03",
+    "receiptId": "r1",
+    "receiptNo": "RCP-G-1",
+    "studentId": "g1",
+    "studentName": "طالب اصطناعي 1",
+    "subscriptionMonth": "2026-10",
+    "teacher": "معلمة أ"
+   },
+   {
+    "actualStartDate": "",
+    "amount": 150,
+    "method": "نقدي",
+    "note": "",
+    "paymentDate": "2026-11-02",
+    "receiptId": "r2",
+    "receiptNo": "RCP-G-2",
+    "studentId": "g1",
+    "studentName": "طالب اصطناعي 1",
+    "subscriptionMonth": "2026-11",
+    "teacher": "معلمة أ"
+   },
+   {
+    "actualStartDate": "",
+    "amount": 600,
+    "method": "نقدي",
+    "note": "",
+    "paymentDate": "2026-11-05",
+    "receiptId": "r3",
+    "receiptNo": "RCP-G-3",
+    "studentId": "g2",
+    "studentName": "طالب اصطناعي 2",
+    "subscriptionMonth": "2026-11",
+    "teacher": "معلمة أ"
+   },
+   {
+    "actualStartDate": "",
+    "amount": 400,
+    "method": "نقدي",
+    "note": "",
+    "paymentDate": "2026-11-10",
+    "receiptId": "r5",
+    "receiptNo": "RCP-G-5",
+    "studentId": "g5",
+    "studentName": "طالب اصطناعي 5",
+    "subscriptionMonth": "2026-11",
+    "teacher": "معلمة ج"
+   }
+  ],
+  "deferredPaymentsCount": 0,
+  "month": "2026-11",
+  "records": [
+   {
+    "actualStartDate": "",
+    "collected": 150,
+    "discount": 100,
+    "endDate": "",
+    "month": "2026-11",
+    "netSubscription": 400,
+    "paymentDate": "2026-11-02",
+    "paymentTiming": "paid",
+    "remaining": 250,
+    "status": "partial",
+    "studentId": "g1",
+    "studentName": "طالب اصطناعي 1",
+    "subscription": 500,
+    "teacher": "معلمة أ"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 300,
+    "discount": 33,
+    "endDate": "",
+    "month": "2026-11",
+    "netSubscription": 300,
+    "paymentDate": "2026-11-05",
+    "paymentTiming": "paid",
+    "remaining": 0,
+    "status": "paid",
+    "studentId": "g2",
+    "studentName": "طالب اصطناعي 2",
+    "subscription": 333,
+    "teacher": "معلمة أ"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 0,
+    "discount": 700,
+    "endDate": "",
+    "month": "2026-11",
+    "netSubscription": 0,
+    "paymentDate": "",
+    "paymentTiming": "unpaid",
+    "remaining": 0,
+    "status": "over_discounted",
+    "studentId": "g3",
+    "studentName": "طالب اصطناعي 3",
+    "subscription": 700,
+    "teacher": "معلمة ب"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 0,
+    "discount": 0,
+    "endDate": "",
+    "month": "2026-11",
+    "netSubscription": 250,
+    "paymentDate": "",
+    "paymentTiming": "unpaid",
+    "remaining": 250,
+    "status": "unpaid",
+    "studentId": "g4",
+    "studentName": "طالب اصطناعي 4",
+    "subscription": 250,
+    "teacher": "معلمة ب"
+   },
+   {
+    "actualStartDate": "",
+    "collected": 400,
+    "discount": 150,
+    "endDate": "",
+    "month": "2026-11",
+    "netSubscription": 850,
+    "paymentDate": "2026-11-10",
+    "paymentTiming": "paid",
+    "remaining": 450,
+    "status": "partial",
+    "studentId": "g5",
+    "studentName": "طالب اصطناعي 5",
+    "subscription": 1000,
+    "teacher": "معلمة ج"
+   }
+  ],
+  "totalCollected": 850,
+  "totalDiscounts": 983,
+  "totalGrossSubscriptions": 2783,
+  "totalNetSubscriptions": 1800,
+  "totalRemaining": 950
+ },
+ "stats|gross|accrued|student|2026-10": {
+  "month": "2026-10",
+  "teachers": [
+   {
+    "collected": 500,
+    "discounts": 0,
+    "grossSubs": 833,
+    "n": 2,
+    "subs": 833,
+    "teacher": "معلمة أ",
+    "uncollected": 333,
+    "wages": 550
+   },
+   {
+    "collected": 0,
+    "discounts": 0,
+    "grossSubs": 250,
+    "n": 1,
+    "subs": 250,
+    "teacher": "معلمة ب",
+    "uncollected": 250,
+    "wages": 200
+   }
+  ],
+  "total": {
+   "collected": 500,
+   "discounts": 0,
+   "grossSubs": 1083,
+   "n": 3,
+   "subs": 1083,
+   "uncollected": 583,
+   "wages": 750
+  }
+ },
+ "stats|gross|accrued|student|2026-11": {
+  "month": "2026-11",
+  "teachers": [
+   {
+    "collected": 400,
+    "discounts": 150,
+    "grossSubs": 1000,
+    "n": 1,
+    "subs": 850,
+    "teacher": "معلمة ج",
+    "uncollected": 450,
+    "wages": 650
+   },
+   {
+    "collected": 450,
+    "discounts": 133,
+    "grossSubs": 833,
+    "n": 2,
+    "subs": 700,
+    "teacher": "معلمة أ",
+    "uncollected": 250,
+    "wages": 550
+   },
+   {
+    "collected": 0,
+    "discounts": 700,
+    "grossSubs": 950,
+    "n": 2,
+    "subs": 250,
+    "teacher": "معلمة ب",
+    "uncollected": 250,
+    "wages": 550
+   }
+  ],
+  "total": {
+   "collected": 850,
+   "discounts": 983,
+   "grossSubs": 2783,
+   "n": 5,
+   "subs": 1800,
+   "uncollected": 950,
+   "wages": 1750
+  }
+ },
+ "stats|gross|accrued|teacher|2026-10": {
+  "month": "2026-10",
+  "teachers": [
+   {
+    "collected": 500,
+    "discounts": 0,
+    "grossSubs": 833,
+    "n": 2,
+    "subs": 833,
+    "teacher": "معلمة أ",
+    "uncollected": 333,
+    "wages": 625
+   },
+   {
+    "collected": 0,
+    "discounts": 0,
+    "grossSubs": 250,
+    "n": 1,
+    "subs": 250,
+    "teacher": "معلمة ب",
+    "uncollected": 250,
+    "wages": 138
+   }
+  ],
+  "total": {
+   "collected": 500,
+   "discounts": 0,
+   "grossSubs": 1083,
+   "n": 3,
+   "subs": 1083,
+   "uncollected": 583,
+   "wages": 763
+  }
+ },
+ "stats|gross|accrued|teacher|2026-11": {
+  "month": "2026-11",
+  "teachers": [
+   {
+    "collected": 400,
+    "discounts": 150,
+    "grossSubs": 1000,
+    "n": 1,
+    "subs": 850,
+    "teacher": "معلمة ج",
+    "uncollected": 450,
+    "wages": 650
+   },
+   {
+    "collected": 450,
+    "discounts": 133,
+    "grossSubs": 833,
+    "n": 2,
+    "subs": 700,
+    "teacher": "معلمة أ",
+    "uncollected": 250,
+    "wages": 625
+   },
+   {
+    "collected": 0,
+    "discounts": 700,
+    "grossSubs": 950,
+    "n": 2,
+    "subs": 250,
+    "teacher": "معلمة ب",
+    "uncollected": 250,
+    "wages": 523
+   }
+  ],
+  "total": {
+   "collected": 850,
+   "discounts": 983,
+   "grossSubs": 2783,
+   "n": 5,
+   "subs": 1800,
+   "uncollected": 950,
+   "wages": 1798
+  }
+ },
+ "stats|net|accrued|student|2026-10": {
+  "month": "2026-10",
+  "teachers": [
+   {
+    "collected": 500,
+    "discounts": 0,
+    "grossSubs": 833,
+    "n": 2,
+    "subs": 833,
+    "teacher": "معلمة أ",
+    "uncollected": 333,
+    "wages": 550
+   },
+   {
+    "collected": 0,
+    "discounts": 0,
+    "grossSubs": 250,
+    "n": 1,
+    "subs": 250,
+    "teacher": "معلمة ب",
+    "uncollected": 250,
+    "wages": 200
+   }
+  ],
+  "total": {
+   "collected": 500,
+   "discounts": 0,
+   "grossSubs": 1083,
+   "n": 3,
+   "subs": 1083,
+   "uncollected": 583,
+   "wages": 750
+  }
+ },
+ "stats|net|accrued|student|2026-11": {
+  "month": "2026-11",
+  "teachers": [
+   {
+    "collected": 400,
+    "discounts": 150,
+    "grossSubs": 1000,
+    "n": 1,
+    "subs": 850,
+    "teacher": "معلمة ج",
+    "uncollected": 450,
+    "wages": 553
+   },
+   {
+    "collected": 450,
+    "discounts": 133,
+    "grossSubs": 833,
+    "n": 2,
+    "subs": 700,
+    "teacher": "معلمة أ",
+    "uncollected": 250,
+    "wages": 460
+   },
+   {
+    "collected": 0,
+    "discounts": 700,
+    "grossSubs": 950,
+    "n": 2,
+    "subs": 250,
+    "teacher": "معلمة ب",
+    "uncollected": 250,
+    "wages": 200
+   }
+  ],
+  "total": {
+   "collected": 850,
+   "discounts": 983,
+   "grossSubs": 2783,
+   "n": 5,
+   "subs": 1800,
+   "uncollected": 950,
+   "wages": 1213
+  }
+ },
+ "stats|net|accrued|teacher|2026-10": {
+  "month": "2026-10",
+  "teachers": [
+   {
+    "collected": 500,
+    "discounts": 0,
+    "grossSubs": 833,
+    "n": 2,
+    "subs": 833,
+    "teacher": "معلمة أ",
+    "uncollected": 333,
+    "wages": 625
+   },
+   {
+    "collected": 0,
+    "discounts": 0,
+    "grossSubs": 250,
+    "n": 1,
+    "subs": 250,
+    "teacher": "معلمة ب",
+    "uncollected": 250,
+    "wages": 138
+   }
+  ],
+  "total": {
+   "collected": 500,
+   "discounts": 0,
+   "grossSubs": 1083,
+   "n": 3,
+   "subs": 1083,
+   "uncollected": 583,
+   "wages": 763
+  }
+ },
+ "stats|net|accrued|teacher|2026-11": {
+  "month": "2026-11",
+  "teachers": [
+   {
+    "collected": 400,
+    "discounts": 150,
+    "grossSubs": 1000,
+    "n": 1,
+    "subs": 850,
+    "teacher": "معلمة ج",
+    "uncollected": 450,
+    "wages": 553
+   },
+   {
+    "collected": 450,
+    "discounts": 133,
+    "grossSubs": 833,
+    "n": 2,
+    "subs": 700,
+    "teacher": "معلمة أ",
+    "uncollected": 250,
+    "wages": 525
+   },
+   {
+    "collected": 0,
+    "discounts": 700,
+    "grossSubs": 950,
+    "n": 2,
+    "subs": 250,
+    "teacher": "معلمة ب",
+    "uncollected": 250,
+    "wages": 138
+   }
+  ],
+  "total": {
+   "collected": 850,
+   "discounts": 983,
+   "grossSubs": 2783,
+   "n": 5,
+   "subs": 1800,
+   "uncollected": 950,
+   "wages": 1216
+  }
+ },
+ "stats|net|collected|student|2026-10": {
+  "month": "2026-10",
+  "teachers": [
+   {
+    "collected": 500,
+    "discounts": 0,
+    "grossSubs": 833,
+    "n": 2,
+    "subs": 833,
+    "teacher": "معلمة أ",
+    "uncollected": 333,
+    "wages": 350
+   },
+   {
+    "collected": 0,
+    "discounts": 0,
+    "grossSubs": 250,
+    "n": 1,
+    "subs": 250,
+    "teacher": "معلمة ب",
+    "uncollected": 250,
+    "wages": 0
+   }
+  ],
+  "total": {
+   "collected": 500,
+   "discounts": 0,
+   "grossSubs": 1083,
+   "n": 3,
+   "subs": 1083,
+   "uncollected": 583,
+   "wages": 350
+  }
+ },
+ "stats|net|collected|student|2026-11": {
+  "month": "2026-11",
+  "teachers": [
+   {
+    "collected": 450,
+    "discounts": 133,
+    "grossSubs": 833,
+    "n": 2,
+    "subs": 700,
+    "teacher": "معلمة أ",
+    "uncollected": 250,
+    "wages": 285
+   },
+   {
+    "collected": 400,
+    "discounts": 150,
+    "grossSubs": 1000,
+    "n": 1,
+    "subs": 850,
+    "teacher": "معلمة ج",
+    "uncollected": 450,
+    "wages": 260
+   },
+   {
+    "collected": 0,
+    "discounts": 700,
+    "grossSubs": 950,
+    "n": 2,
+    "subs": 250,
+    "teacher": "معلمة ب",
+    "uncollected": 250,
+    "wages": 0
+   }
+  ],
+  "total": {
+   "collected": 850,
+   "discounts": 983,
+   "grossSubs": 2783,
+   "n": 5,
+   "subs": 1800,
+   "uncollected": 950,
+   "wages": 545
+  }
+ },
+ "stats|net|collected|teacher|2026-10": {
+  "month": "2026-10",
+  "teachers": [
+   {
+    "collected": 500,
+    "discounts": 0,
+    "grossSubs": 833,
+    "n": 2,
+    "subs": 833,
+    "teacher": "معلمة أ",
+    "uncollected": 333,
+    "wages": 375
+   },
+   {
+    "collected": 0,
+    "discounts": 0,
+    "grossSubs": 250,
+    "n": 1,
+    "subs": 250,
+    "teacher": "معلمة ب",
+    "uncollected": 250,
+    "wages": 0
+   }
+  ],
+  "total": {
+   "collected": 500,
+   "discounts": 0,
+   "grossSubs": 1083,
+   "n": 3,
+   "subs": 1083,
+   "uncollected": 583,
+   "wages": 375
+  }
+ },
+ "stats|net|collected|teacher|2026-11": {
+  "month": "2026-11",
+  "teachers": [
+   {
+    "collected": 450,
+    "discounts": 133,
+    "grossSubs": 833,
+    "n": 2,
+    "subs": 700,
+    "teacher": "معلمة أ",
+    "uncollected": 250,
+    "wages": 338
+   },
+   {
+    "collected": 400,
+    "discounts": 150,
+    "grossSubs": 1000,
+    "n": 1,
+    "subs": 850,
+    "teacher": "معلمة ج",
+    "uncollected": 450,
+    "wages": 260
+   },
+   {
+    "collected": 0,
+    "discounts": 700,
+    "grossSubs": 950,
+    "n": 2,
+    "subs": 250,
+    "teacher": "معلمة ب",
+    "uncollected": 250,
+    "wages": 0
+   }
+  ],
+  "total": {
+   "collected": 850,
+   "discounts": 983,
+   "grossSubs": 2783,
+   "n": 5,
+   "subs": 1800,
+   "uncollected": 950,
+   "wages": 598
+  }
+ },
+ "summary|gross|accrued|student|2026-10": {
+  "accrualBasis": {
+   "accruedWages": 750,
+   "collectedForMonth": 500,
+   "discounts": 0,
+   "grossSubscriptions": 1083,
+   "label": "أساس الاستحقاق (حسب شهر الاشتراك)",
+   "netOperatingProfit": 333,
+   "netSubscriptions": 1083,
+   "uncollectedArrears": 583
+  },
+  "cashBasis": {
+   "cashReceiptsIn": 500,
+   "extraRevenueIn": 0,
+   "label": "الأساس النقدي (حركة الخزينة الفعلية بالتاريخ)",
+   "netCashFlow": 500,
+   "operatingExpenseOut": 0,
+   "salariesPaidOut": 0,
+   "totalCashIn": 500,
+   "totalCashOut": 0
+  },
+  "cashReceiptsInPeriod": 500,
+  "collected": 500,
+  "discounts": 0,
+  "extraRevenue": 0,
+  "grossSubscriptions": 1083,
+  "netCashBalance": 500,
+  "netOperatingProfit": 333,
+  "operatingExpense": 0,
+  "salaryPaid": 0,
+  "salaryRemaining": 750,
+  "scope": "2026-10",
+  "subscriptions": 1083,
+  "totalCashIn": 500,
+  "totalCashOut": 0,
+  "uncollected": 583,
+  "wages": 750
+ },
+ "summary|gross|accrued|student|2026-11": {
+  "accrualBasis": {
+   "accruedWages": 1750,
+   "collectedForMonth": 850,
+   "discounts": 983,
+   "grossSubscriptions": 2783,
+   "label": "أساس الاستحقاق (حسب شهر الاشتراك)",
+   "netOperatingProfit": 50,
+   "netSubscriptions": 1800,
+   "uncollectedArrears": 950
+  },
+  "cashBasis": {
+   "cashReceiptsIn": 1150,
+   "extraRevenueIn": 0,
+   "label": "الأساس النقدي (حركة الخزينة الفعلية بالتاريخ)",
+   "netCashFlow": 1150,
+   "operatingExpenseOut": 0,
+   "salariesPaidOut": 0,
+   "totalCashIn": 1150,
+   "totalCashOut": 0
+  },
+  "cashReceiptsInPeriod": 1150,
+  "collected": 850,
+  "discounts": 983,
+  "extraRevenue": 0,
+  "grossSubscriptions": 2783,
+  "netCashBalance": 1150,
+  "netOperatingProfit": 50,
+  "operatingExpense": 0,
+  "salaryPaid": 0,
+  "salaryRemaining": 1750,
+  "scope": "2026-11",
+  "subscriptions": 1800,
+  "totalCashIn": 1150,
+  "totalCashOut": 0,
+  "uncollected": 950,
+  "wages": 1750
+ },
+ "summary|gross|accrued|teacher|2026-10": {
+  "accrualBasis": {
+   "accruedWages": 763,
+   "collectedForMonth": 500,
+   "discounts": 0,
+   "grossSubscriptions": 1083,
+   "label": "أساس الاستحقاق (حسب شهر الاشتراك)",
+   "netOperatingProfit": 320,
+   "netSubscriptions": 1083,
+   "uncollectedArrears": 583
+  },
+  "cashBasis": {
+   "cashReceiptsIn": 500,
+   "extraRevenueIn": 0,
+   "label": "الأساس النقدي (حركة الخزينة الفعلية بالتاريخ)",
+   "netCashFlow": 500,
+   "operatingExpenseOut": 0,
+   "salariesPaidOut": 0,
+   "totalCashIn": 500,
+   "totalCashOut": 0
+  },
+  "cashReceiptsInPeriod": 500,
+  "collected": 500,
+  "discounts": 0,
+  "extraRevenue": 0,
+  "grossSubscriptions": 1083,
+  "netCashBalance": 500,
+  "netOperatingProfit": 320,
+  "operatingExpense": 0,
+  "salaryPaid": 0,
+  "salaryRemaining": 763,
+  "scope": "2026-10",
+  "subscriptions": 1083,
+  "totalCashIn": 500,
+  "totalCashOut": 0,
+  "uncollected": 583,
+  "wages": 763
+ },
+ "summary|gross|accrued|teacher|2026-11": {
+  "accrualBasis": {
+   "accruedWages": 1798,
+   "collectedForMonth": 850,
+   "discounts": 983,
+   "grossSubscriptions": 2783,
+   "label": "أساس الاستحقاق (حسب شهر الاشتراك)",
+   "netOperatingProfit": 2,
+   "netSubscriptions": 1800,
+   "uncollectedArrears": 950
+  },
+  "cashBasis": {
+   "cashReceiptsIn": 1150,
+   "extraRevenueIn": 0,
+   "label": "الأساس النقدي (حركة الخزينة الفعلية بالتاريخ)",
+   "netCashFlow": 1150,
+   "operatingExpenseOut": 0,
+   "salariesPaidOut": 0,
+   "totalCashIn": 1150,
+   "totalCashOut": 0
+  },
+  "cashReceiptsInPeriod": 1150,
+  "collected": 850,
+  "discounts": 983,
+  "extraRevenue": 0,
+  "grossSubscriptions": 2783,
+  "netCashBalance": 1150,
+  "netOperatingProfit": 2,
+  "operatingExpense": 0,
+  "salaryPaid": 0,
+  "salaryRemaining": 1798,
+  "scope": "2026-11",
+  "subscriptions": 1800,
+  "totalCashIn": 1150,
+  "totalCashOut": 0,
+  "uncollected": 950,
+  "wages": 1798
+ },
+ "summary|net|accrued|student|2026-10": {
+  "accrualBasis": {
+   "accruedWages": 750,
+   "collectedForMonth": 500,
+   "discounts": 0,
+   "grossSubscriptions": 1083,
+   "label": "أساس الاستحقاق (حسب شهر الاشتراك)",
+   "netOperatingProfit": 333,
+   "netSubscriptions": 1083,
+   "uncollectedArrears": 583
+  },
+  "cashBasis": {
+   "cashReceiptsIn": 500,
+   "extraRevenueIn": 0,
+   "label": "الأساس النقدي (حركة الخزينة الفعلية بالتاريخ)",
+   "netCashFlow": 500,
+   "operatingExpenseOut": 0,
+   "salariesPaidOut": 0,
+   "totalCashIn": 500,
+   "totalCashOut": 0
+  },
+  "cashReceiptsInPeriod": 500,
+  "collected": 500,
+  "discounts": 0,
+  "extraRevenue": 0,
+  "grossSubscriptions": 1083,
+  "netCashBalance": 500,
+  "netOperatingProfit": 333,
+  "operatingExpense": 0,
+  "salaryPaid": 0,
+  "salaryRemaining": 750,
+  "scope": "2026-10",
+  "subscriptions": 1083,
+  "totalCashIn": 500,
+  "totalCashOut": 0,
+  "uncollected": 583,
+  "wages": 750
+ },
+ "summary|net|accrued|student|2026-11": {
+  "accrualBasis": {
+   "accruedWages": 1213,
+   "collectedForMonth": 850,
+   "discounts": 983,
+   "grossSubscriptions": 2783,
+   "label": "أساس الاستحقاق (حسب شهر الاشتراك)",
+   "netOperatingProfit": 587,
+   "netSubscriptions": 1800,
+   "uncollectedArrears": 950
+  },
+  "cashBasis": {
+   "cashReceiptsIn": 1150,
+   "extraRevenueIn": 0,
+   "label": "الأساس النقدي (حركة الخزينة الفعلية بالتاريخ)",
+   "netCashFlow": 1150,
+   "operatingExpenseOut": 0,
+   "salariesPaidOut": 0,
+   "totalCashIn": 1150,
+   "totalCashOut": 0
+  },
+  "cashReceiptsInPeriod": 1150,
+  "collected": 850,
+  "discounts": 983,
+  "extraRevenue": 0,
+  "grossSubscriptions": 2783,
+  "netCashBalance": 1150,
+  "netOperatingProfit": 587,
+  "operatingExpense": 0,
+  "salaryPaid": 0,
+  "salaryRemaining": 1213,
+  "scope": "2026-11",
+  "subscriptions": 1800,
+  "totalCashIn": 1150,
+  "totalCashOut": 0,
+  "uncollected": 950,
+  "wages": 1213
+ },
+ "summary|net|accrued|teacher|2026-10": {
+  "accrualBasis": {
+   "accruedWages": 763,
+   "collectedForMonth": 500,
+   "discounts": 0,
+   "grossSubscriptions": 1083,
+   "label": "أساس الاستحقاق (حسب شهر الاشتراك)",
+   "netOperatingProfit": 320,
+   "netSubscriptions": 1083,
+   "uncollectedArrears": 583
+  },
+  "cashBasis": {
+   "cashReceiptsIn": 500,
+   "extraRevenueIn": 0,
+   "label": "الأساس النقدي (حركة الخزينة الفعلية بالتاريخ)",
+   "netCashFlow": 500,
+   "operatingExpenseOut": 0,
+   "salariesPaidOut": 0,
+   "totalCashIn": 500,
+   "totalCashOut": 0
+  },
+  "cashReceiptsInPeriod": 500,
+  "collected": 500,
+  "discounts": 0,
+  "extraRevenue": 0,
+  "grossSubscriptions": 1083,
+  "netCashBalance": 500,
+  "netOperatingProfit": 320,
+  "operatingExpense": 0,
+  "salaryPaid": 0,
+  "salaryRemaining": 763,
+  "scope": "2026-10",
+  "subscriptions": 1083,
+  "totalCashIn": 500,
+  "totalCashOut": 0,
+  "uncollected": 583,
+  "wages": 763
+ },
+ "summary|net|accrued|teacher|2026-11": {
+  "accrualBasis": {
+   "accruedWages": 1216,
+   "collectedForMonth": 850,
+   "discounts": 983,
+   "grossSubscriptions": 2783,
+   "label": "أساس الاستحقاق (حسب شهر الاشتراك)",
+   "netOperatingProfit": 584,
+   "netSubscriptions": 1800,
+   "uncollectedArrears": 950
+  },
+  "cashBasis": {
+   "cashReceiptsIn": 1150,
+   "extraRevenueIn": 0,
+   "label": "الأساس النقدي (حركة الخزينة الفعلية بالتاريخ)",
+   "netCashFlow": 1150,
+   "operatingExpenseOut": 0,
+   "salariesPaidOut": 0,
+   "totalCashIn": 1150,
+   "totalCashOut": 0
+  },
+  "cashReceiptsInPeriod": 1150,
+  "collected": 850,
+  "discounts": 983,
+  "extraRevenue": 0,
+  "grossSubscriptions": 2783,
+  "netCashBalance": 1150,
+  "netOperatingProfit": 584,
+  "operatingExpense": 0,
+  "salaryPaid": 0,
+  "salaryRemaining": 1216,
+  "scope": "2026-11",
+  "subscriptions": 1800,
+  "totalCashIn": 1150,
+  "totalCashOut": 0,
+  "uncollected": 950,
+  "wages": 1216
+ },
+ "summary|net|collected|student|2026-10": {
+  "accrualBasis": {
+   "accruedWages": 350,
+   "collectedForMonth": 500,
+   "discounts": 0,
+   "grossSubscriptions": 1083,
+   "label": "أساس الاستحقاق (حسب شهر الاشتراك)",
+   "netOperatingProfit": 733,
+   "netSubscriptions": 1083,
+   "uncollectedArrears": 583
+  },
+  "cashBasis": {
+   "cashReceiptsIn": 500,
+   "extraRevenueIn": 0,
+   "label": "الأساس النقدي (حركة الخزينة الفعلية بالتاريخ)",
+   "netCashFlow": 500,
+   "operatingExpenseOut": 0,
+   "salariesPaidOut": 0,
+   "totalCashIn": 500,
+   "totalCashOut": 0
+  },
+  "cashReceiptsInPeriod": 500,
+  "collected": 500,
+  "discounts": 0,
+  "extraRevenue": 0,
+  "grossSubscriptions": 1083,
+  "netCashBalance": 500,
+  "netOperatingProfit": 733,
+  "operatingExpense": 0,
+  "salaryPaid": 0,
+  "salaryRemaining": 350,
+  "scope": "2026-10",
+  "subscriptions": 1083,
+  "totalCashIn": 500,
+  "totalCashOut": 0,
+  "uncollected": 583,
+  "wages": 350
+ },
+ "summary|net|collected|student|2026-11": {
+  "accrualBasis": {
+   "accruedWages": 545,
+   "collectedForMonth": 850,
+   "discounts": 983,
+   "grossSubscriptions": 2783,
+   "label": "أساس الاستحقاق (حسب شهر الاشتراك)",
+   "netOperatingProfit": 1255,
+   "netSubscriptions": 1800,
+   "uncollectedArrears": 950
+  },
+  "cashBasis": {
+   "cashReceiptsIn": 1150,
+   "extraRevenueIn": 0,
+   "label": "الأساس النقدي (حركة الخزينة الفعلية بالتاريخ)",
+   "netCashFlow": 1150,
+   "operatingExpenseOut": 0,
+   "salariesPaidOut": 0,
+   "totalCashIn": 1150,
+   "totalCashOut": 0
+  },
+  "cashReceiptsInPeriod": 1150,
+  "collected": 850,
+  "discounts": 983,
+  "extraRevenue": 0,
+  "grossSubscriptions": 2783,
+  "netCashBalance": 1150,
+  "netOperatingProfit": 1255,
+  "operatingExpense": 0,
+  "salaryPaid": 0,
+  "salaryRemaining": 545,
+  "scope": "2026-11",
+  "subscriptions": 1800,
+  "totalCashIn": 1150,
+  "totalCashOut": 0,
+  "uncollected": 950,
+  "wages": 545
+ },
+ "summary|net|collected|teacher|2026-10": {
+  "accrualBasis": {
+   "accruedWages": 375,
+   "collectedForMonth": 500,
+   "discounts": 0,
+   "grossSubscriptions": 1083,
+   "label": "أساس الاستحقاق (حسب شهر الاشتراك)",
+   "netOperatingProfit": 708,
+   "netSubscriptions": 1083,
+   "uncollectedArrears": 583
+  },
+  "cashBasis": {
+   "cashReceiptsIn": 500,
+   "extraRevenueIn": 0,
+   "label": "الأساس النقدي (حركة الخزينة الفعلية بالتاريخ)",
+   "netCashFlow": 500,
+   "operatingExpenseOut": 0,
+   "salariesPaidOut": 0,
+   "totalCashIn": 500,
+   "totalCashOut": 0
+  },
+  "cashReceiptsInPeriod": 500,
+  "collected": 500,
+  "discounts": 0,
+  "extraRevenue": 0,
+  "grossSubscriptions": 1083,
+  "netCashBalance": 500,
+  "netOperatingProfit": 708,
+  "operatingExpense": 0,
+  "salaryPaid": 0,
+  "salaryRemaining": 375,
+  "scope": "2026-10",
+  "subscriptions": 1083,
+  "totalCashIn": 500,
+  "totalCashOut": 0,
+  "uncollected": 583,
+  "wages": 375
+ },
+ "summary|net|collected|teacher|2026-11": {
+  "accrualBasis": {
+   "accruedWages": 598,
+   "collectedForMonth": 850,
+   "discounts": 983,
+   "grossSubscriptions": 2783,
+   "label": "أساس الاستحقاق (حسب شهر الاشتراك)",
+   "netOperatingProfit": 1202,
+   "netSubscriptions": 1800,
+   "uncollectedArrears": 950
+  },
+  "cashBasis": {
+   "cashReceiptsIn": 1150,
+   "extraRevenueIn": 0,
+   "label": "الأساس النقدي (حركة الخزينة الفعلية بالتاريخ)",
+   "netCashFlow": 1150,
+   "operatingExpenseOut": 0,
+   "salariesPaidOut": 0,
+   "totalCashIn": 1150,
+   "totalCashOut": 0
+  },
+  "cashReceiptsInPeriod": 1150,
+  "collected": 850,
+  "discounts": 983,
+  "extraRevenue": 0,
+  "grossSubscriptions": 2783,
+  "netCashBalance": 1150,
+  "netOperatingProfit": 1202,
+  "operatingExpense": 0,
+  "salaryPaid": 0,
+  "salaryRemaining": 598,
+  "scope": "2026-11",
+  "subscriptions": 1800,
+  "totalCashIn": 1150,
+  "totalCashOut": 0,
+  "uncollected": 950,
+  "wages": 598
+ }
+}

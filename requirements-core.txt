@@ -1,0 +1,6 @@
+# Mandatory runtime libraries (pure-Python wheels, install on any Python >= 3.12).
+# pywebview (native window) is optional and installed separately: the app falls back to the default browser without it.
+fastapi>=0.110
+uvicorn>=0.29
+pydantic>=2.6
+openpyxl>=3.1
